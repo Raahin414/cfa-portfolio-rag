@@ -141,10 +141,12 @@ def upload_chunks(index, chunk_file, batch_size=50, namespace="", filter_noise=T
         batch = data[i:i + batch_size]
         vectors = []
         for item in batch:
+            metadata = dict(item.get("metadata", {}))
+            metadata["text"] = item.get("text", "")
             vectors.append({
                 "id": item["id"],
                 "values": item["embedding"],
-                "metadata": item.get("metadata", {}),
+                "metadata": metadata,
             })
         index.upsert(vectors=vectors, namespace=namespace)
 
