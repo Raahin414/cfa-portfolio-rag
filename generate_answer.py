@@ -1,12 +1,16 @@
 import argparse
 import os
 import time
+import logging
 
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 
 from hybrid_retrieval import hybrid_search
 from reranker import rerank_with_scores
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 
 DEFAULT_QUERY = "How to diversify a portfolio to reduce risk?"
@@ -59,32 +63,51 @@ def hf_generate(prompt):
             max_tokens=DEFAULT_MAX_TOKENS,
             temperature=0.0,
         )
-        return completion.choices[0].message.content.strip()
-    except Exception:
-        pass
+        result = completion.choices[0].message.content.strip()
+        logger.debug(f"chat.completions succeeded, result length: {len(result)}")
+        return result
+    except Exception as e:
+        logger.warning(f"chat.completions failed: {type(e).__name__}: {str(e)[:200]}")
 
-    formatted_prompt = f"<s>[INST] {prompt} [/INST]"
-    generated = client.text_generation(
-        prompt=formatted_prompt,
-        max_new_tokens=DEFAULT_MAX_TOKENS,
-        temperature=0.0,
-        do_sample=True,
-    )
-    if isinstance(generated, str):
-        return generated.strip()
-    return str(generated).strip()
+    try:
+        formatted_prompt = f"<s>[INST] {prompt} [/INST]"
+        generated = client.text_generation(
+            prompt=formatted_prompt,
+            max_new_tokens=DEFAULT_MAX_TOKENS,
+            temperature=0.0,
+            do_sample=True,
+        )
+        if isinstance(generated, str):
+            result = generated.strip()
+        else:
+            result = str(generated).strip()
+        logger.debug(f"text_generation succeeded, result length: {len(result)}")
+        return result
+    except Exception as e:
+        logger.error(f"text_generation also failed: {type(e).__name__}: {str(e)[:200]}")
+        return None
 
 
 def fallback_generate(query, contexts):
+    """Generate a better fallback answer when HF API fails."""
     if not contexts:
         return "I do not have enough retrieved context to answer this question."
-
-    best = contexts[0].strip()
-    return (
-        "Based on the retrieved context, here is the most relevant information:\n\n"
-        f"{best}\n\n"
-        f"Question addressed: {query}"
-    )
+    
+    # Try to extract a coherent summary from combined contexts
+    combined = " ".join([c if isinstance(c, str) else str(c) for c in contexts])
+    # Remove common noise patterns
+    combined = combined.replace("Learning Module", "").replace("CONSTRAINTS describe", "").strip()
+    
+    # Limit to ~250 words of the combined context with citation
+    words = combined.split()[:150]
+    summary = " ".join(words)
+    if len(words) == 150:
+        summary += "... [Context 1-5]"
+    else:
+        summary += " [Context 1-5]"
+    
+    logger.info(f"Using fallback answer (HF API unavailable)")
+    return summary
 
 
 def generate_answer(query, top_k=8, strategy="recursive", semantic_weight=0.7, bm25_weight=0.3):
@@ -125,10 +148,11 @@ def generate_answer(query, top_k=8, strategy="recursive", semantic_weight=0.7, b
     prompt = build_prompt(query, selected)
 
     generation_start = time.perf_counter()
+    llm_answer = None
     try:
         llm_answer = hf_generate(prompt)
-    except Exception:
-        llm_answer = None
+    except Exception as e:
+        logger.error(f"hf_generate raised exception: {type(e).__name__}: {str(e)[:200]}")
     generation_latency = time.perf_counter() - generation_start
     answer = llm_answer if llm_answer else fallback_generate(query, selected)
     backend = "huggingface_inference_api" if llm_answer else "fallback_context_only"
