@@ -111,6 +111,22 @@ def _normalize_scores(score_dict):
     return {k: (v - min_v) / (max_v - min_v) for k, v in score_dict.items()}
 
 
+def _source_multiplier(metadata):
+    src = str(metadata.get("source", "") or "").lower()
+    title = str(metadata.get("title", "") or "").lower()
+    joined = f"{src} {title}"
+
+    # Prefer CFA/Kaplan-style book material when available.
+    if any(token in joined for token in ("cfa", "kaplan", "schweser", ".pdf", "book")):
+        return 1.15
+
+    # Keep web content available, but reduce dominance in final ranking.
+    if "investopedia" in joined:
+        return 0.7
+
+    return 1.0
+
+
 def hybrid_search(
     query,
     top_k=5,
@@ -183,7 +199,8 @@ def hybrid_search(
             metadata = metadata or pinecone_meta
 
         if text:
-            combined.append((cid, score, text, metadata, s, b))
+            adjusted_score = score * _source_multiplier(metadata)
+            combined.append((cid, adjusted_score, text, metadata, s, b))
 
     combined.sort(key=lambda x: x[1], reverse=True)
     selected = combined[:top_k]
