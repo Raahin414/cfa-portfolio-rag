@@ -22,13 +22,23 @@ run_search = st.button("Search", type="primary")
 
 if run_search and query.strip():
     with st.spinner("Retrieving and generating answer..."):
-        result = generate_answer(
-            query=query.strip(),
-            top_k=top_k,
-            strategy=strategy,
-            semantic_weight=semantic_weight,
-            bm25_weight=bm25_weight,
-        )
+        try:
+            result = generate_answer(
+                query=query.strip(),
+                top_k=top_k,
+                strategy=strategy,
+                semantic_weight=semantic_weight,
+                bm25_weight=bm25_weight,
+            )
+        except FileNotFoundError:
+            st.error(
+                "Missing local chunk files. Upload fixed_chunks.json / recursive_chunks.json / semantic_chunks.json "
+                "or rebuild Pinecone with chunk text in metadata."
+            )
+            st.stop()
+        except Exception as exc:
+            st.error(f"Search failed: {exc}")
+            st.stop()
 
     st.subheader("Answer")
     st.write(result.get("answer", ""))

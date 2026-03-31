@@ -2,6 +2,7 @@ import json
 import os
 import re
 import time
+from pathlib import Path
 
 import numpy as np
 from dotenv import load_dotenv
@@ -64,7 +65,18 @@ def _load_strategy_corpus(strategy):
     if not chunk_file:
         raise ValueError(f"Unknown strategy '{strategy}'. Choose from {sorted(CHUNK_FILE_MAP)}")
 
-    with open(chunk_file, "r", encoding="utf-8") as f:
+    chunk_path = Path(chunk_file)
+    if not chunk_path.exists():
+        _CACHE[strategy] = {
+            "data": [],
+            "texts": [],
+            "bm25": None,
+            "local_by_id": {},
+            "has_local_corpus": False,
+        }
+        return _CACHE[strategy]
+
+    with chunk_path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
     texts = [item.get("text", "") for item in data]
@@ -77,8 +89,15 @@ def _load_strategy_corpus(strategy):
         "texts": texts,
         "bm25": bm25,
         "local_by_id": local_by_id,
+        "has_local_corpus": True,
     }
     return _CACHE[strategy]
+
+
+def _get_match_metadata(match):
+    if isinstance(match, dict):
+        return match.get("metadata", {}) or {}
+    return getattr(match, "metadata", {}) or {}
 
 
 def _normalize_scores(score_dict):
@@ -109,9 +128,9 @@ def hybrid_search(
 
     corpus = _load_strategy_corpus(strategy)
     data = corpus["data"]
-    texts = corpus["texts"]
     bm25 = corpus["bm25"]
     local_by_id = corpus["local_by_id"]
+    has_local_corpus = corpus.get("has_local_corpus", False)
 
     query_embedding = model.encode(query).tolist()
     semantic_raw = index.query(
@@ -128,29 +147,43 @@ def hybrid_search(
         if cid:
             semantic_scores[cid] = max(semantic_scores.get(cid, -1e9), _get_chunk_score(m))
 
-    tokenized_query = _tokenize(query)
-    raw_bm25_scores = bm25.get_scores(tokenized_query)
-    top_indices = np.argsort(raw_bm25_scores)[-max(top_k * 3, 10):][::-1]
-
     bm25_scores = {}
-    for idx in top_indices:
-        cid = data[idx].get("id", "")
-        if cid:
-            bm25_scores[cid] = float(raw_bm25_scores[idx])
+    if bm25 is not None and has_local_corpus:
+        tokenized_query = _tokenize(query)
+        raw_bm25_scores = bm25.get_scores(tokenized_query)
+        top_indices = np.argsort(raw_bm25_scores)[-max(top_k * 3, 10):][::-1]
+
+        for idx in top_indices:
+            cid = data[idx].get("id", "")
+            if cid:
+                bm25_scores[cid] = float(raw_bm25_scores[idx])
 
     semantic_norm = _normalize_scores(semantic_scores)
     bm25_norm = _normalize_scores(bm25_scores)
 
     candidate_ids = set(semantic_norm) | set(bm25_norm)
+    semantic_meta_by_id = {}
+    for m in semantic_matches:
+        cid = _get_chunk_id(m)
+        if cid and cid not in semantic_meta_by_id:
+            semantic_meta_by_id[cid] = _get_match_metadata(m)
+
     combined = []
     for cid in candidate_ids:
         s = semantic_norm.get(cid, 0.0)
         b = bm25_norm.get(cid, 0.0)
         score = semantic_weight * s + bm25_weight * b
         item = local_by_id.get(cid, {})
+        metadata = item.get("metadata", {})
         text = item.get("text", "")
+
+        if not text:
+            pinecone_meta = semantic_meta_by_id.get(cid, {})
+            text = pinecone_meta.get("text", "")
+            metadata = metadata or pinecone_meta
+
         if text:
-            combined.append((cid, score, text, item.get("metadata", {}), s, b))
+            combined.append((cid, score, text, metadata, s, b))
 
     combined.sort(key=lambda x: x[1], reverse=True)
     selected = combined[:top_k]
