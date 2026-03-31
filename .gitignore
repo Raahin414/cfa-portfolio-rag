@@ -1,0 +1,47 @@
+# Ignore environment variables and sensitive data
+.env
+
+# Ignore Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+
+# Ignore large embedding files (stored in Pinecone, not in repo)
+*_chunks.json
+portfolio_dataset*.json
+cfa_dataset*.json
+
+# Ignore evaluation reports (regenerate locally after setup)
+ablation_results.json
+retrieval_optimization_results.json
+final_validation_report.json
+
+# Ignore data directory (users add PDFs here)
+data/
+!data/README.md
+
+# Ignore outputs directory (temporary results)
+outputs/
+!outputs/README.md
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Ignore logs
+*.log
+chunking_output.log
+
+# Ignore local test files
+test_*.py
+debug_*.py
+check_*.py
+verify_*.py

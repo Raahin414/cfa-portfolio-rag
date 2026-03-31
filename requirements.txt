@@ -1,0 +1,9 @@
+streamlit==1.55.0
+pinecone==8.1.0
+sentence-transformers==5.3.0
+rank-bm25==0.2.2
+huggingface-hub==1.7.2
+python-dotenv==1.2.2
+PyMuPDF==1.27.2.2
+tqdm==4.67.3
+torch==2.11.0
