@@ -11,6 +11,7 @@ from reranker import rerank_with_scores
 
 DEFAULT_QUERY = "How to diversify a portfolio to reduce risk?"
 DEFAULT_HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
+DEFAULT_MAX_TOKENS = 260
 
 
 load_dotenv()
@@ -25,9 +26,10 @@ def build_prompt(query, contexts):
         "2. If the answer is not in the context, respond exactly: 'Information not found in dataset'\n"
         "3. Do NOT add external knowledge or general finance theory\n"
         "4. Do NOT hallucinate or invent information\n"
-        "5. Be concise - keep answer under 120 words\n"
+        "5. Be concise - keep answer under 140 words\n"
         "6. Prefer direct phrasing from context (extractive style)\n"
         "7. Add inline citations like [Context 1], [Context 2]\n\n"
+        "8. End with a complete sentence. Do not stop mid-sentence.\n\n"
         f"Question: {query}\n\n"
         f"PROVIDED CONTEXT:\n{context_block}\n\n"
         "Answer (grounded only in provided context):"
@@ -54,7 +56,7 @@ def hf_generate(prompt):
                 },
                 {"role": "user", "content": prompt},
             ],
-            max_tokens=180,
+            max_tokens=DEFAULT_MAX_TOKENS,
             temperature=0.0,
         )
         return completion.choices[0].message.content.strip()
@@ -64,7 +66,7 @@ def hf_generate(prompt):
     formatted_prompt = f"<s>[INST] {prompt} [/INST]"
     generated = client.text_generation(
         prompt=formatted_prompt,
-        max_new_tokens=180,
+        max_new_tokens=DEFAULT_MAX_TOKENS,
         temperature=0.0,
         do_sample=True,
     )
