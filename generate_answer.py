@@ -22,21 +22,26 @@ load_dotenv()
 
 
 def build_prompt(query, contexts):
+    """Build improved prompt with better structure and guidance."""
     context_block = "\n\n".join([f"Context {i + 1}: {c}" for i, c in enumerate(contexts)])
+    
+    # Improved prompt with better instructions
     return (
-        "You are a finance expert answering questions ONLY using provided context.\n\n"
-        "IMPORTANT RULES:\n"
-        "1. Answer ONLY using the provided context below\n"
-        "2. If the answer is not in the context, respond exactly: 'Information not found in dataset'\n"
-        "3. Do NOT add external knowledge or general finance theory\n"
-        "4. Do NOT hallucinate or invent information\n"
-        "5. Be concise - keep answer under 140 words\n"
-        "6. Prefer direct phrasing from context (extractive style)\n"
-        "7. Add inline citations like [Context 1], [Context 2]\n\n"
-        "8. End with a complete sentence. Do not stop mid-sentence.\n\n"
+        "You are an expert finance educator specializing in portfolio management (CFA curriculum).\n\n"
+        "STRICT RULES:\n"
+        "1. Answer ONLY from the provided context - do NOT add external knowledge\n"
+        "2. If information is not in context, respond exactly: 'Information not found in dataset'\n"
+        "3. For definitions: provide the term, formal definition, and practical examples when relevant\n"
+        "4. For calculations: show the formula AND explain each component\n"
+        "5. Organize using bullet points for lists or numbered points for steps\n"
+        "6. If contexts provide conflicting info, state both viewpoints explicitly\n"
+        "7. MANDATORY: End with a complete, grammatically correct sentence\n"
+        "8. Add inline citations [Context 1], [Context 2] to support key claims\n"
+        "9. Be concise but complete - under 150 words unless the topic requires more\n"
+        "10. For time-based concepts: make chronological relationships explicit\n\n"
         f"Question: {query}\n\n"
         f"PROVIDED CONTEXT:\n{context_block}\n\n"
-        "Answer (grounded only in provided context):"
+        "Answer (grounded ONLY in provided context, with citations):"
     )
 
 
@@ -88,25 +93,68 @@ def hf_generate(prompt):
         return None
 
 
+def compute_answer_confidence(answer, contexts, query=""):
+    """
+    Compute confidence score for an answer (0-1).
+    
+    Factors:
+    - Citations present (critical for grounded generation)
+    - Answer length vs context length (specific vs generic)
+    - Sentence completeness
+    - Relevant keywords from query present in answer
+    """
+    
+    # Factor 1: Citation presence (40% weight) - most important for grounded RAG
+    citation_score = 0.4 if "[Context" in answer else 0.0
+    
+    # Factor 2: Sentence completeness (20% weight)
+    completeness = 0.2 if answer.strip().endswith(('.', '?', '!')) else 0.0
+    
+    # Factor 3: Length appropriateness (20% weight)
+    # Good answers are not too short, not too long
+    answer_words = len(answer.split())
+    context_words = sum(len(c.split()) for c in contexts)
+    
+    if 50 < answer_words < 300:  # Sweet spot for portfolio Q&A
+        length_score = 0.2
+    elif 20 < answer_words < 500:
+        length_score = 0.1
+    else:
+        length_score = 0.0
+    
+    # Factor 4: Query relevance (20% weight)
+    # Check if key query terms appear in answer
+    query_keywords = set(query.lower().split()) if query else set()
+    answer_keywords = set(answer.lower().split())
+    
+    overlap = len(query_keywords & answer_keywords)
+    relevance_score = min(0.2 * (overlap / max(len(query_keywords), 1)), 0.2)
+    
+    # Combined confidence
+    confidence = citation_score + completeness + length_score + relevance_score
+    return min(confidence, 1.0)
+
+
 def fallback_generate(query, contexts):
-    """Generate a better fallback answer when HF API fails."""
+    """Generate better fallback answer when HF API fails."""
     if not contexts:
         return "I do not have enough retrieved context to answer this question."
     
-    # Try to extract a coherent summary from combined contexts
+    # Combine contexts more intelligently
     combined = " ".join([c if isinstance(c, str) else str(c) for c in contexts])
-    # Remove common noise patterns
+    
+    # Clean common noise
     combined = combined.replace("Learning Module", "").replace("CONSTRAINTS describe", "").strip()
     
-    # Limit to ~250 words of the combined context with citation
-    words = combined.split()[:150]
+    # Extract best portion (first 200 words usually have most relevant context)
+    words = combined.split()[:180]
     summary = " ".join(words)
-    if len(words) == 150:
-        summary += "... [Context 1-5]"
-    else:
-        summary += " [Context 1-5]"
     
-    logger.info(f"Using fallback answer (HF API unavailable)")
+    # Add trailing context indicators
+    if len(words) == 180:
+        summary = summary.rstrip() + " [from retrieved contexts]"
+    
+    logger.info(f"Using fallback answer (HF API unavailable, confidence: lower)")
     return summary
 
 
@@ -156,6 +204,9 @@ def generate_answer(query, top_k=8, strategy="recursive", semantic_weight=0.7, b
     generation_latency = time.perf_counter() - generation_start
     answer = llm_answer if llm_answer else fallback_generate(query, selected)
     backend = "huggingface_inference_api" if llm_answer else "fallback_context_only"
+    
+    # Compute answer confidence score
+    answer_confidence = compute_answer_confidence(answer, selected, query)
 
     return {
         "query": query,
@@ -175,8 +226,10 @@ def generate_answer(query, top_k=8, strategy="recursive", semantic_weight=0.7, b
         "generation_backend": backend,
         "sources": sources,
         "confidence": {
+            "answer_confidence_score": float(answer_confidence),
             "rerank_mean": (sum(rerank_scores) / len(rerank_scores)) if rerank_scores else 0.0,
             "num_supporting_contexts": len(selected),
+            "has_citations": "[Context" in answer,
         },
     }
 
