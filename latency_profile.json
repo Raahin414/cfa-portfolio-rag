@@ -1,0 +1,33 @@
+{
+  "sample_queries": [
+    {
+      "query": "What is the efficient frontier?",
+      "retrieval_ms": 4592.398000007961,
+      "rerank_ms": 271.574700018391,
+      "generation_ms": 9479.46289999527,
+      "total_ms": 14343.496699992102
+    },
+    {
+      "query": "Explain portfolio diversification.",
+      "retrieval_ms": 246.39590000151657,
+      "rerank_ms": 214.43269998417236,
+      "generation_ms": 5133.734999981243,
+      "total_ms": 5594.659299997147
+    },
+    {
+      "query": "What is the investment policy statement?",
+      "retrieval_ms": 295.24880001554266,
+      "rerank_ms": 163.85470001841895,
+      "generation_ms": 4459.262100019259,
+      "total_ms": 4918.436900014058
+    }
+  ],
+  "averages": {
+    "retrieval_ms": 1711.3475666750066,
+    "rerank_ms": 216.6207000069941,
+    "generation_ms": 6357.486666665257,
+    "total_ms": 8285.53096666777
+  },
+  "bottleneck": "Generation",
+  "acceptability": "\u2705 ACCEPTABLE for Streamlit Cloud (5-8 user requests/min reasonable)"
+}
