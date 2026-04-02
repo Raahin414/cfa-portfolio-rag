@@ -1,0 +1,71 @@
+{
+  "llm_comparison": {},
+  "parameter_tuning": {},
+  "weight_optimization": {
+    "BM25-heavy": {
+      "weights": [
+        0.3,
+        0.7
+      ],
+      "avg_faithfulness": 0.8948412698412699,
+      "avg_relevancy": 0.8462757408757215,
+      "combined_score": 0.8705585053584957
+    },
+    "BM25-biased": {
+      "weights": [
+        0.4,
+        0.6
+      ],
+      "avg_faithfulness": 0.8948412698412699,
+      "avg_relevancy": 0.8462757408757215,
+      "combined_score": 0.8705585053584957
+    },
+    "Balanced": {
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "avg_faithfulness": 0.8948412698412699,
+      "avg_relevancy": 0.8463137216621182,
+      "combined_score": 0.8705774957516941
+    },
+    "Semantic-biased": {
+      "weights": [
+        0.6,
+        0.4
+      ],
+      "avg_faithfulness": 0.8948412698412699,
+      "avg_relevancy": 0.8462757408757215,
+      "combined_score": 0.8705585053584957
+    },
+    "Semantic-heavy": {
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "avg_faithfulness": 0.8660714285714286,
+      "avg_relevancy": 0.8434437734501354,
+      "combined_score": 0.854757601010782
+    }
+  },
+  "chunk_strategy_comparison": {
+    "fixed": {
+      "avg_faithfulness": 1.0,
+      "avg_relevancy": 0.7953614353890476,
+      "avg_latency_sec": 1.4023597333289217,
+      "combined_score": 0.8976807176945238
+    },
+    "recursive": {
+      "avg_faithfulness": 0.9629629629629629,
+      "avg_relevancy": 0.8027909835404653,
+      "avg_latency_sec": 1.3197893000033218,
+      "combined_score": 0.8828769732517141
+    },
+    "semantic": {
+      "avg_faithfulness": 0.9583333333333334,
+      "avg_relevancy": 0.8359779414035341,
+      "avg_latency_sec": 0.8044356000027619,
+      "combined_score": 0.8971556373684337
+    }
+  }
+}

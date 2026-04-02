@@ -158,7 +158,7 @@ def fallback_generate(query, contexts):
     return summary
 
 
-def generate_answer(query, top_k=8, strategy="recursive", semantic_weight=0.7, bm25_weight=0.3):
+def generate_answer(query, top_k=8, strategy="fixed", semantic_weight=0.5, bm25_weight=0.5):
     start = time.perf_counter()
     retrieval = hybrid_search(
         query,

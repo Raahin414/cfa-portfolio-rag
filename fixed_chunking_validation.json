@@ -1,0 +1,86 @@
+{
+  "baseline_semantic": [
+    {
+      "query": "What is diversification in portfolio management?",
+      "faithfulness": 1.0,
+      "relevancy": 0.8996403873181128,
+      "latency": 2.71556850001798,
+      "answer_length": 1201
+    },
+    {
+      "query": "Explain the Sharpe ratio and its importance.",
+      "faithfulness": 0.875,
+      "relevancy": 0.8239650971879098,
+      "latency": 0.9665688999812119,
+      "answer_length": 1175
+    },
+    {
+      "query": "What role do constraints play in portfolio construction?",
+      "faithfulness": 0.8571428571428571,
+      "relevancy": 0.8207176923751831,
+      "latency": 0.8145969999895897,
+      "answer_length": 1213
+    },
+    {
+      "query": "Describe the efficient frontier.",
+      "faithfulness": 0.9473684210526315,
+      "relevancy": 0.7593845581641543,
+      "latency": 0.7189909000007901,
+      "answer_length": 1093
+    },
+    {
+      "query": "What are the benefits of portfolio rebalancing?",
+      "faithfulness": 0.9230769230769231,
+      "relevancy": 0.8664128263942841,
+      "latency": 0.697388200002024,
+      "answer_length": 1360
+    }
+  ],
+  "improved_fixed": [
+    {
+      "query": "What is diversification in portfolio management?",
+      "faithfulness": 1.0,
+      "relevancy": 0.866498760372328,
+      "latency": 1.4640011999872513,
+      "answer_length": 1196
+    },
+    {
+      "query": "Explain the Sharpe ratio and its importance.",
+      "faithfulness": 1.0,
+      "relevancy": 0.8023247718811035,
+      "latency": 1.2579964000033215,
+      "answer_length": 1175
+    },
+    {
+      "query": "What role do constraints play in portfolio construction?",
+      "faithfulness": 1.0,
+      "relevancy": 0.8146387338638306,
+      "latency": 1.199844499991741,
+      "answer_length": 1209
+    },
+    {
+      "query": "Describe the efficient frontier.",
+      "faithfulness": 1.0,
+      "relevancy": 0.693265438079834,
+      "latency": 1.234474400000181,
+      "answer_length": 1229
+    },
+    {
+      "query": "What are the benefits of portfolio rebalancing?",
+      "faithfulness": 1.0,
+      "relevancy": 0.8524015711904981,
+      "latency": 1.2283030000107829,
+      "answer_length": 1234
+    }
+  ],
+  "comparison": {
+    "baseline_avg_faithfulness": 0.9205176402544823,
+    "improved_avg_faithfulness": 1.0,
+    "faith_improvement": 0.07948235974551765,
+    "baseline_avg_relevancy": 0.8340241122879288,
+    "improved_avg_relevancy": 0.8058258550775188,
+    "relev_improvement": -0.028198257210410027,
+    "baseline_avg_latency": 1.1826226999983191,
+    "improved_avg_latency": 1.2769238999986556
+  }
+}

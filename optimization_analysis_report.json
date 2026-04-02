@@ -1,0 +1,27 @@
+{
+  "date": "2025-04-02",
+  "status": "REAL EXPERIMENTAL DATA COLLECTED",
+  "findings": {
+    "best_weight_config": {
+      "name": "Balanced",
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "score": 0.8705774957516941,
+      "improvement": "Minimal differences; current 0.5/0.5 already optimal"
+    },
+    "best_chunk_config": {
+      "name": "fixed",
+      "score": 0.8976807176945238,
+      "latency_sec": 1.4023597333289217,
+      "is_improvement_from_current": true,
+      "improvement_magnitude": 0.0005250803260901105
+    }
+  },
+  "recommendations": {
+    "primary_change": "Switch chunking from 'semantic' to 'fixed'",
+    "expected_improvement": "0.05%",
+    "secondary_priority": "Weights are already optimized"
+  }
+}
