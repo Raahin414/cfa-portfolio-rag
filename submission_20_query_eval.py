@@ -1,10 +1,13 @@
 import json
+import os
 from pathlib import Path
 from statistics import mean
 
 from faithfulness import faithfulness_score
 from generate_answer import generate_answer
 from relevance import relevance_score
+
+GENERATION_MODEL = os.getenv("HF_GENERATION_MODEL", "mistralai/Mistral-7B-Instruct-v0.2")
 
 QUERIES = [
     "What is the efficient frontier in portfolio management?",
@@ -39,13 +42,17 @@ def main():
             strategy="semantic",
             semantic_weight=0.5,
             bm25_weight=0.5,
-            generation_model="meta-llama/Meta-Llama-3-8B-Instruct",
+            generation_model=GENERATION_MODEL,
             temperature=0.0,
             max_tokens=300,
         )
 
-        faith = faithfulness_score(result["answer"], result["contexts"])["score"]
-        rel = float(relevance_score(query, result["answer"]))
+        faith_report = faithfulness_score(result["answer"], result["contexts"])
+        faith = float(faith_report["score"])
+
+        rel_report = relevance_score(query, result["answer"], return_details=True)
+        rel = float(rel_report["average_score"])
+
         lat = float(result["latency"]["total_sec"])
         backend = result.get("generation_backend", "unknown")
 
@@ -55,7 +62,11 @@ def main():
                 "query": query,
                 "answer": result["answer"],
                 "faithfulness": float(faith),
+                "faithfulness_report": faith_report,
                 "relevance": rel,
+                "relevance_report": rel_report,
+                "retrieval_sec": float(result["latency"].get("retrieval_sec", 0.0)),
+                "generation_sec": float(result["latency"].get("generation_sec", 0.0)),
                 "latency_sec": lat,
                 "backend": backend,
             }
@@ -72,15 +83,20 @@ def main():
             "semantic_weight": 0.5,
             "bm25_weight": 0.5,
             "top_k": 6,
-            "generation_model": "meta-llama/Meta-Llama-3-8B-Instruct",
+            "generation_model": GENERATION_MODEL,
             "temperature": 0.0,
             "max_tokens": 300,
         },
         "avg_faithfulness": float(mean([x["faithfulness"] for x in rows])),
         "avg_relevance": float(mean([x["relevance"] for x in rows])),
+        "avg_retrieval_sec": float(mean([x["retrieval_sec"] for x in rows])),
+        "avg_generation_sec": float(mean([x["generation_sec"] for x in rows])),
         "avg_latency_sec": float(mean([x["latency_sec"] for x in rows])),
         "success_rate": float(
-            mean([1.0 if x["backend"] == "huggingface_inference_api" else 0.0 for x in rows])
+            mean([
+                1.0 if x["backend"] in {"huggingface_inference_api", "local_llm_fallback"} else 0.0
+                for x in rows
+            ])
         ),
     }
 

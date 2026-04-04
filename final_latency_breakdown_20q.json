@@ -1,0 +1,172 @@
+{
+  "summary": {
+    "avg_retrieval_sec": 0.2894774399996095,
+    "avg_generation_sec": 8.670283865001693,
+    "avg_total_sec": 9.059749819998979,
+    "backend_counts": {
+      "huggingface_inference_api": 20
+    }
+  },
+  "rows": [
+    {
+      "id": 1,
+      "query": "What is the efficient frontier in portfolio management?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 1.3169220999989193,
+      "generation_sec": 10.57586949999677,
+      "total_sec": 11.99152719999256
+    },
+    {
+      "id": 2,
+      "query": "Explain the role of constraints in portfolio construction.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23110589999123476,
+      "generation_sec": 8.632397599998512,
+      "total_sec": 8.975349499989534
+    },
+    {
+      "id": 3,
+      "query": "Define and explain diversification in portfolio context.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23346879999735393,
+      "generation_sec": 6.181854900001781,
+      "total_sec": 6.49367519999214
+    },
+    {
+      "id": 4,
+      "query": "What is the relationship between risk and return?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2398144000035245,
+      "generation_sec": 11.591368199995486,
+      "total_sec": 11.90375949999725
+    },
+    {
+      "id": 5,
+      "query": "Describe the Modern Portfolio Theory.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23508339999534655,
+      "generation_sec": 10.182827099997667,
+      "total_sec": 10.487096400000155
+    },
+    {
+      "id": 6,
+      "query": "How is the Sharpe ratio calculated and what does it measure?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.22988579999946523,
+      "generation_sec": 10.124618600006215,
+      "total_sec": 10.516636300002574
+    },
+    {
+      "id": 7,
+      "query": "Explain rebalancing and its importance in portfolio management.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2724937000020873,
+      "generation_sec": 6.777657200000249,
+      "total_sec": 7.130464899993967
+    },
+    {
+      "id": 8,
+      "query": "What is the significance of correlation in portfolio diversification?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2306397000065772,
+      "generation_sec": 10.159090899993316,
+      "total_sec": 10.476879900001222
+    },
+    {
+      "id": 9,
+      "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2362460000003921,
+      "generation_sec": 10.156107200004044,
+      "total_sec": 10.482017200003611
+    },
+    {
+      "id": 10,
+      "query": "What is beta and how is it used in portfolio management?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2321075999934692,
+      "generation_sec": 8.465522500002407,
+      "total_sec": 8.801365899998927
+    },
+    {
+      "id": 11,
+      "query": "What are the key components of an Investment Policy Statement?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2346115000109421,
+      "generation_sec": 7.21548939999775,
+      "total_sec": 7.610717100003967
+    },
+    {
+      "id": 12,
+      "query": "How do time horizons affect portfolio construction decisions?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23786999999720138,
+      "generation_sec": 7.989048700008425,
+      "total_sec": 8.297784900001716
+    },
+    {
+      "id": 13,
+      "query": "What role does liquidity play in portfolio constraints?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2326154000038514,
+      "generation_sec": 9.627353400006541,
+      "total_sec": 10.01735350000672
+    },
+    {
+      "id": 14,
+      "query": "Explain tax considerations in portfolio planning.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23025919999054167,
+      "generation_sec": 5.874419100000523,
+      "total_sec": 6.170718000008492
+    },
+    {
+      "id": 15,
+      "query": "How do regulatory requirements impact portfolio construction?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23325600000680424,
+      "generation_sec": 7.2276202000066405,
+      "total_sec": 7.603575999994064
+    },
+    {
+      "id": 16,
+      "query": "Discuss the relationship between systematic and unsystematic risk.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2324932999908924,
+      "generation_sec": 10.10732760000974,
+      "total_sec": 10.443460200011032
+    },
+    {
+      "id": 17,
+      "query": "How do you handle concentration limits in portfolio optimization?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23176100000273436,
+      "generation_sec": 10.377340499995626,
+      "total_sec": 10.695200299989665
+    },
+    {
+      "id": 18,
+      "query": "Explain the difference between strategic and tactical asset allocation.",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23262989999784622,
+      "generation_sec": 4.109633800006122,
+      "total_sec": 4.444131099997321
+    },
+    {
+      "id": 19,
+      "query": "What factors should be considered in evaluating portfolio performance?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.2337033999938285,
+      "generation_sec": 11.846773199999006,
+      "total_sec": 12.159273199999006
+    },
+    {
+      "id": 20,
+      "query": "How can investors achieve diversification across asset classes?",
+      "backend": "huggingface_inference_api",
+      "retrieval_sec": 0.23258170000917744,
+      "generation_sec": 6.183357700007036,
+      "total_sec": 6.4940100999956485
+    }
+  ]
+}

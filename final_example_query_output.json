@@ -1,0 +1,134 @@
+{
+  "query": "What is the efficient frontier in portfolio management?",
+  "retrieved_chunks": [
+    "MPT emphasizes the power of diversification in reducing overall portfolio risk. By combining assets that don't move in perfect tandem with each other, investors can smooth out the ups and downs of their portfolio's performance. The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return. There isn\u2019t one best rebalancing strategy. It\u2019s about finding the one that works best for you.",
+    "The efficient frontier does not account for the risk-free rate. The efficient frontier is the set of all attainable risky assets with the highest expected return for a given level of risk or the lowest amount of risk for a given level of return. 26. C is correct. The global minimum-variance portfolio is the portfolio on the minimum-variance frontier with the lowest standard deviation.",
+    "The line that connects those portfolios with the minimal risk for each level of expected return (above that of the minimum-variance portfolio\u2014the portfolio with the minimum variance for each given level of expected return) is the efficient frontier. Clearly, the efficient frontier will move \u201cupward\u201d as more low-correlation assets with sufficient expected return are added to the mix because it lowers the risk in the portfolios for equal expected returns. Similarly, when return expectations increase for asset classes while volatility and correlation assumptions remain unchanged, the efficient frontier will move upward because each portfolio is able to generate higher returns for the same level of risk. Both the efficient frontier and a range of indifference curves can be plotted in the risk\u2013return space. In Exhibit 8, the dark-colored curves that are concave from below represent efficient frontiers associated with different assumed expected returns.",
+    "Those portfolios that have the greatest expected return for each level of risk make up the efficient frontier. The efficient frontier coincides with the top portion of the minimum variance frontier. Risk-averse investors would only choose a portfolio that lies on the efficient frontier. ANSWER KEY FOR MODULE QUIZZES",
+    "For example, suppose Portfolio A has an expected return of 8.5% and a standard deviation of 8%. Assume that Portfolio B has an expected return of 8.5% and a standard deviation of 9.5%. Portfolio A would be deemed more efficient because it has the same expected return but lower risk. It is possible to draw an upward-sloping curve to connect all of the most efficient portfolios. This curve is called the efficient frontier ."
+  ],
+  "generated_answer": "The efficient frontier in portfolio management is a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of return [Context 1]. This concept is based on Modern Portfolio Theory (MPT), which emphasizes the power of diversification in reducing overall portfolio risk [Context 1].\n\nThe efficient frontier is represented by an upward-sloping curve that connects all of the most efficient portfolios [Context 5]. This curve is called the efficient frontier.\n\nIt is important to note that the efficient frontier does not account for the risk-free rate [Context 2]. Therefore, it is essential to consider the risk-free rate when constructing an efficient portfolio.\n\nIn summary, the efficient frontier in portfolio management is a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of return. This concept is based on Modern Portfolio Theory (MPT), which emphasizes the power of diversification in reducing overall portfolio risk. The efficient frontier is represented by an upward-sloping curve that connects all of the most efficient portfolios. It is important to note that the efficient frontier does not account for the risk-free rate. Therefore, it is essential to consider the risk-free rate when constructing an efficient portfolio.",
+  "claims": [
+    "The efficient frontier in portfolio management is a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of return [Context 1].",
+    "This concept is based on Modern Portfolio Theory (MPT), which emphasizes the power of diversification in reducing overall portfolio risk [Context 1].",
+    "The efficient frontier is represented by an upward-sloping curve that connects all of the most efficient portfolios [Context 5].",
+    "This curve is called the efficient frontier.",
+    "It is important to note that the efficient frontier does not account for the risk-free rate [Context 2].",
+    "Therefore, it is essential to consider the risk-free rate when constructing an efficient portfolio.",
+    "In summary, the efficient frontier in portfolio management is a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of return.",
+    "This concept is based on Modern Portfolio Theory (MPT), which emphasizes the power of diversification in reducing overall portfolio risk.",
+    "The efficient frontier is represented by an upward-sloping curve that connects all of the most efficient portfolios.",
+    "It is important to note that the efficient frontier does not account for the risk-free rate.",
+    "Therefore, it is essential to consider the risk-free rate when constructing an efficient portfolio."
+  ],
+  "faithfulness_result": {
+    "score": 0.45454545454545453,
+    "supported_claims": 5,
+    "total_claims": 11,
+    "details": [
+      {
+        "claim": "The efficient frontier in portfolio management is a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of return [Context 1].",
+        "label": "SUPPORTED",
+        "supported": true,
+        "raw_response": "SUPPORTED\n\nThe context",
+        "backend": "chat.completions"
+      },
+      {
+        "claim": "This concept is based on Modern Portfolio Theory (MPT), which emphasizes the power of diversification in reducing overall portfolio risk [Context 1].",
+        "label": "SUPPORTED",
+        "supported": true,
+        "raw_response": "SUPPORTED. The claim align",
+        "backend": "chat.completions"
+      },
+      {
+        "claim": "The efficient frontier is represented by an upward-sloping curve that connects all of the most efficient portfolios [Context 5].",
+        "label": "SUPPORTED",
+        "supported": true,
+        "raw_response": "SUPPORTED\n\nThe context",
+        "backend": "chat.completions"
+      },
+      {
+        "claim": "This curve is called the efficient frontier.",
+        "label": "SUPPORTED",
+        "supported": true,
+        "raw_response": "SUPPORTED\n\nThe context",
+        "backend": "chat.completions"
+      },
+      {
+        "claim": "It is important to note that the efficient frontier does not account for the risk-free rate [Context 2].",
+        "label": "SUPPORTED",
+        "supported": true,
+        "raw_response": "SUPPORTED. The claim states",
+        "backend": "chat.completions"
+      },
+      {
+        "claim": "Therefore, it is essential to consider the risk-free rate when constructing an efficient portfolio.",
+        "label": "NOT_SUPPORTED",
+        "supported": false,
+        "raw_response": "1).",
+        "backend": "local_llm_fallback",
+        "fallback_reason": "chat=HfHubHTTPError; text=ValueError"
+      },
+      {
+        "claim": "In summary, the efficient frontier in portfolio management is a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of return.",
+        "label": "NOT_SUPPORTED",
+        "supported": false,
+        "raw_response": "a safe and",
+        "backend": "local_llm_fallback",
+        "fallback_reason": "chat=HfHubHTTPError; text=ValueError"
+      },
+      {
+        "claim": "This concept is based on Modern Portfolio Theory (MPT), which emphasizes the power of diversification in reducing overall portfolio risk.",
+        "label": "NOT_SUPPORTED",
+        "supported": false,
+        "raw_response": "1).",
+        "backend": "local_llm_fallback",
+        "fallback_reason": "chat=HfHubHTTPError; text=ValueError"
+      },
+      {
+        "claim": "The efficient frontier is represented by an upward-sloping curve that connects all of the most efficient portfolios.",
+        "label": "NOT_SUPPORTED",
+        "supported": false,
+        "raw_response": "1).",
+        "backend": "local_llm_fallback",
+        "fallback_reason": "chat=HfHubHTTPError; text=ValueError"
+      },
+      {
+        "claim": "It is important to note that the efficient frontier does not account for the risk-free rate.",
+        "label": "NOT_SUPPORTED",
+        "supported": false,
+        "raw_response": "1).",
+        "backend": "local_llm_fallback",
+        "fallback_reason": "chat=HfHubHTTPError; text=ValueError"
+      },
+      {
+        "claim": "Therefore, it is essential to consider the risk-free rate when constructing an efficient portfolio.",
+        "label": "NOT_SUPPORTED",
+        "supported": false,
+        "raw_response": "1).",
+        "backend": "local_llm_fallback",
+        "fallback_reason": "chat=HfHubHTTPError; text=ValueError"
+      }
+    ],
+    "method": "llm_claim_verification",
+    "threshold": 0.45
+  },
+  "generated_questions": [
+    "What is the best way to evaluate the efficiency frontier?"
+  ],
+  "relevance_scores": [
+    0.7967557432201076
+  ],
+  "relevance_report": {
+    "generated_questions": [
+      "What is the best way to evaluate the efficiency frontier?"
+    ],
+    "similarity_scores": [
+      0.7967557432201076
+    ],
+    "average_score": 0.7967557432201076,
+    "method": "alternate_query_generation",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "question_generation_backend": "local_llm_fallback(chat=HfHubHTTPError,text=ValueError)"
+  }
+}

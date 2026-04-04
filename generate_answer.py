@@ -2,6 +2,7 @@ import argparse
 import os
 import time
 import logging
+from functools import lru_cache
 
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
@@ -15,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_QUERY = "How to diversify a portfolio to reduce risk?"
 DEFAULT_HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
+DEFAULT_LOCAL_FALLBACK_MODEL = "google/flan-t5-small"
 DEFAULT_MAX_TOKENS = 260
 DEFAULT_TEMPERATURE = 0.0
 
@@ -91,6 +93,36 @@ def hf_generate(prompt, model_name=None, max_tokens=DEFAULT_MAX_TOKENS, temperat
         return result
     except Exception as e:
         logger.error(f"text_generation also failed: {type(e).__name__}: {str(e)[:200]}")
+        return None
+
+
+@lru_cache(maxsize=1)
+def _get_local_seq2seq_model_and_tokenizer():
+    from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
+    local_model_name = os.getenv("LOCAL_FALLBACK_MODEL", DEFAULT_LOCAL_FALLBACK_MODEL)
+    tokenizer = AutoTokenizer.from_pretrained(local_model_name)
+    model = AutoModelForSeq2SeqLM.from_pretrained(local_model_name)
+    return model, tokenizer
+
+
+def local_llm_generate(prompt, max_tokens=DEFAULT_MAX_TOKENS):
+    try:
+        model, tokenizer = _get_local_seq2seq_model_and_tokenizer()
+        local_prompt = (
+            "Answer the finance question using only the provided context. "
+            "If information is missing, reply exactly: Information not found in dataset.\n\n"
+            f"{prompt}"
+        )
+        inputs = tokenizer(local_prompt, return_tensors="pt", truncation=True, max_length=1024)
+        output_ids = model.generate(
+            **inputs,
+            max_new_tokens=max_tokens,
+            do_sample=False,
+        )
+        return tokenizer.decode(output_ids[0], skip_special_tokens=True).strip()
+    except Exception as e:
+        logger.error(f"local_llm_generate failed: {type(e).__name__}: {str(e)[:200]}")
         return None
 
 
@@ -216,9 +248,18 @@ def generate_answer(
         )
     except Exception as e:
         logger.error(f"hf_generate raised exception: {type(e).__name__}: {str(e)[:200]}")
+
+    local_answer = None
+    if not llm_answer:
+        local_answer = local_llm_generate(prompt, max_tokens=max_tokens)
+
     generation_latency = time.perf_counter() - generation_start
-    answer = llm_answer if llm_answer else fallback_generate(query, selected)
-    backend = "huggingface_inference_api" if llm_answer else "fallback_context_only"
+    answer = llm_answer if llm_answer else (local_answer if local_answer else fallback_generate(query, selected))
+    backend = (
+        "huggingface_inference_api"
+        if llm_answer
+        else ("local_llm_fallback" if local_answer else "fallback_context_only")
+    )
     
     # Compute answer confidence score
     answer_confidence = compute_answer_confidence(answer, selected, query)
