@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_QUERY = "How to diversify a portfolio to reduce risk?"
 DEFAULT_HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
 DEFAULT_MAX_TOKENS = 260
+DEFAULT_TEMPERATURE = 0.0
 
 
 load_dotenv()
@@ -45,9 +46,9 @@ def build_prompt(query, contexts):
     )
 
 
-def hf_generate(prompt):
+def hf_generate(prompt, model_name=None, max_tokens=DEFAULT_MAX_TOKENS, temperature=DEFAULT_TEMPERATURE):
     hf_token = os.getenv("HF_API_KEY") or os.getenv("HUGGINGFACEHUB_API_TOKEN")
-    model_name = os.getenv("HF_GENERATION_MODEL", DEFAULT_HF_MODEL)
+    model_name = model_name or os.getenv("HF_GENERATION_MODEL", DEFAULT_HF_MODEL)
     provider = os.getenv("HF_PROVIDER")
     client = InferenceClient(model=model_name, token=hf_token, provider=provider) if provider else InferenceClient(model=model_name, token=hf_token)
 
@@ -65,8 +66,8 @@ def hf_generate(prompt):
                 },
                 {"role": "user", "content": prompt},
             ],
-            max_tokens=DEFAULT_MAX_TOKENS,
-            temperature=0.0,
+            max_tokens=max_tokens,
+            temperature=temperature,
         )
         result = completion.choices[0].message.content.strip()
         logger.debug(f"chat.completions succeeded, result length: {len(result)}")
@@ -78,8 +79,8 @@ def hf_generate(prompt):
         formatted_prompt = f"<s>[INST] {prompt} [/INST]"
         generated = client.text_generation(
             prompt=formatted_prompt,
-            max_new_tokens=DEFAULT_MAX_TOKENS,
-            temperature=0.0,
+            max_new_tokens=max_tokens,
+            temperature=temperature,
             do_sample=True,
         )
         if isinstance(generated, str):
@@ -158,7 +159,16 @@ def fallback_generate(query, contexts):
     return summary
 
 
-def generate_answer(query, top_k=8, strategy="fixed", semantic_weight=0.5, bm25_weight=0.5):
+def generate_answer(
+    query,
+    top_k=8,
+    strategy="fixed",
+    semantic_weight=0.5,
+    bm25_weight=0.5,
+    generation_model=None,
+    temperature=DEFAULT_TEMPERATURE,
+    max_tokens=DEFAULT_MAX_TOKENS,
+):
     start = time.perf_counter()
     retrieval = hybrid_search(
         query,
@@ -198,7 +208,12 @@ def generate_answer(query, top_k=8, strategy="fixed", semantic_weight=0.5, bm25_
     generation_start = time.perf_counter()
     llm_answer = None
     try:
-        llm_answer = hf_generate(prompt)
+        llm_answer = hf_generate(
+            prompt,
+            model_name=generation_model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
     except Exception as e:
         logger.error(f"hf_generate raised exception: {type(e).__name__}: {str(e)[:200]}")
     generation_latency = time.perf_counter() - generation_start
@@ -224,6 +239,11 @@ def generate_answer(query, top_k=8, strategy="fixed", semantic_weight=0.5, bm25_
             "bm25": bm25_weight,
         },
         "generation_backend": backend,
+        "generation_config": {
+            "model": generation_model or os.getenv("HF_GENERATION_MODEL", DEFAULT_HF_MODEL),
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+        },
         "sources": sources,
         "confidence": {
             "answer_confidence_score": float(answer_confidence),
@@ -238,9 +258,12 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Generate an answer from retrieved and reranked chunks.")
     parser.add_argument("--query", default=DEFAULT_QUERY, help="User question")
     parser.add_argument("--top-k", type=int, default=8, help="Number of docs to retrieve before rerank")
-    parser.add_argument("--strategy", default="recursive", choices=["fixed", "recursive", "semantic"], help="Chunking strategy namespace")
-    parser.add_argument("--semantic-weight", type=float, default=0.7, help="Weight for semantic retrieval")
-    parser.add_argument("--bm25-weight", type=float, default=0.3, help="Weight for BM25 retrieval")
+    parser.add_argument("--strategy", default="fixed", choices=["fixed", "recursive", "semantic"], help="Chunking strategy namespace")
+    parser.add_argument("--semantic-weight", type=float, default=0.5, help="Weight for semantic retrieval")
+    parser.add_argument("--bm25-weight", type=float, default=0.5, help="Weight for BM25 retrieval")
+    parser.add_argument("--model", default=None, help="HF generation model (overrides env HF_GENERATION_MODEL)")
+    parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE, help="Generation temperature")
+    parser.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS, help="Maximum generation tokens")
     return parser.parse_args()
 
 
@@ -254,6 +277,9 @@ def main():
         strategy=args.strategy,
         semantic_weight=args.semantic_weight,
         bm25_weight=args.bm25_weight,
+        generation_model=args.model,
+        temperature=args.temperature,
+        max_tokens=args.max_tokens,
     )
 
     print("Question:")

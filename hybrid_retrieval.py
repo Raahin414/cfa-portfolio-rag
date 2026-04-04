@@ -11,7 +11,9 @@ from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 
 
-MODEL_NAME = "BAAI/bge-small-en-v1.5"
+load_dotenv()
+
+MODEL_NAME = os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
 DEFAULT_INDEX = os.getenv("PINECONE_INDEX", "portfolio-rag-384")
 DEFAULT_NAMESPACE = "recursive"
 CHUNK_FILE_MAP = {
@@ -19,9 +21,6 @@ CHUNK_FILE_MAP = {
     "recursive": "recursive_chunks.json",
     "semantic": "semantic_chunks.json",
 }
-
-
-load_dotenv()
 
 model = SentenceTransformer(MODEL_NAME)
 

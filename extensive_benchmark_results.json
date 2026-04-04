@@ -1,0 +1,3969 @@
+{
+  "run_started": "2026-04-02 12:43:16",
+  "duration_sec": 1115.0121482000104,
+  "phase_a_all": [
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "fixed",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8090277777777778,
+        "avg_relevance": 0.8547511313021487,
+        "avg_latency_sec": 4.746245724993059,
+        "generation_success_rate": 1.0,
+        "objective": 0.7615308405852196
+      },
+      "rows": [
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.888297438621521,
+          "latency_sec": 6.615271400019992,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7850309142451948,
+          "latency_sec": 4.567101399996318,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.8123323079248608,
+          "latency_sec": 4.284466099983547,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8639156818389893,
+          "latency_sec": 4.450708499993198,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.9118631429590685,
+          "latency_sec": 4.259278599987738,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8466131687164307,
+          "latency_sec": 4.2648323999892455,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8718621211134139,
+          "latency_sec": 4.769112899986794,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8580942749977112,
+          "latency_sec": 4.759194499987643,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "fixed",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7621527777777778,
+        "avg_relevance": 0.8567211146592728,
+        "avg_latency_sec": 4.606105462506093,
+        "generation_success_rate": 1.0,
+        "objective": 0.7368741130194706
+      },
+      "rows": [
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8813968826172893,
+          "latency_sec": 5.1220394000119995,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.807383692044509,
+          "latency_sec": 4.46568780002417,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.7990231394185507,
+          "latency_sec": 4.548562700016191,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.7,
+          "relevance": 0.8779663443565369,
+          "latency_sec": 4.448591099993791,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.9053719639778202,
+          "latency_sec": 4.352080400014529,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8293370110191711,
+          "latency_sec": 4.44338769998285,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8871621027991712,
+          "latency_sec": 4.517362400016282,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8661277810411339,
+          "latency_sec": 4.951132199988933,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "fixed",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.6705357142857142,
+        "avg_relevance": 0.8572674037062467,
+        "avg_latency_sec": 4.7602398749986605,
+        "generation_success_rate": 1.0,
+        "objective": 0.6861986222926831
+      },
+      "rows": [
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.892326831817627,
+          "latency_sec": 4.338855400012108,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7930777072906551,
+          "latency_sec": 4.240262499981327,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.375,
+          "relevance": 0.8202523237542014,
+          "latency_sec": 4.482044700009283,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.8933640058853646,
+          "latency_sec": 4.773540900001535,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.9104208892834733,
+          "latency_sec": 4.916654899978312,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8202080726623535,
+          "latency_sec": 5.767213100014487,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8664026260375977,
+          "latency_sec": 4.83347449998837,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.8620867729187012,
+          "latency_sec": 4.729873000003863,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "fixed",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.6739042207792207,
+        "avg_relevance": 0.8598233660731991,
+        "avg_latency_sec": 5.638655474998814,
+        "generation_success_rate": 1.0,
+        "objective": 0.6866487906643565
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8858791589736938,
+          "latency_sec": 6.733191800012719,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7,
+          "relevance": 0.8112492319569253,
+          "latency_sec": 8.14565729998867,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8055540563331267,
+          "latency_sec": 6.715880600007949,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.9012209118140303,
+          "latency_sec": 4.743338399974164,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.9104394263291034,
+          "latency_sec": 5.177838400006294,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8202427625656128,
+          "latency_sec": 4.596475199999986,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8771572113037109,
+          "latency_sec": 4.462699099996826,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.8668441693093893,
+          "latency_sec": 4.5341630000039,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "recursive",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.6784722222222223,
+        "avg_relevance": 0.8493662301526763,
+        "avg_latency_sec": 4.288981012501608,
+        "generation_success_rate": 1.0,
+        "objective": 0.6893451364684307
+      },
+      "rows": [
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8811284303665161,
+          "latency_sec": 4.48821839998709,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.7968580247844457,
+          "latency_sec": 4.363205800007563,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.8238393804883407,
+          "latency_sec": 4.241677000012714,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.847804257404552,
+          "latency_sec": 4.317742899991572,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8996961176576688,
+          "latency_sec": 4.344188100018073,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8244242563500572,
+          "latency_sec": 4.266711100004613,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8648079714293513,
+          "latency_sec": 4.091402199992444,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8563714027404785,
+          "latency_sec": 4.198702599998796,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "recursive",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.5726686507936508,
+        "avg_relevance": 0.8500852545732659,
+        "avg_latency_sec": 4.561251449998963,
+        "generation_success_rate": 1.0,
+        "objective": 0.6304791612406576
+      },
+      "rows": [
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8836162090301514,
+          "latency_sec": 4.53245140000945,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8075056901567351,
+          "latency_sec": 4.68544779997319,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.42857142857142855,
+          "relevance": 0.8016680836180455,
+          "latency_sec": 4.777058900013799,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.4444444444444444,
+          "relevance": 0.8949988155066618,
+          "latency_sec": 4.36797839999781,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.899002188384665,
+          "latency_sec": 4.508101099985652,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.7872936725616455,
+          "latency_sec": 4.435508499998832,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8710664510726929,
+          "latency_sec": 4.784171200008132,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8555309262555301,
+          "latency_sec": 4.39929430000484,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "recursive",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.5927579365079365,
+        "avg_relevance": 0.852206438087286,
+        "avg_latency_sec": 4.86904081249304,
+        "generation_success_rate": 1.0,
+        "objective": 0.6413276777239239
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8896867898013235,
+          "latency_sec": 4.268432000011671,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.8009399412942003,
+          "latency_sec": 4.20564739999827,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.7827316159824022,
+          "latency_sec": 4.52596899998025,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.8949905696516905,
+          "latency_sec": 4.675566799996886,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8791938614124536,
+          "latency_sec": 5.121662899997318,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8365210294723511,
+          "latency_sec": 4.574959699995816,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.0,
+          "relevance": 0.8755407481741075,
+          "latency_sec": 6.794106499990448,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8580469489097595,
+          "latency_sec": 4.78598219997366,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "recursive",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7962121212121213,
+        "avg_relevance": 0.852040040219412,
+        "avg_latency_sec": 4.9423751374961284,
+        "generation_success_rate": 1.0,
+        "objective": 0.7529589687068048
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8866344690322876,
+          "latency_sec": 5.543452799989609,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.8009311079423973,
+          "latency_sec": 4.805733799992595,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8064084533696445,
+          "latency_sec": 4.9793464000103995,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.6363636363636364,
+          "relevance": 0.8766218423843384,
+          "latency_sec": 5.454716999985976,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.9036691073976884,
+          "latency_sec": 4.96765370000503,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.823482776388013,
+          "latency_sec": 4.775667100009741,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8612788998318389,
+          "latency_sec": 4.404193599999417,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.8572936654090881,
+          "latency_sec": 4.60823669997626,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9,
+        "avg_relevance": 0.8554824525575584,
+        "avg_latency_sec": 3.7012798499963537,
+        "generation_success_rate": 1.0,
+        "objective": 0.8156896619190152
+      },
+      "rows": [
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.8823870683427776,
+          "latency_sec": 3.920037100004265,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.809723805801643,
+          "latency_sec": 4.466745399986394,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8284901627448253,
+          "latency_sec": 3.3424873999902047,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8905165460859704,
+          "latency_sec": 3.9701707999920473,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8934412471581992,
+          "latency_sec": 3.6789677999913692,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8482876329593455,
+          "latency_sec": 2.964306800015038,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8356043100357056,
+          "latency_sec": 3.7315342999936547,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8554088473320007,
+          "latency_sec": 3.535989199997857,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8516369047619048,
+        "avg_relevance": 0.849663926068253,
+        "avg_latency_sec": 4.106110099994112,
+        "generation_success_rate": 1.0,
+        "objective": 0.7853670516410733
+      },
+      "rows": [
+        {
+          "faithfulness": 0.7,
+          "relevance": 0.8830225661119168,
+          "latency_sec": 3.7493437999801245,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8102088683719132,
+          "latency_sec": 4.25503899998148,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8262839071070016,
+          "latency_sec": 3.0321843000128865,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8399941921234131,
+          "latency_sec": 4.710344499995699,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8963783588747707,
+          "latency_sec": 7.131280400004471,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8437682641675555,
+          "latency_sec": 3.170451399986632,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8448492288589478,
+          "latency_sec": 4.015004599990789,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8528060229305058,
+          "latency_sec": 2.785232800000813,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8319444444444445,
+        "avg_relevance": 0.8646008533067608,
+        "avg_latency_sec": 3.712001850002707,
+        "generation_success_rate": 1.0,
+        "objective": 0.7814021456354479
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8893198304963027,
+          "latency_sec": 3.8713420999993104,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8134032599089601,
+          "latency_sec": 3.9877448999905027,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8465214280200856,
+          "latency_sec": 3.298062600020785,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8992870986036733,
+          "latency_sec": 4.584928399999626,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.907604867673212,
+          "latency_sec": 3.7976204000005964,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.856729294560233,
+          "latency_sec": 2.7021134000096936,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.846476674079895,
+          "latency_sec": 3.726375199999893,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8574643731117249,
+          "latency_sec": 3.7278278000012506,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.832936507936508,
+        "avg_relevance": 0.8529456570318913,
+        "avg_latency_sec": 3.601689275001263,
+        "generation_success_rate": 1.0,
+        "objective": 0.7783772093504838
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8774447441101074,
+          "latency_sec": 3.8843973000184633,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.5714285714285714,
+          "relevance": 0.8084359879233859,
+          "latency_sec": 4.19296879999456,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8256159670834535,
+          "latency_sec": 3.348074599984102,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.8745086863929832,
+          "latency_sec": 3.9213782000006177,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.895224863006168,
+          "latency_sec": 4.183909600018524,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.856729294560233,
+          "latency_sec": 2.6996320000034757,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.83734868987493,
+          "latency_sec": 3.7839757000037935,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8482570233038697,
+          "latency_sec": 2.7991779999865685,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    }
+  ],
+  "phase_a_top3": [
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9,
+        "avg_relevance": 0.8554824525575584,
+        "avg_latency_sec": 3.7012798499963537,
+        "generation_success_rate": 1.0,
+        "objective": 0.8156896619190152
+      },
+      "rows": [
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.8823870683427776,
+          "latency_sec": 3.920037100004265,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.809723805801643,
+          "latency_sec": 4.466745399986394,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8284901627448253,
+          "latency_sec": 3.3424873999902047,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8905165460859704,
+          "latency_sec": 3.9701707999920473,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8934412471581992,
+          "latency_sec": 3.6789677999913692,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8482876329593455,
+          "latency_sec": 2.964306800015038,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8356043100357056,
+          "latency_sec": 3.7315342999936547,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8554088473320007,
+          "latency_sec": 3.535989199997857,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8516369047619048,
+        "avg_relevance": 0.849663926068253,
+        "avg_latency_sec": 4.106110099994112,
+        "generation_success_rate": 1.0,
+        "objective": 0.7853670516410733
+      },
+      "rows": [
+        {
+          "faithfulness": 0.7,
+          "relevance": 0.8830225661119168,
+          "latency_sec": 3.7493437999801245,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8102088683719132,
+          "latency_sec": 4.25503899998148,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8262839071070016,
+          "latency_sec": 3.0321843000128865,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8399941921234131,
+          "latency_sec": 4.710344499995699,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8963783588747707,
+          "latency_sec": 7.131280400004471,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8437682641675555,
+          "latency_sec": 3.170451399986632,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8448492288589478,
+          "latency_sec": 4.015004599990789,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8528060229305058,
+          "latency_sec": 2.785232800000813,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "A_retrieval",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 260
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8319444444444445,
+        "avg_relevance": 0.8646008533067608,
+        "avg_latency_sec": 3.712001850002707,
+        "generation_success_rate": 1.0,
+        "objective": 0.7814021456354479
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8893198304963027,
+          "latency_sec": 3.8713420999993104,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8134032599089601,
+          "latency_sec": 3.9877448999905027,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8465214280200856,
+          "latency_sec": 3.298062600020785,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8992870986036733,
+          "latency_sec": 4.584928399999626,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.907604867673212,
+          "latency_sec": 3.7976204000005964,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.856729294560233,
+          "latency_sec": 2.7021134000096936,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.846476674079895,
+          "latency_sec": 3.726375199999893,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8574643731117249,
+          "latency_sec": 3.7278278000012506,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    }
+  ],
+  "phase_b_all": [
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.903125,
+        "avg_relevance": 0.8591809231911749,
+        "avg_latency_sec": 3.5110569374992338,
+        "generation_success_rate": 1.0,
+        "objective": 0.8195998270126171
+      },
+      "rows": [
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8792748641319487,
+          "latency_sec": 3.6086714999983087,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8123529181059697,
+          "latency_sec": 4.063758700009203,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8440143969067572,
+          "latency_sec": 3.5003239999932703,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8983406485116111,
+          "latency_sec": 3.5013578000070993,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.6,
+          "relevance": 0.8978331563273855,
+          "latency_sec": 3.650476599985268,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8440206050872803,
+          "latency_sec": 2.983017899998231,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8407477235348404,
+          "latency_sec": 3.3900925000198185,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8568630729236065,
+          "latency_sec": 3.390756499982672,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8736111111111111,
+        "avg_relevance": 0.8565229811080626,
+        "avg_latency_sec": 3.8939243874992826,
+        "generation_success_rate": 1.0,
+        "objective": 0.8007026536873213
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8850237131118774,
+          "latency_sec": 4.422860099992249,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8116858713814111,
+          "latency_sec": 4.103619800007436,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8347800622814916,
+          "latency_sec": 3.9413234000094235,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8947423696517944,
+          "latency_sec": 4.097767300001578,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8984068571571638,
+          "latency_sec": 3.7000368000008166,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8431096076965332,
+          "latency_sec": 2.8682825999858323,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.6,
+          "relevance": 0.836010217666626,
+          "latency_sec": 3.6831449999881443,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8484251499176025,
+          "latency_sec": 4.33436010000878,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8727678571428571,
+        "avg_relevance": 0.8581453450287467,
+        "avg_latency_sec": 3.441240675005247,
+        "generation_success_rate": 1.0,
+        "objective": 0.802889422971348
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8822247982025146,
+          "latency_sec": 3.3494663999881595,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8172757247357697,
+          "latency_sec": 3.591429699998116,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8295538672671878,
+          "latency_sec": 3.559697700024117,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.9021200596022586,
+          "latency_sec": 3.45155060000252,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.9053822373195507,
+          "latency_sec": 3.4452306000166573,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.832467103972051,
+          "latency_sec": 3.1535466000204906,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8450168967247009,
+          "latency_sec": 3.4272898999915924,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8511220724059402,
+          "latency_sec": 3.5517139000003226,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7878787878787878,
+        "avg_relevance": 0.8554135669938484,
+        "avg_latency_sec": 4.272721637498762,
+        "generation_success_rate": 1.0,
+        "objective": 0.7516936192919823
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8181818181818182,
+          "relevance": 0.868756890296936,
+          "latency_sec": 4.5623139000090305,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.8077184787132169,
+          "latency_sec": 4.6140539000043646,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8181818181818182,
+          "relevance": 0.824741079635121,
+          "latency_sec": 4.99164419999579,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.3333333333333333,
+          "relevance": 0.8959709405899048,
+          "latency_sec": 5.248751699982677,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8909591436386172,
+          "latency_sec": 3.888723799987929,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8406153226265518,
+          "latency_sec": 3.0830651000142097,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8597275018692017,
+          "latency_sec": 3.9410350999969523,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8548191785812378,
+          "latency_sec": 3.8521853999991436,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7098214285714286,
+        "avg_relevance": 0.8656195312748103,
+        "avg_latency_sec": 2.3117329250017065,
+        "generation_success_rate": 1.0,
+        "objective": 0.7235642933117238
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.9123973794220333,
+          "latency_sec": 2.2484597000002395,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.5714285714285714,
+          "relevance": 0.8222798320913515,
+          "latency_sec": 2.6071705000067595,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.8418694389423564,
+          "latency_sec": 2.3082145000225864,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.3333333333333333,
+          "relevance": 0.9036377880249467,
+          "latency_sec": 2.2612210999941453,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.9018985570608725,
+          "latency_sec": 2.2919933999946807,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8582174437706904,
+          "latency_sec": 2.1976722999825142,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8497869029577647,
+          "latency_sec": 2.437435700005153,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8348689079284668,
+          "latency_sec": 2.1416962000075728,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7697107351712614,
+        "avg_relevance": 0.8610080132588462,
+        "avg_latency_sec": 2.3906429249982466,
+        "generation_success_rate": 0.75,
+        "objective": 0.7541866406240164
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.9232853009274797,
+          "latency_sec": 2.5236866000050213,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 2.413028300012229,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.9473684210526315,
+          "relevance": 0.802780282745983,
+          "latency_sec": 0.6656347999814898,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.4,
+          "relevance": 0.9016058444976807,
+          "latency_sec": 2.7181880999996793,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.5714285714285714,
+          "relevance": 0.8951644505707432,
+          "latency_sec": 2.672625799983507,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.850597620010376,
+          "latency_sec": 2.713574900000822,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.6,
+          "relevance": 0.8585421698851043,
+          "latency_sec": 2.827594800008228,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8386445545342314,
+          "latency_sec": 2.5908100999949966,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7243641774891775,
+        "avg_relevance": 0.866028891109827,
+        "avg_latency_sec": 2.2565447374981886,
+        "generation_success_rate": 1.0,
+        "objective": 0.7322178027910887
+      },
+      "rows": [
+        {
+          "faithfulness": 0.7272727272727273,
+          "relevance": 0.9296229162699857,
+          "latency_sec": 2.2867224999936298,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8173228015111221,
+          "latency_sec": 2.3284868999908213,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8361340013622733,
+          "latency_sec": 2.2287889999861363,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.6363636363636364,
+          "relevance": 0.907664185305586,
+          "latency_sec": 2.368189800006803,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8181818181818182,
+          "relevance": 0.9061045534735386,
+          "latency_sec": 2.3097737999923993,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8472262024879456,
+          "latency_sec": 2.181347600009758,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8492875605396978,
+          "latency_sec": 2.4480199000099674,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8348689079284668,
+          "latency_sec": 1.9010283999959938,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8844592907092907,
+        "avg_relevance": 0.8444586026437286,
+        "avg_latency_sec": 1.5210788625008718,
+        "generation_success_rate": 0.375,
+        "objective": 0.8216786788776493
+      },
+      "rows": [
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.9228374361991882,
+          "latency_sec": 2.5880789999791887,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.5454545454545454,
+          "relevance": 0.8149886351837354,
+          "latency_sec": 3.27293550001923,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8487579063691675,
+          "latency_sec": 2.5983487000048626,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8224202394485474,
+          "latency_sec": 0.7481353000039235,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.6773702999926172,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7829629000043496,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.8566164000076242,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9230769230769231,
+          "relevance": 0.8622627258300781,
+          "latency_sec": 0.6441827999951784,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.8374917625005764,
+        "generation_success_rate": 0.0,
+        "objective": 0.8690519520232884
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 1.0460638000222389,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.9543131999962498,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7744939000112936,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8208249999734107,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.7419057000079192,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7293214999954216,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.9065898999979254,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.7264211000001524,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.7829750874916499,
+        "generation_success_rate": 0.0,
+        "objective": 0.8707159725693268
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.7150476999813691,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.9198880000039935,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7781372999888845,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8184847999946214,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.7339013000018895,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7154838999849744,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.8910717999970075,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.6917858999804594,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8722718253968254,
+        "avg_relevance": 0.8556325053720711,
+        "avg_latency_sec": 3.0777138874982484,
+        "generation_success_rate": 0.875,
+        "objective": 0.8037444258442636
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.712400999997044,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8104430550072771,
+          "latency_sec": 3.7718783000018448,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8184333091507352,
+          "latency_sec": 3.1506775000016205,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8903788593524359,
+          "latency_sec": 3.5470099999802187,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8919117982334986,
+          "latency_sec": 3.323694400023669,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8460291624069214,
+          "latency_sec": 3.271657099976437,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8377526305766496,
+          "latency_sec": 3.6440207000123337,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8504708409309387,
+          "latency_sec": 3.200372099992819,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8827380952380952,
+        "avg_relevance": 0.8558691043482777,
+        "avg_latency_sec": 3.6886422249990574,
+        "generation_success_rate": 1.0,
+        "objective": 0.8063882751097063
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8809849761742444,
+          "latency_sec": 4.045508199982578,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8192786193753935,
+          "latency_sec": 4.606858699989971,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8271387568968938,
+          "latency_sec": 3.388266800000565,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8900697827339172,
+          "latency_sec": 4.468469400017057,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.9026194810867374,
+          "latency_sec": 3.2296151999908034,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8383690215129258,
+          "latency_sec": 3.158695899997838,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.84023517370224,
+          "latency_sec": 3.9007254000171088,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8482570233038697,
+          "latency_sec": 2.7109981999965385,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7924107142857143,
+        "avg_relevance": 0.8604194753825828,
+        "avg_latency_sec": 2.4474184999962745,
+        "generation_success_rate": 1.0,
+        "objective": 0.7659799214492856
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.9186661517222573,
+          "latency_sec": 2.3401049000094645,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8215909919278055,
+          "latency_sec": 2.648321099986788,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8292586105620033,
+          "latency_sec": 2.396998699987307,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.8917571306228638,
+          "latency_sec": 2.4751499999838416,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8933615024901348,
+          "latency_sec": 2.3554809000052046,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8582174437706904,
+          "latency_sec": 2.5198958999826573,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8519954173567658,
+          "latency_sec": 2.5559600999986287,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8185085546081411,
+          "latency_sec": 2.287436400016304,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.796875,
+        "avg_relevance": 0.8501439476270838,
+        "avg_latency_sec": 1.9793683499992767,
+        "generation_success_rate": 0.625,
+        "objective": 0.7693957930126124
+      },
+      "rows": [
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.9237754344940186,
+          "latency_sec": 2.50866120000137,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8100559228625358,
+          "latency_sec": 2.557550400000764,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.816089714052967,
+          "latency_sec": 2.347566700016614,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8917489051818848,
+          "latency_sec": 3.035684200003743,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.8953872260682137,
+          "latency_sec": 3.0595114000025205,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7277839999878779,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.899324300000444,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.6988645999808796,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.7731084624938376,
+        "generation_success_rate": 0.0,
+        "objective": 0.8710280684558285
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.7066233999794349,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.9244047999964096,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7295894999988377,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8188695999851916,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.7004506999801379,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.6989495999878272,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.9253436000144575,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.6806365000084043,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.77595714999552,
+        "generation_success_rate": 0.0,
+        "objective": 0.8709376041979919
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.7009551000082865,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.906338600005256,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7109754999983124,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8175448999973014,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.6934264999872539,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7734005999809597,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.9045734999817796,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.7004425000050105,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.7702380952380953,
+        "avg_relevance": 0.860032446347752,
+        "avg_latency_sec": 3.466133075005928,
+        "generation_success_rate": 1.0,
+        "objective": 0.7470330431196543
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8808849978974476,
+          "latency_sec": 3.23704240002553,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8149058575956301,
+          "latency_sec": 3.8461655999999493,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8435478964639813,
+          "latency_sec": 3.52252430000226,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8904091054444988,
+          "latency_sec": 3.6014821999997366,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.6,
+          "relevance": 0.9016663373509862,
+          "latency_sec": 3.243025400006445,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8298486471176147,
+          "latency_sec": 3.473864700004924,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8484953298716349,
+          "latency_sec": 3.48819909998565,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8705013990402222,
+          "latency_sec": 3.3167609000229277,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8611638361638362,
+        "avg_relevance": 0.855847043272717,
+        "avg_latency_sec": 3.2219211500050733,
+        "generation_success_rate": 0.75,
+        "objective": 0.7968724745223099
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8852880001068115,
+          "latency_sec": 3.8911176999972668,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8116858713814111,
+          "latency_sec": 4.1711166000168305,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8331925521252324,
+          "latency_sec": 3.4231128999963403,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8901814222335815,
+          "latency_sec": 4.2592952999984846,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.9109429014853122,
+          "latency_sec": 4.6311564000207,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 0.9,
+          "relevance": 0.8286992311477661,
+          "latency_sec": 3.8379396999953315,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.8618846000172198,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9230769230769231,
+          "relevance": 0.8622627258300781,
+          "latency_sec": 0.699745999998413,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.90765716374269,
+        "avg_relevance": 0.8558163395145939,
+        "avg_latency_sec": 2.49506222499258,
+        "generation_success_rate": 0.625,
+        "objective": 0.8273589527745209
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.6993862999952398,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.8814647999824956,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.9473684210526315,
+          "relevance": 0.802780282745983,
+          "latency_sec": 0.6794048000010662,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8899432951178147,
+          "latency_sec": 3.5158381999935955,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8955674705247579,
+          "latency_sec": 3.7812494999961928,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8437550161030895,
+          "latency_sec": 3.0012330999888945,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8373613856650239,
+          "latency_sec": 3.7849046000046656,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8600389957427979,
+          "latency_sec": 3.61701649997849,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8036616161616161,
+        "avg_relevance": 0.8595961497083925,
+        "avg_latency_sec": 4.055419587493816,
+        "generation_success_rate": 1.0,
+        "objective": 0.7626532930660419
+      },
+      "rows": [
+        {
+          "faithfulness": 0.7,
+          "relevance": 0.8849965402486017,
+          "latency_sec": 4.4083559999999125,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.812688207248208,
+          "latency_sec": 4.539855799986981,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8362487359343467,
+          "latency_sec": 3.6601865999982692,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8181818181818182,
+          "relevance": 0.9043360622029327,
+          "latency_sec": 4.892643299972406,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.9068502728253782,
+          "latency_sec": 3.4213221999816597,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8417457342147827,
+          "latency_sec": 2.702908200008096,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8388634516163586,
+          "latency_sec": 3.8749966000032146,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8510401933765311,
+          "latency_sec": 4.943087999999989,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8562682748538012,
+        "avg_relevance": 0.8477095637943697,
+        "avg_latency_sec": 1.5341623875028745,
+        "generation_success_rate": 0.5,
+        "objective": 0.807106668846492
+      },
+      "rows": [
+        {
+          "faithfulness": 0.7777777777777778,
+          "relevance": 0.9190241694450378,
+          "latency_sec": 2.22234480001498,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.8482053000188898,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.9473684210526315,
+          "relevance": 0.802780282745983,
+          "latency_sec": 0.686742799996864,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8224202394485474,
+          "latency_sec": 0.7588408000010531,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.678724900004454,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.858291106667323,
+          "latency_sec": 2.287688700016588,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8497869029577647,
+          "latency_sec": 2.51408569997875,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8386445545342314,
+          "latency_sec": 2.2766660999914166,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.6967983405483406,
+        "avg_relevance": 0.8681751010751007,
+        "avg_latency_sec": 2.671937937491748,
+        "generation_success_rate": 1.0,
+        "objective": 0.714333948436048
+      },
+      "rows": [
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.9272892475128174,
+          "latency_sec": 2.2200597999908496,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.5555555555555556,
+          "relevance": 0.8167190064955364,
+          "latency_sec": 3.0065964000241365,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8451906006208603,
+          "latency_sec": 2.2285659999761265,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.45454545454545453,
+          "relevance": 0.9055776112583211,
+          "latency_sec": 3.1013728999823797,
+          "backend": "huggingface_inference_api",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.9076348433059267,
+          "latency_sec": 2.9061070999887306,
+          "backend": "huggingface_inference_api",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8514013544142653,
+          "latency_sec": 2.684826399985468,
+          "backend": "huggingface_inference_api",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 0.6,
+          "relevance": 0.852943590458847,
+          "latency_sec": 2.9278224000008777,
+          "backend": "huggingface_inference_api",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8386445545342314,
+          "latency_sec": 2.3001524999854155,
+          "backend": "huggingface_inference_api",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8549679487179487,
+        "avg_relevance": 0.8399911738254201,
+        "avg_latency_sec": 1.3285532124973543,
+        "generation_success_rate": 0.375,
+        "objective": 0.8071744038632515
+      },
+      "rows": [
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.9123835563659668,
+          "latency_sec": 2.2199247000098694,
+          "backend": "huggingface_inference_api",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.8171644915840347,
+          "latency_sec": 2.5143840999808162,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.8212964992556216,
+          "latency_sec": 2.2617650000029244,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8224202394485474,
+          "latency_sec": 0.7688908999843989,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.6922725999902468,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.6767644000065047,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.834386300004553,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9230769230769231,
+          "relevance": 0.8622627258300781,
+          "latency_sec": 0.6600376999995206,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9525556680161943,
+        "avg_relevance": 0.8361186745451257,
+        "avg_latency_sec": 0.7359164000044984,
+        "generation_success_rate": 0.0,
+        "objective": 0.8741536142715104
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.6720099000085611,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.8545258000085596,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.9473684210526315,
+          "relevance": 0.802780282745983,
+          "latency_sec": 0.7476176999916788,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8224202394485474,
+          "latency_sec": 0.7799570999923162,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.662519000004977,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.6581051000102889,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.8546166000014637,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9230769230769231,
+          "relevance": 0.8622627258300781,
+          "latency_sec": 0.6579800000181422,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    }
+  ],
+  "phase_b_top4": [
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9525556680161943,
+        "avg_relevance": 0.8361186745451257,
+        "avg_latency_sec": 0.7359164000044984,
+        "generation_success_rate": 0.0,
+        "objective": 0.8741536142715104
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.6720099000085611,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.8545258000085596,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 0.9473684210526315,
+          "relevance": 0.802780282745983,
+          "latency_sec": 0.7476176999916788,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8224202394485474,
+          "latency_sec": 0.7799570999923162,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.662519000004977,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.6581051000102889,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.8546166000014637,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 0.9230769230769231,
+          "relevance": 0.8622627258300781,
+          "latency_sec": 0.6579800000181422,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.7731084624938376,
+        "generation_success_rate": 0.0,
+        "objective": 0.8710280684558285
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.7066233999794349,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.9244047999964096,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7295894999988377,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8188695999851916,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.7004506999801379,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.6989495999878272,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.9253436000144575,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.6806365000084043,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.77595714999552,
+        "generation_success_rate": 0.0,
+        "objective": 0.8709376041979919
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.7009551000082865,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.906338600005256,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7109754999983124,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8175448999973014,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.6934264999872539,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7734005999809597,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.9045734999817796,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.7004425000050105,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "B_generation",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9508928571428571,
+        "avg_relevance": 0.8332539083249668,
+        "avg_latency_sec": 0.7829750874916499,
+        "generation_success_rate": 0.0,
+        "objective": 0.8707159725693268
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8996403873181128,
+          "latency_sec": 0.7150476999813691,
+          "backend": "fallback_context_only",
+          "query": "What is diversification in portfolio management?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8174438828991719,
+          "latency_sec": 0.9198880000039935,
+          "backend": "fallback_context_only",
+          "query": "Explain the Sharpe ratio."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7908495539933177,
+          "latency_sec": 0.7781372999888845,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier?"
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.8207176923751831,
+          "latency_sec": 0.8184847999946214,
+          "backend": "fallback_context_only",
+          "query": "What role do constraints play in portfolio construction?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8732853716568985,
+          "latency_sec": 0.7339013000018895,
+          "backend": "fallback_context_only",
+          "query": "How does correlation affect portfolio risk?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7865928645906709,
+          "latency_sec": 0.7154838999849744,
+          "backend": "fallback_context_only",
+          "query": "What is the purpose of rebalancing?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8245236418715428,
+          "latency_sec": 0.8910717999970075,
+          "backend": "fallback_context_only",
+          "query": "What are key components of an investment policy statement?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8529778718948364,
+          "latency_sec": 0.6917858999804594,
+          "backend": "fallback_context_only",
+          "query": "Differentiate systematic vs unsystematic risk."
+        }
+      ]
+    }
+  ],
+  "phase_c_ranked": [
+    {
+      "config": {
+        "phase": "C_final",
+        "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.0,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9240440115440115,
+        "avg_relevance": 0.8544283755067962,
+        "avg_latency_sec": 1.6386018550023436,
+        "generation_success_rate": 0.25,
+        "objective": 0.8451729969054896
+      },
+      "rows": [
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.8622234031887828,
+          "latency_sec": 3.950745200010715,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier in portfolio management?"
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8750280141830444,
+          "latency_sec": 4.461861300020246,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the role of constraints in portfolio construction."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.876985676468274,
+          "latency_sec": 0.7945442000054754,
+          "backend": "fallback_context_only",
+          "query": "Define and explain diversification in portfolio context."
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8292999514728774,
+          "latency_sec": 0.6861535999923944,
+          "backend": "fallback_context_only",
+          "query": "What is the relationship between risk and return?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356009623766534,
+          "latency_sec": 0.9607041999988724,
+          "backend": "fallback_context_only",
+          "query": "Describe the Modern Portfolio Theory."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8340676426887571,
+          "latency_sec": 0.9732843000092544,
+          "backend": "fallback_context_only",
+          "query": "How is the Sharpe ratio calculated and what does it measure?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8924833068271509,
+          "latency_sec": 0.769793599989498,
+          "backend": "fallback_context_only",
+          "query": "Explain rebalancing and its importance in portfolio management."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8960511026412922,
+          "latency_sec": 0.9249811999907251,
+          "backend": "fallback_context_only",
+          "query": "What is the significance of correlation in portfolio diversification?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356702674725606,
+          "latency_sec": 1.0263901999860536,
+          "backend": "fallback_context_only",
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8862590329338272,
+          "latency_sec": 0.8358048999798484,
+          "backend": "fallback_context_only",
+          "query": "What is beta and how is it used in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.823658182352026,
+          "latency_sec": 0.9188167000247631,
+          "backend": "fallback_context_only",
+          "query": "What are the key components of an Investment Policy Statement?"
+        },
+        {
+          "faithfulness": 0.9166666666666666,
+          "relevance": 0.8328797221183777,
+          "latency_sec": 0.6909278999955859,
+          "backend": "fallback_context_only",
+          "query": "How do time horizons affect portfolio construction decisions?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8325376510620117,
+          "latency_sec": 0.8451747000217438,
+          "backend": "fallback_context_only",
+          "query": "What role does liquidity play in portfolio constraints?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8544579570839353,
+          "latency_sec": 0.8421456999785732,
+          "backend": "fallback_context_only",
+          "query": "Explain tax considerations in portfolio planning."
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.823050856590271,
+          "latency_sec": 1.1088130999996793,
+          "backend": "fallback_context_only",
+          "query": "How do regulatory requirements impact portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8296538940175241,
+          "latency_sec": 0.7930127000145148,
+          "backend": "fallback_context_only",
+          "query": "Discuss the relationship between systematic and unsystematic risk."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7953870533522089,
+          "latency_sec": 0.7554992000223137,
+          "backend": "fallback_context_only",
+          "query": "How do you handle concentration limits in portfolio optimization?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.8840281298177335,
+          "latency_sec": 3.9398190999927465,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the difference between strategic and tactical asset allocation."
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8672844688465875,
+          "latency_sec": 4.119271600007778,
+          "backend": "huggingface_inference_api",
+          "query": "What factors should be considered in evaluating portfolio performance?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.9219602346420288,
+          "latency_sec": 3.374293700006092,
+          "backend": "huggingface_inference_api",
+          "query": "How can investors achieve diversification across asset classes?"
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "C_final",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.896518759018759,
+        "avg_relevance": 0.8567407576210224,
+        "avg_latency_sec": 1.1175228250023792,
+        "generation_success_rate": 0.25,
+        "objective": 0.8401695753499557
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8503461137517132,
+          "latency_sec": 0.7168917000235524,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8137758374214172,
+          "latency_sec": 0.7685613000066951,
+          "backend": "fallback_context_only",
+          "query": "Explain the role of constraints in portfolio construction."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.876985676468274,
+          "latency_sec": 0.6891383999900427,
+          "backend": "fallback_context_only",
+          "query": "Define and explain diversification in portfolio context."
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8292999514728774,
+          "latency_sec": 0.6651545999920927,
+          "backend": "fallback_context_only",
+          "query": "What is the relationship between risk and return?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356009623766534,
+          "latency_sec": 0.6673930000106338,
+          "backend": "fallback_context_only",
+          "query": "Describe the Modern Portfolio Theory."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8340676426887571,
+          "latency_sec": 0.857211800001096,
+          "backend": "fallback_context_only",
+          "query": "How is the Sharpe ratio calculated and what does it measure?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8924833068271509,
+          "latency_sec": 0.6625343000050634,
+          "backend": "fallback_context_only",
+          "query": "Explain rebalancing and its importance in portfolio management."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8960511026412922,
+          "latency_sec": 0.704807800007984,
+          "backend": "fallback_context_only",
+          "query": "What is the significance of correlation in portfolio diversification?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356702674725606,
+          "latency_sec": 0.7187473000085447,
+          "backend": "fallback_context_only",
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8862590329338272,
+          "latency_sec": 0.7486206000030506,
+          "backend": "fallback_context_only",
+          "query": "What is beta and how is it used in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.823658182352026,
+          "latency_sec": 0.8374417999875732,
+          "backend": "fallback_context_only",
+          "query": "What are the key components of an Investment Policy Statement?"
+        },
+        {
+          "faithfulness": 0.9166666666666666,
+          "relevance": 0.8328797221183777,
+          "latency_sec": 0.6906679999956395,
+          "backend": "fallback_context_only",
+          "query": "How do time horizons affect portfolio construction decisions?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8325376510620117,
+          "latency_sec": 0.7565719000122044,
+          "backend": "fallback_context_only",
+          "query": "What role does liquidity play in portfolio constraints?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8544579570839353,
+          "latency_sec": 0.6475773000274785,
+          "backend": "fallback_context_only",
+          "query": "Explain tax considerations in portfolio planning."
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.823050856590271,
+          "latency_sec": 0.7959559000155423,
+          "backend": "fallback_context_only",
+          "query": "How do regulatory requirements impact portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8365121137056388,
+          "latency_sec": 2.77004879998276,
+          "backend": "huggingface_inference_api",
+          "query": "Discuss the relationship between systematic and unsystematic risk."
+        },
+        {
+          "faithfulness": 0.2222222222222222,
+          "relevance": 0.885184109210968,
+          "latency_sec": 2.2405449000070803,
+          "backend": "huggingface_inference_api",
+          "query": "How do you handle concentration limits in portfolio optimization?"
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.9011273921208035,
+          "latency_sec": 2.0117557999910787,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the difference between strategic and tactical asset allocation."
+        },
+        {
+          "faithfulness": 0.6363636363636364,
+          "relevance": 0.8720707221073343,
+          "latency_sec": 2.0006635999889113,
+          "backend": "huggingface_inference_api",
+          "query": "What factors should be considered in evaluating portfolio performance?"
+        },
+        {
+          "faithfulness": 0.875,
+          "relevance": 0.922796552014558,
+          "latency_sec": 2.4001676999905612,
+          "backend": "huggingface_inference_api",
+          "query": "How can investors achieve diversification across asset classes?"
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "C_final",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 220
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8687157287157287,
+        "avg_relevance": 0.8530884282661112,
+        "avg_latency_sec": 1.5045516350015533,
+        "generation_success_rate": 0.4,
+        "objective": 0.8163019068770404
+      },
+      "rows": [
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.9035344777384727,
+          "latency_sec": 2.4564092000073288,
+          "backend": "huggingface_inference_api",
+          "query": "What is the efficient frontier in portfolio management?"
+        },
+        {
+          "faithfulness": 0.2727272727272727,
+          "relevance": 0.8789794445037842,
+          "latency_sec": 2.5406608000048436,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the role of constraints in portfolio construction."
+        },
+        {
+          "faithfulness": 0.8,
+          "relevance": 0.8776844216773274,
+          "latency_sec": 2.384597299998859,
+          "backend": "huggingface_inference_api",
+          "query": "Define and explain diversification in portfolio context."
+        },
+        {
+          "faithfulness": 0.5555555555555556,
+          "relevance": 0.85720478637247,
+          "latency_sec": 2.297955300018657,
+          "backend": "huggingface_inference_api",
+          "query": "What is the relationship between risk and return?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8040025234222469,
+          "latency_sec": 2.463176499994006,
+          "backend": "huggingface_inference_api",
+          "query": "Describe the Modern Portfolio Theory."
+        },
+        {
+          "faithfulness": 0.8333333333333334,
+          "relevance": 0.8597622597359279,
+          "latency_sec": 2.6906658000079915,
+          "backend": "huggingface_inference_api",
+          "query": "How is the Sharpe ratio calculated and what does it measure?"
+        },
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.8900052309036318,
+          "latency_sec": 2.469897700008005,
+          "backend": "huggingface_inference_api",
+          "query": "Explain rebalancing and its importance in portfolio management."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.9037227630615234,
+          "latency_sec": 2.5808932000072673,
+          "backend": "huggingface_inference_api",
+          "query": "What is the significance of correlation in portfolio diversification?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356702674725606,
+          "latency_sec": 0.8094688999990467,
+          "backend": "fallback_context_only",
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8862590329338272,
+          "latency_sec": 0.8218465000099968,
+          "backend": "fallback_context_only",
+          "query": "What is beta and how is it used in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.823658182352026,
+          "latency_sec": 0.9388811999815516,
+          "backend": "fallback_context_only",
+          "query": "What are the key components of an Investment Policy Statement?"
+        },
+        {
+          "faithfulness": 0.9166666666666666,
+          "relevance": 0.8328797221183777,
+          "latency_sec": 0.7223395999753848,
+          "backend": "fallback_context_only",
+          "query": "How do time horizons affect portfolio construction decisions?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8325376510620117,
+          "latency_sec": 0.8887456000084057,
+          "backend": "fallback_context_only",
+          "query": "What role does liquidity play in portfolio constraints?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8544579570839353,
+          "latency_sec": 0.8803619999962393,
+          "backend": "fallback_context_only",
+          "query": "Explain tax considerations in portfolio planning."
+        },
+        {
+          "faithfulness": 0.8571428571428571,
+          "relevance": 0.823050856590271,
+          "latency_sec": 0.9348120999929961,
+          "backend": "fallback_context_only",
+          "query": "How do regulatory requirements impact portfolio construction?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8296538940175241,
+          "latency_sec": 0.8046012000122573,
+          "backend": "fallback_context_only",
+          "query": "Discuss the relationship between systematic and unsystematic risk."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.7953870533522089,
+          "latency_sec": 0.795100800023647,
+          "backend": "fallback_context_only",
+          "query": "How do you handle concentration limits in portfolio optimization?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.880342853120395,
+          "latency_sec": 1.0278519999992568,
+          "backend": "fallback_context_only",
+          "query": "Explain the difference between strategic and tactical asset allocation."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8168465142502346,
+          "latency_sec": 0.7428673999966122,
+          "backend": "fallback_context_only",
+          "query": "What factors should be considered in evaluating portfolio performance?"
+        },
+        {
+          "faithfulness": 0.9285714285714286,
+          "relevance": 0.8761286735534668,
+          "latency_sec": 0.839899599988712,
+          "backend": "fallback_context_only",
+          "query": "How can investors achieve diversification across asset classes?"
+        }
+      ]
+    },
+    {
+      "config": {
+        "phase": "C_final",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 8,
+        "temperature": 0.1,
+        "max_tokens": 300
+      },
+      "metrics": {
+        "avg_faithfulness": 0.8061868686868687,
+        "avg_relevance": 0.8731972675567775,
+        "avg_latency_sec": 1.7225098499984597,
+        "generation_success_rate": 0.5,
+        "objective": 0.785752634352512
+      },
+      "rows": [
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8503461137517132,
+          "latency_sec": 0.8158197000157088,
+          "backend": "fallback_context_only",
+          "query": "What is the efficient frontier in portfolio management?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8137758374214172,
+          "latency_sec": 1.1026968999940436,
+          "backend": "fallback_context_only",
+          "query": "Explain the role of constraints in portfolio construction."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.876985676468274,
+          "latency_sec": 0.785723400011193,
+          "backend": "fallback_context_only",
+          "query": "Define and explain diversification in portfolio context."
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8292999514728774,
+          "latency_sec": 0.7269922999839764,
+          "backend": "fallback_context_only",
+          "query": "What is the relationship between risk and return?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356009623766534,
+          "latency_sec": 0.916555600007996,
+          "backend": "fallback_context_only",
+          "query": "Describe the Modern Portfolio Theory."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8340676426887571,
+          "latency_sec": 0.9535510999849066,
+          "backend": "fallback_context_only",
+          "query": "How is the Sharpe ratio calculated and what does it measure?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8924833068271509,
+          "latency_sec": 0.7623531999997795,
+          "backend": "fallback_context_only",
+          "query": "Explain rebalancing and its importance in portfolio management."
+        },
+        {
+          "faithfulness": 0.8888888888888888,
+          "relevance": 0.8960511026412922,
+          "latency_sec": 0.8215354999992996,
+          "backend": "fallback_context_only",
+          "query": "What is the significance of correlation in portfolio diversification?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8356702674725606,
+          "latency_sec": 0.77593390000402,
+          "backend": "fallback_context_only",
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection."
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.8862590329338272,
+          "latency_sec": 0.9134629000036512,
+          "backend": "fallback_context_only",
+          "query": "What is beta and how is it used in portfolio management?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.8609415292739868,
+          "latency_sec": 2.867244799999753,
+          "backend": "huggingface_inference_api",
+          "query": "What are the key components of an Investment Policy Statement?"
+        },
+        {
+          "faithfulness": 0.75,
+          "relevance": 0.9086887945307802,
+          "latency_sec": 2.519186699995771,
+          "backend": "huggingface_inference_api",
+          "query": "How do time horizons affect portfolio construction decisions?"
+        },
+        {
+          "faithfulness": 0.375,
+          "relevance": 0.9056997299194336,
+          "latency_sec": 2.6979246999835595,
+          "backend": "huggingface_inference_api",
+          "query": "What role does liquidity play in portfolio constraints?"
+        },
+        {
+          "faithfulness": 0.6666666666666666,
+          "relevance": 0.9045860596751097,
+          "latency_sec": 2.2084919000044465,
+          "backend": "huggingface_inference_api",
+          "query": "Explain tax considerations in portfolio planning."
+        },
+        {
+          "faithfulness": 0.625,
+          "relevance": 0.9135910272598267,
+          "latency_sec": 2.690018900000723,
+          "backend": "huggingface_inference_api",
+          "query": "How do regulatory requirements impact portfolio construction?"
+        },
+        {
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.8311646131722287,
+          "latency_sec": 2.587874799995916,
+          "backend": "huggingface_inference_api",
+          "query": "Discuss the relationship between systematic and unsystematic risk."
+        },
+        {
+          "faithfulness": 0.07142857142857142,
+          "relevance": 0.8953345417976379,
+          "latency_sec": 2.90676660000463,
+          "backend": "huggingface_inference_api",
+          "query": "How do you handle concentration limits in portfolio optimization?"
+        },
+        {
+          "faithfulness": 1.0,
+          "relevance": 0.900850892066962,
+          "latency_sec": 2.771301999979187,
+          "backend": "huggingface_inference_api",
+          "query": "Explain the difference between strategic and tactical asset allocation."
+        },
+        {
+          "faithfulness": 0.5,
+          "relevance": 0.8656317253599088,
+          "latency_sec": 2.4964279000123497,
+          "backend": "huggingface_inference_api",
+          "query": "What factors should be considered in evaluating portfolio performance?"
+        },
+        {
+          "faithfulness": 0.7142857142857143,
+          "relevance": 0.9269165440251519,
+          "latency_sec": 2.130334199988283,
+          "backend": "huggingface_inference_api",
+          "query": "How can investors achieve diversification across asset classes?"
+        }
+      ]
+    }
+  ]
+}

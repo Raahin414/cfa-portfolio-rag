@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-04",
+  "assignment_allows_embedding_change": true,
+  "assignment_note": "Query embedding must use a lightweight model in-app (example given: all-MiniLM-L6-v2), so testing alternatives is allowed.",
+  "setup": {
+    "num_queries": 20,
+    "configs_tested": [
+      {
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6
+      },
+      {
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6
+      }
+    ],
+    "pipeline": "Hybrid retrieval + reranker, no generation dependency"
+  },
+  "results": [
+    {
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "best_config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6
+      },
+      "metrics": {
+        "avg_pre_relevance": 0.8574487695153673,
+        "avg_post_relevance": 0.8545738158182165,
+        "avg_rerank_lift": -0.002874953697150906,
+        "avg_retrieval_latency_sec": 0.26849757000054525,
+        "objective": 0.6335876605135753
+      }
+    },
+    {
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "best_config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.6,
+        "bm25_weight": 0.4,
+        "top_k": 6
+      },
+      "metrics": {
+        "avg_pre_relevance": 0.7866975189791676,
+        "avg_post_relevance": 0.8087605055917308,
+        "avg_rerank_lift": 0.022062986612563184,
+        "avg_retrieval_latency_sec": 0.29597433499984616,
+        "objective": 0.608372097173031
+      }
+    }
+  ],
+  "conclusion": "BAAI/bge-small-en-v1.5 remains better for the current indexed corpus under the tested setup."
+}
