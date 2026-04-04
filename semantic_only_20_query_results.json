@@ -1,0 +1,200 @@
+{
+  "summary": {
+    "num_queries": 20,
+    "config": {
+      "strategy": "semantic",
+      "semantic_weight": 1.0,
+      "bm25_weight": 0.0,
+      "top_k": 6,
+      "generation_model": "meta-llama/Meta-Llama-3-8B-Instruct",
+      "temperature": 0.0,
+      "max_tokens": 300
+    },
+    "avg_faithfulness": 0.7110714285714286,
+    "avg_relevance": 0.8743332255370169,
+    "avg_latency_sec": 4.174275089998991,
+    "success_rate": 0.95
+  },
+  "rows": [
+    {
+      "id": 1,
+      "query": "What is the efficient frontier in portfolio management?",
+      "answer": "\u2022 The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return [Context 1].\n\u2022 It is the set of all attainable risky assets with the highest expected return for a given level of risk or the lowest amount of risk for a given level of return [Context 2].\n\u2022 The efficient frontier is the line that connects those portfolios with the minimal risk for each level of expected return [Context 3].\n\u2022 It is the set of portfolios that have the greatest expected return for each level of risk [Context 4].\n\nThe efficient frontier can be plotted in the risk-return space, and it coincides with the top portion of the minimum variance frontier [Context 3].\n\nA portfolio is deemed more efficient if it has the same expected return but lower risk [Context 5].\n\nThe efficient frontier is an upward-sloping curve that connects all of the most efficient portfolios [Context 5].\n\nThe efficient frontier does not account for the risk-free rate [Context 2].\n\nThe global minimum-variance portfolio is the portfolio on the minimum-variance frontier with the lowest standard deviation [Context 2].\n\nRisk-averse investors would only choose a portfolio that lies on the efficient frontier [Context 4].\n\nThe efficient frontier will move upward as more low-correlation assets with sufficient expected return are added to the mix [Context 3].\n\nThe efficient frontier will move upward when return expectations increase for asset",
+      "faithfulness": 1.0,
+      "relevance": 0.8573613336847684,
+      "latency_sec": 5.976991799994721,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 2,
+      "query": "Explain the role of constraints in portfolio construction.",
+      "answer": "The role of constraints in portfolio construction is to limit the investment options available to the portfolio manager, ensuring that the portfolio meets the client's specific needs and objectives. Constraints can be categorized into five major types:\n\n* Liquidity requirements: The IPS should state the likely requirements to withdraw funds from the portfolio, such as outlays for healthcare payments or tuition fees [Context 1].\n* Time horizon: The client's time horizon should be considered when constructing a portfolio, as it affects the risk tolerance and return requirements [Context 2].\n* Tax concerns: Tax status should be taken into account when constructing a portfolio, as it can impact the client's investment returns [Context 2].\n* Legal and regulatory factors: The IPS should consider regulatory requirements, such as those related to endowment funds or pension funds [Context 1].\n* Unique circumstances: The IPS should account for any unique needs or circumstances that may impact the portfolio's construction, such as ESG integration [Context 3].\n\nConstraints can be either internal (set by the client) or external (set by law or regulation) [Context 2]. The IPS should include a constraints section that covers these factors, ensuring that the portfolio meets the client's objectives [Context 3].\n\nThe IPS is the starting point of the portfolio management process, and without a full understanding of the client's situation and requirements, it is unlikely that successful results will be achieved [Context 3].\n\nThe constraints section of the IPS can include investment guidelines, such as",
+      "faithfulness": 0.7,
+      "relevance": 0.8800860047340393,
+      "latency_sec": 4.3456504000059795,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 3,
+      "query": "Define and explain diversification in portfolio context.",
+      "answer": "**Definition and Explanation of Diversification:**\n\n* Diversification is the process of spreading investments across different asset classes, industries, and geographic regions to reduce the overall risk of an investment portfolio [Context 1].\n* It involves holding a variety of investments to offset the poor performance of one investment with the better performance of another [Context 1].\n* The goal is to include assets that are not highly correlated with one another [Context 1].\n* Diversification aims to make the ups and downs of investing more manageable and keep the long-term plan on track [Context 2].\n* It involves spreading the risk and reward of individual securities within an asset class or between asset classes [Context 3].\n* Real diversification is made across various classes of securities, sectors of the economy, and geographical regions [Context 3].\n\n**Key Components:**\n\n* Spreading investments across different asset classes, industries, and geographic regions\n* Holding a variety of investments to offset poor performance\n* Including assets that are not highly correlated with one another\n* Rebalancing returns a portfolio to its original target allocation at regular intervals\n\n**Practical Examples:**\n\n* Spreading investments across stocks, bonds, real estate, and other asset classes [Context 2]\n* Investing in different sectors of the economy, such as technology, healthcare, and finance [Context 3]\n\n**Benefits:**\n\n* Reduces the overall risk of an investment portfolio [Context 1]\n* Smooths out uns",
+      "faithfulness": 0.7142857142857143,
+      "relevance": 0.8678370792962877,
+      "latency_sec": 4.407899500001804,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 4,
+      "query": "What is the relationship between risk and return?",
+      "answer": "\u2022 The relationship between risk and return is a direct one, established by the risk-return tradeoff principle [Context 1].\n\u2022 According to this principle, higher potential returns are associated with higher levels of uncertainty or risk [Context 1].\n\u2022 Conversely, low levels of uncertainty are linked to low potential returns [Context 1].\n\u2022 The risk-return tradeoff principle links high risk with high reward [Context 1].\n\u2022 The appropriate risk-return tradeoff depends on various factors, including an investor's risk tolerance, years to retirement, and potential to replace lost funds [Context 4].\n\u2022 Time also plays a crucial role in determining a portfolio's risk and reward levels [Context 4].\n\u2022 Risk exposure is the extent to which an investor or business is vulnerable to environmental or market risks [Context 3].\n\u2022 Risk and return are interconnected forces in the financial universe [Context 3].\n\nThe relationship between risk and return is a fundamental concept in finance, where higher potential returns are associated with higher levels of uncertainty or risk.",
+      "faithfulness": 0.8888888888888888,
+      "relevance": 0.8661817054098371,
+      "latency_sec": 3.5054593999957433,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 5,
+      "query": "Describe the Modern Portfolio Theory.",
+      "answer": "**Modern Portfolio Theory (MPT)**\n\n* A mathematical investment strategy that balances risk and return based on investor's risk tolerance [Context 1]\n* A mathematical framework to build a portfolio that maximizes expected return for a given level of risk [Context 1]\n* Pioneered by American economist Harry Markowitz in his 1952 paper \"Portfolio Selection\" [Context 1, Context 3]\n\n**Key Components:**\n\n* Diversification: reducing portfolio risk without reducing expected return [Context 2]\n* Standard deviation of returns: measure of investment risk [Context 2]\n* Efficient frontier: maximum return obtainable for a given amount of risk taken [Context 4]\n* Asset allocation and periodic rebalancing: optimize portfolios [Context 4]\n\n**Formal Definition:**\nModern Portfolio Theory (MPT) is a mathematical framework used to build a portfolio of assets that maximizes the expected return for the collective level of risk.\n\n**Practical Example:**\nAn investor with a risk tolerance of 5% can use MPT to build a portfolio that maximizes expected return while minimizing risk.\n\nMPT is a widely accepted investment strategy that helps investors optimize their portfolios by balancing risk and return.",
+      "faithfulness": 0.3333333333333333,
+      "relevance": 0.8177203671086166,
+      "latency_sec": 3.7822479999886127,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 6,
+      "query": "How is the Sharpe ratio calculated and what does it measure?",
+      "answer": "The Sharpe ratio is calculated by taking the return of the investment, subtracting the risk-free rate, and dividing this result by the investment's standard deviation [Context 1]. The formula is:\n\nSharpe Ratio = (Return - Risk-free Rate) / Standard Deviation\n\nThis ratio measures the profit of an investment that exceeds the risk-free rate per unit of standard deviation [Context 1]. It is used to determine whether the risk is worth the reward and to compare peers or ETFs that hold similar assets [Context 2]. A higher Sharpe ratio is better, as it shows an attractive risk-adjusted return [Context 2].\n\nThe Sharpe ratio is defined as the portfolio's risk premium divided by its risk [Context 3]. It is an efficiency ratio relating reward to risks taken and is easy to interpret [Context 3]. The Sharpe ratio is based on total risk (standard deviation of returns), rather than systematic risk (beta) [Context 4]. It can be used to evaluate the performance of concentrated portfolios as well as well-diversified portfolios.\n\nThe Sharpe ratio is also related to M2, which is a rescaling of the Sharpe ratio that allows for easier comparisons among different portfolios [Context 5]. The equation for M2 is:\n\nM2 = [E(Rp) - Rf] / (\u03c3m / \u03c3p + Rf) = SR \u00d7 \u03c3m + Rf (ex ante)\nM2 = (_Rp -",
+      "faithfulness": 0.9,
+      "relevance": 0.8622163616289892,
+      "latency_sec": 5.137152000010246,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 7,
+      "query": "Explain rebalancing and its importance in portfolio management.",
+      "answer": "**Rebalancing in Portfolio Management**\n\n* **Definition:** Rebalancing is the process of adjusting a portfolio's asset allocation to match its target allocation, typically in response to changes in market conditions or the investor's risk tolerance [Context 1].\n* **Importance:** Rebalancing helps maintain a portfolio's risk level, achieve long-term financial goals, and protect investors from unwanted risks while allowing for potential rewards [Context 2].\n* **Strategies:** Various rebalancing strategies exist, including calendar and constant-mix rebalancing, which offer ways to manage changes effectively [Context 2].\n* **Considerations:** Critical considerations for rebalancing include required withdrawal rates, other income sources, and expected longevity [Context 3].\n* **Example:** A portfolio with a 70% equity and 30% fixed-income allocation may shift to an 80/20 allocation after a market rally, requiring rebalancing to realign with the original risk-return profile [Context 4].\n* **Frequency:** Rebalancing is generally recommended once or twice a year or whenever the asset allocation drifts significantly from its target [Context 5].\n\nRebalancing is essential for maintaining a portfolio's risk level and achieving long-term financial goals.",
+      "faithfulness": 0.8571428571428571,
+      "relevance": 0.9049251249566467,
+      "latency_sec": 4.106103999991319,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 8,
+      "query": "What is the significance of correlation in portfolio diversification?",
+      "answer": "\u2022 **Significance of correlation in portfolio diversification:**\n  \u2022 Helps investors combine assets that don\u2019t move together, smoothing returns and reducing portfolio volatility [Context 1].\n  \u2022 Reduces exposure to unsystematic risk (company-specific risk) by investing in various companies across different sectors, industries, or countries [Context 1].\n  \u2022 Increases diversification and reduces overall volatility and risk by combining assets with negative correlation [Context 2].\n  \u2022 Low correlation reduces volatility, creating consistency and improving overall performance [Context 3].\n  \u2022 The degree to which two assets move in relation to each other, ranging from -1 (perfectly negative correlation) to +1 (perfectly positive correlation) [Context 5].\n\n**Correlation coefficient formula:**\n  \u2022 Correlation coefficient = Covariance of two assets / (Product of standard deviation of both assets)\n  \u2022 Example: If the covariance is 0.05 and the standard deviations are 0.1 and 0.2, the correlation coefficient would be 0.05 / (0.1 * 0.2) = 0.25.\n\n**Practical example:**\n  \u2022 A portfolio holding diversified assets helps to create more consistency and improve overall performance [Context 3].\n\n**Key point:**\n  \u2022 Correlation measures how closely two investments move in relation to each other, but it doesn't capture all aspects of the relationship between assets [Context 5].\n\nCorrelation is a crucial concept in",
+      "faithfulness": 0.8888888888888888,
+      "relevance": 0.9021100518572333,
+      "latency_sec": 4.313066799993976,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 9,
+      "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+      "answer": "The role of the efficient frontier in optimal portfolio selection is to represent the set of portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of expected return [Context 2]. It is formed by plotting the portfolios with the greatest expected return for each level of risk, which coincides with the top portion of the minimum-variance frontier [Context 4, Context 5].\n\nKey components of the efficient frontier include:\n\n* **Minimum-Variance Frontier**: The set of portfolios with the lowest risk for a given level of expected return [Context 4].\n* **Efficient Frontier**: The set of portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of expected return [Context 2].\n* **Global Minimum-Variance Portfolio**: The portfolio with the minimum variance for each given level of expected return [Context 1].\n\nThe efficient frontier is used to determine an investor's optimal portfolio by overlaying the capital allocation line with the indifference curves of investors [Context 1]. A risk-averse investor would only choose a portfolio that lies on the efficient frontier, as it offers the highest expected return for a given level of risk [Context 4, Context 5].\n\nThe efficient frontier moves upward as more low-correlation assets with sufficient expected return are added to the mix, or when return expectations increase for asset classes while volatility and correlation assumptions remain unchanged [Context 2].\n\nThe capital allocation line",
+      "faithfulness": 0.5555555555555556,
+      "relevance": 0.9179831469660096,
+      "latency_sec": 4.145577000002959,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 10,
+      "query": "What is beta and how is it used in portfolio management?",
+      "answer": "**Definition of Beta:**\nBeta, formal definition: A measure of an asset's systematic risk or market risk, representing its volatility relative to the broader market. \nPractical example: A beta of 1.0 indicates a stock has market risk identical to the broader S&P 500, while a beta greater than 1 means that the asset is more volatile than the market [Context 1].\n\n**Calculation of Beta:**\nBeta = Covariance (Ri, Rm) / Variance (Rm)\nWhere:\n- Ri = Return of the asset\n- Rm = Return of the market\n- Covariance (Ri, Rm) = The covariance between the asset's return and the market's return\n- Variance (Rm) = The variance of the market's return\n\n**Use of Beta in Portfolio Management:**\nBeta can be used to estimate the market risk of a portfolio by calculating the weighted average beta of its constituent assets [Context 1].\nTo create a diversified portfolio, an investor can use the beta of each stock [Context 2].\nSmart beta strategies feature somewhat higher management fees and higher portfolio turnover relative to passive market-cap weighted strategies [Context 3].\n\n**Chronological Relationship:**\nBeta captures an asset's systematic risk, which cannot be eliminated by diversification, and is usually based on historical returns [Context 5].\n\nBeta is a measure of an asset's systematic risk or market risk, representing its volatility relative to the broader",
+      "faithfulness": 0.7142857142857143,
+      "relevance": 0.8875995345354374,
+      "latency_sec": 4.3581311000016285,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 11,
+      "query": "What are the key components of an Investment Policy Statement?",
+      "answer": "The key components of an Investment Policy Statement (IPS) include:\n\n* Investment Objectives: define the investor's return requirements and risk tolerance [Context 4]\n* Investment Constraints: include the investor's time horizon, liquidity needs, tax considerations, legal and regulatory requirements, and unique needs and preferences [Context 4]\n* Investment Guidelines: policies regarding permitted asset types and the amount of leverage to use [Context 4]\n\nThe IPS is a written document that captures the client's investment objectives and constraints [Context 3]. It is the starting point of the portfolio management process and a plan for achieving investment success [Context 4].\n\nThe IPS should include information about the investor's risk tolerance [Context 1], unique needs and preferences [Context 1], and permitted asset types and use of leverage in the investment account [Context 1].\n\nThe IPS also includes information about how policy may be executed, including restrictions and exclusions, which is best described as the Investment Guidelines [Context 2].\n\nA well-written IPS is essential for building a suitable portfolio for a client, as it helps investment advisers understand the client's investment goals, resources, circumstances, and constraints [Context 5].",
+      "faithfulness": 0.6,
+      "relevance": 0.8406316041946411,
+      "latency_sec": 3.7592693000042345,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 12,
+      "query": "How do time horizons affect portfolio construction decisions?",
+      "answer": "Time horizons significantly affect portfolio construction decisions. \n\n\u2022 A longer time horizon allows for riskier investments with higher growth potential, as investors can weather market fluctuations [Context 4].\n\u2022 A shorter time horizon requires more conservative investments to preserve assets and provide stable returns [Context 4].\n\u2022 Time horizon influences the nature of investments used in the portfolio, with a 10-year horizon requiring a restructuring of the portfolio as the investor begins to draw an income [Context 2].\n\u2022 A high risk tolerance may lead to investments with less stability but higher growth potential, while a risk-averse investor may pursue safer options with lower returns [Context 4].\n\u2022 Time horizons range from short-term (hours, days, or weeks) to long-term (years and decades), with post-college professionals having investment horizons of decades [Context 5].\n\nThe time horizon of an investor will affect the nature of investments used in the portfolio, and it is essential to consider this factor when constructing a portfolio.",
+      "faithfulness": 0.8571428571428571,
+      "relevance": 0.9231471694453711,
+      "latency_sec": 3.1845551999867894,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 13,
+      "query": "What role does liquidity play in portfolio constraints?",
+      "answer": "\u2022 **Liquidity in Portfolio Constraints:**\n  Liquidity refers to the ability to turn investment assets into spendable cash in a short period of time without having to make significant price concessions [Context 1].\n  Investor needs for liquidity may require holding liquid assets, such as for tuition or assisted living expenses [Context 1].\n  Liquidity requirements should be stated in the Investment Policy Statement (IPS) to determine the allocation of the portfolio to cover liabilities [Context 2].\n  Examples of liquidity requirements include outlays for healthcare payments or tuition fees for individual investors, or spending rules and requirements for endowment funds for institutions [Context 2].\n  The need for liquidity forces property and casualty (P&C) companies to accept investments with relatively low expected returns [Context 3].\n  Liquidity is of less concern to life insurance companies given the greater predictability of life insurance payouts [Context 3].\n\n\u2022 **Impact of Liquidity on Portfolio Allocation:**\n  High liquidity needs often translate to a high portfolio allocation to bonds or cash [Context 5].\n  Risky or illiquid investments may be inappropriate for an investor with a short time horizon [Context 5].\n\n\u2022 **Liquidity in IPS Constraints:**\n  Liquidity is one of the major components of an IPS, along with time horizon, tax concerns, legal and regulatory factors, and unique circumstances [Context 2].\n  The IPS should note any restrictions in trading, such as an obligation to refrain from trading,",
+      "faithfulness": 0.7,
+      "relevance": 0.8653469343586846,
+      "latency_sec": 5.78212319999875,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 14,
+      "query": "Explain tax considerations in portfolio planning.",
+      "answer": "Tax considerations in portfolio planning are crucial for maximizing after-tax returns and increasing the portfolio's size over time [Context 1]. Key points to consider include:\n\n* Accounting for the investor's specific tax situation\n* Balancing the portfolio to minimize tax liabilities\n* Considering the tax treatments of capital gains and income\n* Managing the time value of money by deferring taxation of gains relative to income [Context 3]\n\nTax implications can significantly affect after-tax returns, and investors should account for taxes when planning [Context 4]. This includes:\n\n* Managing risk and pursuing growth while minimizing losses\n* Shifting from aggressive growth to conservative, income-focused strategies as the investor nears retirement\n* Regularly reviewing and rebalancing the portfolio to ensure it stays aligned with objectives and market changes\n\nTo manage tax considerations, investors may wish to hold a portfolio that emphasizes capital gains and receives little income, especially for taxable investors [Context 3]. A financial advisor or tax professional can provide guidance on tax strategies and help investors create an investment policy statement (IPS) that spells out their needs and circumstances [Context 5].\n\nTax considerations are a critical component of portfolio planning, and investors should seek professional advice to maximize their after-tax returns and increase the size of their portfolio over time.",
+      "faithfulness": 0.6,
+      "relevance": 0.8925492369427599,
+      "latency_sec": 4.272528500005137,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 15,
+      "query": "How do regulatory requirements impact portfolio construction?",
+      "answer": "Regulatory requirements impact portfolio construction by influencing the investment manager's decisions on asset allocation and risk management. According to Context 3, regulatory requirements are one of the typical categories of constraints that need to be taken into account when constructing a portfolio for the client that meets the objectives.\n\nFormal Definition: Regulatory requirements refer to the rules and regulations imposed by government agencies or other external bodies that govern the investment activities of a portfolio manager.\n\nPractical Example: In Context 4, environmental regulation is cited as a regulatory hurdle for property development, which can increase construction time or delay successful leases, reducing the level of rents relative to initial expectations.\n\nCalculation: No specific calculation is required for this answer.\n\nSteps to consider regulatory requirements in portfolio construction:\n\n1. Identify the regulatory requirements that apply to the portfolio, such as laws and regulations related to tax, labor, or environmental issues.\n2. Assess the impact of these requirements on the portfolio's asset allocation and risk management strategies.\n3. Consider the potential risks and opportunities associated with regulatory changes or non-compliance.\n4. Update the Investment Policy Statement (IPS) to reflect the regulatory requirements and their implications for the portfolio.\n\nChronological Relationship: Regulatory requirements can change over time, and the investment manager must stay informed about these changes to ensure compliance and make informed investment decisions.\n\nSupporting Context: Context 3 and Context 4 provide examples of regulatory requirements impacting portfolio construction.\n\nThe investment manager must carefully consider regulatory requirements when constructing a portfolio to ensure compliance and achieve the",
+      "faithfulness": 0.5,
+      "relevance": 0.8991758823394775,
+      "latency_sec": 4.141393900004914,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 16,
+      "query": "Discuss the relationship between systematic and unsystematic risk.",
+      "answer": "\u2022 **Definition of Systematic and Unsystematic Risk:**\n  - Systematic risk: The risk tied to the broader market, also referred to as market risk [Context 2].\n  - Unsystematic risk: The risk specific to a company or industry [Context 2].\n\n\u2022 **Relationship between Systematic and Unsystematic Risk:**\n  - Systematic risk is attributed to broad market factors, while unsystematic risk is attributed to specific company or industry factors [Context 2].\n  - Systematic risk can include interest rate changes, recessions, or inflation [Context 2].\n  - Unsystematic risk can be mitigated through diversification [Context 1, Context 3].\n\n\u2022 **Measuring Systematic Risk:**\n  - Beta measures the volatility of a stock or portfolio relative to the entire market [Context 2].\n\n\u2022 **Examples of Systematic and Unsystematic Risk:**\n  - Systematic risk: A recession or interest rate changes affecting every company [Context 4].\n  - Unsystematic risk: A company's bad leadership or vulnerability to weather events [Context 4].\n\nSystematic and unsystematic risk are two distinct types of risk that affect investments, with systematic risk being tied to the broader market and unsystematic risk being specific to a company or industry.",
+      "faithfulness": 1.0,
+      "relevance": 0.848796656656066,
+      "latency_sec": 4.054356499997084,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 17,
+      "query": "How do you handle concentration limits in portfolio optimization?",
+      "answer": "To handle concentration limits in portfolio optimization, we consider the following:\n\n* Concentration limits are not explicitly mentioned in the provided context, but we can infer that they are related to the characteristics of individual asset classes, such as transaction costs, price volatility, and correlation with other portfolio holdings [Context 3].\n* To determine the optimal corridor bands, we consider the unique properties of each asset class, including transaction costs, price volatility, and correlation with other portfolio holdings [Context 3].\n* The optimal investor portfolio is selected by overlaying the indifference curves that incorporate investor preferences on the capital allocation line [Context 5].\n* The capital allocation line (CAL) is a graphical representation of the optimal portfolio, which is a linear combination of the risk-free asset and the optimal risky portfolio [Context 4].\n\nTo determine the optimal concentration limits, we can use the following steps:\n\n1. Identify the unique properties of each asset class, including transaction costs, price volatility, and correlation with other portfolio holdings.\n2. Determine the optimal corridor bands based on these properties.\n3. Overlay the indifference curves that incorporate investor preferences on the capital allocation line to select the optimal investor portfolio.\n\nThe optimal concentration limits will depend on the investor's risk preferences and the characteristics of the asset classes in the portfolio.\n\nThe optimal investor portfolio is selected by overlaying the indifference curves that incorporate investor preferences on the capital allocation line, allowing identification of the optimal investor portfolio.",
+      "faithfulness": 0.5833333333333334,
+      "relevance": 0.8771544883091326,
+      "latency_sec": 4.2765439000068,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 18,
+      "query": "Explain the difference between strategic and tactical asset allocation.",
+      "answer": "\u2022 **Strategic Asset Allocation**: \n  - Formal definition: A set of percentage allocations to various asset classes designed to meet the investor's objectives [Context 1].\n  - Practical example: Mrs. Smith's strategic asset allocation of 40% equities / 40% fixed income / 20% cash [Context 2].\n  - Characteristics: Compatible with a buy-and-hold strategy, emphasizes diversification to reduce risk and improve portfolio returns [Context 2].\n\n\u2022 **Tactical Asset Allocation**: \n  - Formal definition: An allocation that deviates from the baseline (strategic) allocation to profit from a forecast of shorter-term opportunities in specific asset classes [Context 1].\n  - Practical example: Shifting more capital into commodities to take advantage of a substantial increase in demand [Context 3].\n  - Characteristics: Takes an active stance on the strategic asset allocation, adjusts long-term target weights for a short period to capitalize on market or economic opportunities [Context 3].\n\nKey differences:\n- Strategic asset allocation is a long-term approach, while tactical asset allocation is a short-term approach.\n- Strategic asset allocation is compatible with a buy-and-hold strategy, while tactical asset allocation is more suited to an active trading approach.\n\nTactical asset allocation allows actual asset allocation to deviate from that of the strategic asset allocation, attempting to take advantage of temporary dislocations from the market conditions [Context 4].",
+      "faithfulness": 0.9,
+      "relevance": 0.8856415348328536,
+      "latency_sec": 4.3218602999986615,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 19,
+      "query": "What factors should be considered in evaluating portfolio performance?",
+      "answer": "When evaluating portfolio performance, the following factors should be considered:\n\n* Risk and return [Context 1, Context 2]\n* Excess returns per unit of total portfolio risk (Sharpe ratio) [Context 1]\n* Ex ante (expected) and ex post (actual) measures of portfolio performance [Context 1]\n* Attribution analysis to identify sources of returns differences between active and passive portfolios [Context 2]\n* Adjustment for risk differences between active and benchmark portfolios [Context 2]\n* Use of performance evaluation measures such as the Sharpe ratio, Treynor ratio, M2, and Jensen's alpha [Context 3]\n* Accuracy of benchmark selection and measurement of risk and return [Context 4]\n\nTo calculate the Sharpe ratio, use the following formula:\n\nSharpe Ratio = (Expected Return - Risk-Free Rate) / Standard Deviation\n\nWhere:\n- Expected Return is the expected return of the portfolio\n- Risk-Free Rate is the return of a risk-free asset (e.g. a bond)\n- Standard Deviation is the total portfolio risk\n\nFor example, if the expected return of a portfolio is 10%, the risk-free rate is 2%, and the standard deviation is 15%, the Sharpe ratio would be:\n\nSharpe Ratio = (10% - 2%) / 15% = 0.67\n\nThis indicates that the portfolio has a Sharpe ratio of 0.67, which is a measure of its excess returns per",
+      "faithfulness": 0.0,
+      "relevance": 0.814071619930018,
+      "latency_sec": 4.646521899994696,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 20,
+      "query": "How can investors achieve diversification across asset classes?",
+      "answer": "As investors consider ways to diversify their holdings, there are dozens of strategies to implement. Many of the methods below can be combined to enhance the level of diversification within a single portfolio. Fund managers and investors often diversify their investments across asset classes and determine what percentages of the portfolio to allocate to each. Each asset class has a different, unique set of risks and opportunities. Classes can include: The theory holds that what may negatively impact one asset class may benefit another. Investors can mitigate risk and potentially improve their returns by diversifying across different asset classes because various assets often respond differently to changing market conditions. U.S. Federal Reserve. \" Economic Well-Being of U.S. Households in 2023 .\" Pages 67-70. The automatic diversification in each share purchased eliminates company-specific risk. For example, a total market or S&P 500 ETF provides exposure to hundreds of stocks in one investment. Investors who want to expand further can use sector-specific or international funds to gain exposure to different industries or regions without having to select individual stocks. When we discuss [from retrieved contexts]",
+      "faithfulness": 0.9285714285714286,
+      "relevance": 0.8761286735534668,
+      "latency_sec": 0.9680690999957733,
+      "backend": "fallback_context_only"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "examples": [
+    {
+      "query": "What is the efficient frontier in portfolio management?",
+      "generation_backend": "huggingface_inference_api",
+      "faithfulness_score": 1.0,
+      "supported_claims": 7,
+      "total_claims": 7,
+      "claims": [
+        {
+          "claim": "\u2022 The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return [Context 1].",
+          "supported": true,
+          "match_ratio": 0.962
+        },
+        {
+          "claim": "\u2022 It is the set of all attainable risky assets with the highest expected return for a given level of risk or the lowest amount of risk for a given level of return [Context 2].",
+          "supported": true,
+          "match_ratio": 0.91
+        },
+        {
+          "claim": "\u2022 The efficient frontier is the line that connects those portfolios with the minimal risk for each level of expected return [Context 3].",
+          "supported": true,
+          "match_ratio": 0.58
+        },
+        {
+          "claim": "\u2022 It is the set of portfolios that have the greatest expected return for each level of risk [Context 4].",
+          "supported": true,
+          "match_ratio": 0.785
+        },
+        {
+          "claim": "The efficient frontier can be plotted in the risk-return space, and it coincides with the top portion of the minimum variance frontier [Context 3].",
+          "supported": true,
+          "match_ratio": 0.744
+        },
+        {
+          "claim": "A portfolio is deemed more efficient if it has the same expected return but lower risk [Context 5].",
+          "supported": true,
+          "match_ratio": 0.822
+        },
+        {
+          "claim": "The efficient frontier is a key concept in portfolio management, allowing investors to find the optimal balance between risk and return.",
+          "supported": true,
+          "match_ratio": 0.511
+        }
+      ],
+      "answer": "\u2022 The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return [Context 1].\n\u2022 It is the set of all attainable risky assets with the highest expected return for a given level of risk or the lowest amount of risk for a given level of return [Context 2].\n\u2022 The efficient frontier is the line that connects those portfolios with the minimal risk for each level of expected return [Context 3].\n\u2022 It is the set of portfolios that have the greatest expected return for each level of risk [Context 4].\n\nThe efficient frontier can be plotted in the risk-return space, and it coincides with the top portion of the minimum variance frontier [Context 3].\n\nA portfolio is deemed more efficient if it has the same expected return but lower risk [Context 5].\n\nThe efficient frontier is a key concept in portfolio management, allowing investors to find the optimal balance between risk and return.",
+      "contexts_preview": [
+        "MPT emphasizes the power of diversification in reducing overall portfolio risk. By combining assets that don't move in perfect tandem with each other, investors can smooth out the ups and downs of their portfolio's performance. The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected r",
+        "The efficient frontier does not account for the risk-free rate. The efficient frontier is the set of all attainable risky assets with the highest expected return for a given level of risk or the lowest amount of risk for a given level of return. 26. C is correct. The global minimum-variance portfolio is the portfolio on the minimum-variance frontier with the lowest standard deviation.",
+        "The line that connects those portfolios with the minimal risk for each level of expected return (above that of the minimum-variance portfolio\u2014the portfolio with the minimum variance for each given level of expected return) is the efficient frontier. Clearly, the efficient frontier will move \u201cupward\u201d as more low-correlation assets with sufficient expected return are added to the mix because it lowe"
+      ]
+    },
+    {
+      "query": "What are the key components of an Investment Policy Statement?",
+      "generation_backend": "huggingface_inference_api",
+      "faithfulness_score": 0.6,
+      "supported_claims": 3,
+      "total_claims": 5,
+      "claims": [
+        {
+          "claim": "The key components of an Investment Policy Statement (IPS) include:\n\n* Investment Objectives: define the investor's return requirements and risk tolerance [Context 4]\n* Investment Constraints: include the investor's time horizon, liquidity needs, tax considerations, legal and regulatory requirements, and unique needs and preferences [Context 4]\n* Investment Guidelines: policies regarding permitted asset types and the amount of leverage to use [Context 4]\n\nThe IPS is a written document that captures the client's investment objectives and constraints [Context 3].",
+          "supported": false,
+          "match_ratio": 0.448
+        },
+        {
+          "claim": "It is the starting point of the portfolio management process and a plan for achieving investment success [Context 4].",
+          "supported": true,
+          "match_ratio": 0.583
+        },
+        {
+          "claim": "The IPS should include information about the investor's risk tolerance [Context 1], unique needs and preferences [Context 1], and permitted asset types and use of leverage in the investment account [Context 1].",
+          "supported": true,
+          "match_ratio": 0.489
+        },
+        {
+          "claim": "The IPS also includes information about how policy may be executed, including restrictions and exclusions, which is best described as the Investment Guidelines [Context 2].",
+          "supported": true,
+          "match_ratio": 0.716
+        },
+        {
+          "claim": "A well-crafted IPS is essential for building a suitable portfolio for a client, as it helps investment advisers understand the client's investment goals, resources, circumstances, and constraints [Context 5].",
+          "supported": false,
+          "match_ratio": 0.325
+        }
+      ],
+      "answer": "The key components of an Investment Policy Statement (IPS) include:\n\n* Investment Objectives: define the investor's return requirements and risk tolerance [Context 4]\n* Investment Constraints: include the investor's time horizon, liquidity needs, tax considerations, legal and regulatory requirements, and unique needs and preferences [Context 4]\n* Investment Guidelines: policies regarding permitted asset types and the amount of leverage to use [Context 4]\n\nThe IPS is a written document that captures the client's investment objectives and constraints [Context 3]. It is the starting point of the portfolio management process and a plan for achieving investment success [Context 4].\n\nThe IPS should include information about the investor's risk tolerance [Context 1], unique needs and preferences [Context 1], and permitted asset types and use of leverage in the investment account [Context 1].\n\nThe IPS also includes information about how policy may be executed, including restrictions and exclusions, which is best described as the Investment Guidelines [Context 2].\n\nA well-crafted IPS is essential for building a suitable portfolio for a client, as it helps investment advisers understand the client's investment goals, resources, circumstances, and constraints [Context 5].",
+      "contexts_preview": [
+        "C. end product of the portfolio management process. 2. The component of an investment policy statement that defines the investment objectives is most likely to include information about: A. the investor\u2019s risk tolerance. B. unique needs and preferences of the investor. C. permitted asset types and use of leverage in the investment account.",
+        "4. The section of the investment policy statement (IPS) that provides information about how policy may be executed, including restrictions and exclusions, is best described as the: A. Investment Objectives. B. Investment Guidelines.",
+        "Learning Module 4 Basics of Portfolio Planning and Construction This reading is organized as follows: Section 2 discusses the investment policy statement, a written document that captures the client\u2019s investment objectives and the constraints. Section 3 discusses the portfolio construction process, including the first step of specifying a strategic asset allocation for the client. Section 4 conclu"
+      ]
+    },
+    {
+      "query": "How do regulatory requirements impact portfolio construction?",
+      "generation_backend": "huggingface_inference_api",
+      "faithfulness_score": 0.6666666666666666,
+      "supported_claims": 4,
+      "total_claims": 6,
+      "claims": [
+        {
+          "claim": "Regulatory requirements impact portfolio construction by influencing the investment manager's decisions on asset allocation and risk management.",
+          "supported": true,
+          "match_ratio": 0.48
+        },
+        {
+          "claim": "Key regulatory factors to consider include:\n\n* Compliance with laws and regulations, such as those related to pension funds [Context 2]\n* Adherence to tax laws and regulations, which can affect the client's tax status and investment decisions [Context 2]\n* Consideration of unique needs, such as minimizing exposure to oil and related stocks for an executive in the oil industry [Context 2]\n\nThe investment manager should allocate part of the portfolio to cover liabilities, such as healthcare payments or tuition fees, as required by the client's liquidity needs [Context 1].",
+          "supported": false,
+          "match_ratio": 0.291
+        },
+        {
+          "claim": "The IPS should state the likely requirements for withdrawing funds from the portfolio, and the manager should allocate part of the portfolio accordingly [Context 1].",
+          "supported": true,
+          "match_ratio": 0.581
+        },
+        {
+          "claim": "Regulatory requirements can also impact the portfolio's risk profile, as seen in the example of property development, which is subject to special risks, including regulatory issues, construction delays, and cost overruns [Context 4].",
+          "supported": true,
+          "match_ratio": 0.682
+        },
+        {
+          "claim": "In summary, regulatory requirements play a crucial role in portfolio construction, and investment managers must consider these factors when making strategic asset allocation decisions.",
+          "supported": true,
+          "match_ratio": 0.52
+        },
+        {
+          "claim": "Regulatory requirements impact portfolio construction by influencing the investment manager's decisions on asset allocation and risk management, and must be carefully considered to ensure compliance with laws and regulations.",
+          "supported": false,
+          "match_ratio": 0.433
+        }
+      ],
+      "answer": "Regulatory requirements impact portfolio construction by influencing the investment manager's decisions on asset allocation and risk management. \n\nKey regulatory factors to consider include:\n\n* Compliance with laws and regulations, such as those related to pension funds [Context 2]\n* Adherence to tax laws and regulations, which can affect the client's tax status and investment decisions [Context 2]\n* Consideration of unique needs, such as minimizing exposure to oil and related stocks for an executive in the oil industry [Context 2]\n\nThe investment manager should allocate part of the portfolio to cover liabilities, such as healthcare payments or tuition fees, as required by the client's liquidity needs [Context 1].\n\nThe IPS should state the likely requirements for withdrawing funds from the portfolio, and the manager should allocate part of the portfolio accordingly [Context 1].\n\nRegulatory requirements can also impact the portfolio's risk profile, as seen in the example of property development, which is subject to special risks, including regulatory issues, construction delays, and cost overruns [Context 4].\n\nIn summary, regulatory requirements play a crucial role in portfolio construction, and investment managers must consider these factors when making strategic asset allocation decisions.\n\nRegulatory requirements impact portfolio construction by influencing the investment manager's decisions on asset allocation and risk management, and must be carefully considered to ensure compliance with laws and regulations.",
+      "contexts_preview": [
+        "Learning Module 4 Basics of Portfolio Planning and Construction IPS CONSTRAINTS describe the major components of an IPS describe the investment constraints of liquidity, time horizon, tax concerns, legal and regulatory factors, and unique circumstances and their implications for the choice of portfolio assets In the following sections, we analyze five major types of constraints on portfolio select",
+        "Constraints: \u25a0 Liquidity: The portfolio consists of pension fund assets, and there is no need for liquidity in the short to medium term. \u25a0 Time Horizon: The portfolio will be invested with a 20-year time hori- zon. The client intends to retire in 20 years, at which time an income will be drawn from the portfolio. \u25a0 Tax Status: Under French law, contributions to the fund are made gross of tax and r",
+        "The Investment Policy Statement on a relatively high level of expected risk. As part of their financial planning, clients may specify specific spending goals, which need to be considered when setting risk tolerance and return requirements. The constraints section covers factors that need to be taken into account when constructing a portfolio for the client that meets the objectives. The typical ca"
+      ]
+    }
+  ]
+}
