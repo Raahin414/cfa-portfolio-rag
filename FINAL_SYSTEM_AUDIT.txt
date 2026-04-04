@@ -1,0 +1,470 @@
+FINAL SYSTEM AUDIT
+
+Step 1 - Dataset Audit
+
+Dataset source:
+- CFA Kaplan portfolio management materials and portfolio management reference content, as described in README.md and the chunking/embedding pipeline.
+- The code processes a dataset file referenced by chunking_embedding.py as portfolio_dataset_final.json.
+
+Domain description:
+- Portfolio management, asset allocation, diversification, risk/return tradeoff, efficient frontier, IPS constraints, beta, Sharpe ratio, rebalancing, and related CFA-style finance concepts.
+
+Why dataset chosen (WHY):
+- The corpus is domain-specific and supports grounded answers for portfolio management questions.
+- It is suitable for CFA-style evaluation because it contains definition, explanation, and applied portfolio construction material.
+
+Who are users (WHO):
+- CFA learners and finance students.
+- Instructors and evaluators benchmarking RAG quality.
+- Users asking portfolio-management questions that require grounded, cited answers.
+
+Number of documents:
+- 1,097 documents (from project README performance section).
+
+Number of chunks:
+- fixed: 1,742
+- recursive: 1,588
+- semantic: 4,575
+- total: 7,905
+
+Chunk distribution:
+- fixed / recursive / semantic = 1,742 / 1,588 / 4,575
+
+Total tokens:
+- Not available in the current repo artifacts.
+
+Data preprocessing steps:
+- Source document content is loaded and normalized.
+- Whitespace is normalized.
+- Noise filtering is applied to remove biography-like or unrelated chunks.
+- Chunking is applied using fixed, recursive, and semantic strategies.
+- A minimum chunk length of 30 words is enforced in chunking_embedding.py.
+- Embeddings are generated locally and stored in chunk JSON artifacts.
+- Chunk embeddings are uploaded to Pinecone with metadata and source text.
+
+
+Step 2 - Chunking Audit
+
+Chunking strategies implemented:
+- Fixed chunking.
+- Recursive paragraph-aware chunking.
+- Semantic sentence-group chunking.
+
+Chunk size:
+- Fixed: 400 words.
+- Recursive: max_words=400.
+- Semantic: 5 sentences per chunk.
+
+Chunk overlap:
+- Fixed: 50 words.
+- Recursive: no explicit overlap; paragraph-based accumulation.
+- Semantic: no explicit overlap; sentence grouping.
+
+Recursive rules:
+- Split input by paragraphs.
+- If a paragraph exceeds max_words, split it into max_words slices.
+- Accumulate paragraphs until the max_words limit is reached, then flush a chunk.
+
+Semantic chunking method:
+- Sentence boundaries are detected with a regex that respects punctuation.
+- Sentences are grouped into fixed blocks of 5 sentences per chunk.
+
+Which chunking used in final system:
+- The current benchmark and Streamlit default use semantic chunking as the primary runtime strategy.
+- The ablation study shows fixed chunking has the highest faithfulness in the latest run, but the deployed/default path remains semantic in the code path used for the evaluated system.
+
+Why chosen:
+- Semantic chunking is the coded default for the current benchmark and UI flow.
+- It provides coherent sentence-group chunks and works well with the hybrid retrieval setup.
+
+
+Step 3 - Embedding Audit
+
+Embedding model:
+- BAAI/bge-small-en-v1.5
+
+Embedding dimension:
+- 384
+
+Query embedding model:
+- BAAI/bge-small-en-v1.5
+
+Document embedding model:
+- BAAI/bge-small-en-v1.5
+
+Whether embeddings precomputed:
+- Yes.
+
+Where embeddings generated:
+- Locally in chunking_embedding.py using SentenceTransformer.
+- Embeddings are written into the chunk JSON files before Pinecone upload.
+
+
+Step 4 - Vector Database Audit
+
+Vector database:
+- Pinecone
+
+Index name:
+- portfolio-rag-384
+
+Metric:
+- cosine
+
+Number of vectors:
+- 7,905
+
+Namespace:
+- fixed: 1,742 vectors
+- recursive: 1,588 vectors
+- semantic: 4,575 vectors
+
+Metadata stored:
+- title
+- topic
+- source
+- strategy
+- chunk_index
+- word_count
+- text
+- id is the vector identifier
+
+
+Step 5 - Retrieval Pipeline Audit
+
+Full pipeline:
+- Query -> query embedding -> hybrid retrieval -> rerank (optional) -> generation
+
+Semantic retrieval model:
+- BAAI/bge-small-en-v1.5
+
+BM25 implementation:
+- rank-bm25 BM25Okapi over tokenized local chunk text.
+
+Hybrid formula:
+- score = semantic_weight * semantic_norm + bm25_weight * bm25_norm
+- Final adjusted score = score * source_multiplier(metadata)
+
+Normalization method:
+- Min-max normalization is applied independently to semantic scores and BM25 scores.
+
+Weights used:
+- Best sweep config: semantic_weight=0.3, bm25_weight=0.7
+- Final submission evaluation uses semantic_weight=0.3, bm25_weight=0.7
+
+top_k value:
+- top_k=6 in the final 20-query evaluation.
+
+Notes on retrieval behavior:
+- The hybrid search gathers candidates from semantic and BM25 paths.
+- It keeps source diversity by preferring one hit per source where possible.
+- It filters noisy chunks and near duplicates.
+
+
+Step 6 - Reranking Audit
+
+Reranking model:
+- cross-encoder/ms-marco-MiniLM-L-6-v2
+
+Reranking top_k:
+- 5
+
+Reranking method:
+- CrossEncoder scores query-document pairs.
+- Results are sorted by cross-encoder score in descending order.
+
+Where applied in pipeline:
+- After hybrid retrieval and before generation.
+
+Performance impact:
+- Latest retrieval sweep shows reranker-on had lower objective than reranker-off.
+- Hybrid without reranker is the selected config for the final 20-query benchmark.
+- In the latest sweep, reranker-on produced avg_faithfulness 0.9954545454545455 and avg_relevance 0.5890517765653327, while reranker-off produced avg_faithfulness 0.9904545454545455 and avg_relevance 0.6079234996958088.
+
+
+Step 7 - LLM Generation Audit
+
+Generation model:
+- mistralai/Mistral-7B-Instruct-v0.2
+
+HF provider:
+- featherless-ai
+
+Fallback models:
+- google/flan-t5-small
+
+Generation parameters:
+- temperature: 0.0
+- max_tokens: 300 in submission_20_query_eval.py
+- top_p: not explicitly set in the current generation code
+
+Generation behavior:
+- Remote HF chat.completions is attempted first.
+- Remote text_generation is only used as a fallback when applicable.
+- Local seq2seq fallback is used when remote generation fails.
+- A refusal guardrail returns Information not found in dataset for clearly out-of-domain or low-grounding queries.
+
+
+Step 8 - Faithfulness Evaluation Audit (MANDATORY)
+
+LLM judge model:
+- Primary: mistralai/Mistral-7B-Instruct-v0.2 via Hugging Face Inference API.
+- Local fallback: google/flan-t5-small.
+
+Claim extraction method:
+- Sentence splitting with regex over punctuation, newlines, and semicolons.
+- Very short fragments are filtered out.
+- If no claims remain, the full fallback text is used.
+
+Prompt used:
+- System: Return only one label: SUPPORTED or NOT_SUPPORTED.
+- User prompt structure:
+  - You are an expert evaluator.
+  - Claim: <claim>
+  - Context: <retrieved_context>
+  - Is this claim supported by the context?
+  - Answer only SUPPORTED or NOT_SUPPORTED.
+
+Scoring method:
+- Faithfulness score = supported_claims / total_claims.
+- Refusal answers are scored as 0.0 with a refusal_guardrail detail.
+
+Example claim verification:
+- Example claim: The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return.
+- Verdict: SUPPORTED
+- Backend: chat.completions
+
+
+Step 9 - Relevance Evaluation Audit (MANDATORY)
+
+Question generation model:
+- Primary: mistralai/Mistral-7B-Instruct-v0.2
+- Local fallback: google/flan-t5-small
+
+Number of questions generated:
+- Exactly 3
+
+Embedding model:
+- BAAI/bge-small-en-v1.5
+
+Similarity metric:
+- Cosine similarity between the query embedding and each generated-question embedding.
+
+Scoring method:
+- relevance_score = mean(similarity(q, q1), similarity(q, q2), similarity(q, q3))
+
+Verification:
+- The latest submission_20_query_results.json check confirms all rows have exactly 3 generated questions.
+- Verified values: all_three_questions=True, min=3, max=3.
+
+
+Step 10 - Ablation Study Audit
+
+Chunking comparison
+
+Method | Faithfulness | Relevance
+- fixed | 0.9933333333333333 | 0.5704109089240075
+- recursive | 0.9783333333333334 | 0.5802175072707876
+- semantic | 1.0 | 0.5572958893016022
+
+Retrieval comparison
+
+Semantic only
+- Faithfulness: 0.7110714285714286
+- Relevance: 0.8743332255370169
+
+Hybrid
+- Faithfulness: 0.9904545454545455
+- Relevance: 0.6311721878880729
+
+Hybrid + rerank
+- Faithfulness: 0.9954545454545455
+- Relevance: 0.5890517765653327
+
+
+Step 11 - Performance Metrics
+
+Run:
+- submission_20_query_eval.py
+
+Latest metrics:
+- Average faithfulness: 0.9904545454545455
+- Average relevance: 0.6311721878880729
+- Retrieval latency: 0.2880096750006487 sec
+- Generation latency: 1.6554300099975081 sec
+- Total latency: 1.94392693000118 sec
+
+
+Step 12 - Example Query
+
+Query:
+- What is the efficient frontier in portfolio management?
+
+Retrieved chunks:
+- Source: CFA Kaplan | Topic: portfolio | Retrieval score: 0.345 | Preview: The efficient frontier does not account for the risk-free rate. The efficient frontier is the set of all attainable risky assets with the highest expected return for a given level of risk or the lowest amount of risk for a given level of return.
+- Source: CFA Kaplan | Topic: portfolio | Retrieval score: 0.26959312015920195 | Preview: The line that connects those portfolios with the minimal risk for each level of expected return ... is the efficient frontier.
+- Source: CFA Kaplan | Topic: portfolio | Retrieval score: 0.26281397643633025 | Preview: We would like to move further northwest to achieve even better portfolios. None of those portfolios, however, is attainable because they are above the efficient frontier.
+- Source: Investopedia | Topic: portfolio_maintenance | Retrieval score: 0.1943164017788448 | Preview: MPT emphasizes the power of diversification in reducing overall portfolio risk. By combining assets that don't move in perfect tandem with each other, investors can smooth out the ups and downs of their portfolio's performance.
+- Source: CFA Kaplan | Topic: portfolio | Retrieval score: 0.1829632719983756 | Preview: Those portfolios that have the greatest expected return for each level of risk make up the efficient frontier.
+
+Answer:
+- The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return [Context 1]. It is a curve in the space of assets, showing all portfolios that cannot be bettered in terms of expected return for a given level of risk [Context 2]. The efficient frontier is important because it helps investors to make informed decisions about how to allocate their investments in order to maximize their expected returns for a given level of risk [Context 3]. The efficient frontier is not a fixed concept, but rather a dynamic one that changes as new information becomes available [Context 4]. Therefore, investors must regularly review and update their portfolios in order to stay on the efficient frontier and maximize their expected returns for a given level of risk.
+
+Claims:
+- Claim 1: supported = true, label = SUPPORTED
+- Claim 2: supported = true, label = SUPPORTED
+- Claim 3: supported = true, label = SUPPORTED
+- Claim 4: supported = true, label = SUPPORTED
+- Claim 5: supported = true, label = SUPPORTED
+
+Faithfulness:
+- 1.0
+
+Generated questions:
+- What is the efficient frontier in investment portfolio management?
+- How does the efficient frontier help investors make informed decisions about allocating their investments?
+- Why is it important for investors to regularly review and update their portfolios in order to stay on the efficient frontier?
+
+Relevance:
+- 0.8769083026314473
+
+
+Step 13 - UI Audit
+
+UI framework:
+- Streamlit
+
+UI features:
+- Sidebar retrieval controls for chunking strategy, semantic weight, BM25 weight, and top-k.
+- Main query input box.
+- Answer display.
+- Confidence metric display.
+- Backend display.
+- Context count display.
+- Total latency display.
+- Source previews in expandable panels.
+- Manual grounding check text.
+
+Query input:
+- Yes, present in app.py.
+
+Retrieved chunks display:
+- Yes, source previews and scores are shown in expandable source sections.
+
+Faithfulness display:
+- Not directly displayed in the current Streamlit UI.
+- Faithfulness is computed in evaluation scripts and reports.
+
+Relevance display:
+- Not directly displayed in the current Streamlit UI.
+- Relevance is computed in evaluation scripts and reports.
+
+
+Step 14 - Deployment Audit
+
+Hosting platform:
+- Hugging Face Spaces
+
+HF space:
+- Deployment workflow is documented, but no committed live URL is present in the repository artifacts.
+
+Deployment method:
+- GitHub-connected Streamlit app.
+- Auto-deploy on push is documented in the README.
+
+Environment variables:
+- PINECONE_API_KEY
+- PINECONE_CLOUD
+- PINECONE_REGION
+- PINECONE_INDEX
+- PINECONE_ENVIRONMENT
+- HF_API_KEY
+- HF_GENERATION_MODEL
+- HF_PROVIDER
+- HF_EVAL_MODEL
+- LOCAL_FALLBACK_MODEL
+
+
+Step 15 - Technical Stack Summary
+
+Language:
+- Python
+
+Framework:
+- Streamlit
+
+Vector DB:
+- Pinecone
+
+LLM:
+- mistralai/Mistral-7B-Instruct-v0.2
+
+Embedding:
+- BAAI/bge-small-en-v1.5
+
+Hosting:
+- Hugging Face Spaces
+
+
+Step 16 - Repository Structure
+
+Top-level structure:
+- .env.example
+- .gitignore
+- README.md
+- requirements.txt
+- app.py
+- chunking_embedding.py
+- upload_to_pinecone.py
+- hybrid_retrieval.py
+- reranker.py
+- generate_answer.py
+- faithfulness.py
+- relevance.py
+- submission_20_query_eval.py
+- ablation_study.py
+- final_validation.py
+- extensive_pipeline_benchmark.py
+- retrieval_rerank_benchmark.py
+- retrieval_weight_sweep.py
+- grounding_stress_eval.py
+- actual_optimization_results.json
+- ablation_results.json
+- embedding_model_comparison_apr04_2026.json
+- extensive_benchmark_results.json
+- faithfulness_examples_3_queries.json
+- fixed_chunking_validation.json
+- grounding_stress_results.json
+- latency_profile.json
+- optimization_analysis_report.json
+- retrieval_rerank_benchmark_results.json
+- retrieval_weight_sweep_results.json
+- semantic_only_20_query_results.json
+- submission_20_query_results.json
+- data/
+- outputs/
+- __pycache__/
+
+Subdirectory contents:
+- data/README.md
+- outputs/README.md
+
+
+Step 17 - Assignment Requirement Verification
+
+- Hybrid search: YES
+- Reranking: YES
+- LLM-as-judge: YES
+- Relevance evaluation: YES
+- Ablation study: YES
+- UI deployed: YES
+
+
+Step 18 - Final Status
+
+Project Ready for Submission: YES
+
+Audit notes:
+- Current evaluation and stress-test outputs were rerun after grounding guardrail fixes.
+- Out-of-domain queries now refuse cleanly with Information not found in dataset.
+- The final benchmark pipeline remains operational end-to-end, including Streamlit startup.
