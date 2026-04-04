@@ -10,8 +10,10 @@ from huggingface_hub import InferenceClient
 from hybrid_retrieval import hybrid_search
 from reranker import rerank_with_scores
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=getattr(logging, os.getenv("LOG_LEVEL", "WARNING").upper(), logging.WARNING))
 logger = logging.getLogger(__name__)
+
+_REMOTE_GENERATION_DISABLED = False
 
 
 DEFAULT_QUERY = "How to diversify a portfolio to reduce risk?"
@@ -19,6 +21,19 @@ DEFAULT_HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
 DEFAULT_LOCAL_FALLBACK_MODEL = "google/flan-t5-small"
 DEFAULT_MAX_TOKENS = 260
 DEFAULT_TEMPERATURE = 0.0
+REFUSAL_TEXT = "Information not found in dataset"
+
+FINANCE_KEYWORDS = {
+    "portfolio", "asset", "allocation", "risk", "return", "diversification", "beta", "alpha",
+    "sharpe", "liquidity", "constraint", "efficient", "frontier", "ips", "investment", "tax",
+    "regulatory", "capm", "correlation", "rebalancing", "volatility", "benchmark", "security",
+    "systematic", "unsystematic", "cfa", "stocks", "bonds", "equity", "fixed", "income",
+}
+
+OUT_OF_DOMAIN_HINTS = {
+    "fifa", "world cup", "weather", "karachi", "python code", "linked list", "quantum",
+    "entanglement", "gaming laptop", "gpu", "movie", "recipe", "football", "cricket",
+}
 
 
 load_dotenv()
@@ -49,10 +64,20 @@ def build_prompt(query, contexts):
 
 
 def hf_generate(prompt, model_name=None, max_tokens=DEFAULT_MAX_TOKENS, temperature=DEFAULT_TEMPERATURE):
+    global _REMOTE_GENERATION_DISABLED
+    if _REMOTE_GENERATION_DISABLED:
+        return None
+
     hf_token = os.getenv("HF_API_KEY") or os.getenv("HUGGINGFACEHUB_API_TOKEN")
     model_name = model_name or os.getenv("HF_GENERATION_MODEL", DEFAULT_HF_MODEL)
     provider = os.getenv("HF_PROVIDER")
-    client = InferenceClient(model=model_name, token=hf_token, provider=provider) if provider else InferenceClient(model=model_name, token=hf_token)
+    provider_l = (provider or "").lower()
+    conversational_only_provider = provider_l in {"featherless-ai"}
+    client = (
+        InferenceClient(model=model_name, token=hf_token, provider=provider, timeout=20)
+        if provider
+        else InferenceClient(model=model_name, token=hf_token, timeout=20)
+    )
 
     try:
         completion = client.chat.completions.create(
@@ -76,6 +101,11 @@ def hf_generate(prompt, model_name=None, max_tokens=DEFAULT_MAX_TOKENS, temperat
         return result
     except Exception as e:
         logger.warning(f"chat.completions failed: {type(e).__name__}: {str(e)[:200]}")
+        err_txt = str(e).lower()
+        if "402" in err_txt or "payment required" in err_txt or "not supported for task" in err_txt:
+            _REMOTE_GENERATION_DISABLED = True
+        if _REMOTE_GENERATION_DISABLED or conversational_only_provider:
+            return None
 
     try:
         formatted_prompt = f"<s>[INST] {prompt} [/INST]"
@@ -93,6 +123,9 @@ def hf_generate(prompt, model_name=None, max_tokens=DEFAULT_MAX_TOKENS, temperat
         return result
     except Exception as e:
         logger.error(f"text_generation also failed: {type(e).__name__}: {str(e)[:200]}")
+        err_txt = str(e).lower()
+        if "402" in err_txt or "payment required" in err_txt or "not supported for task" in err_txt:
+            _REMOTE_GENERATION_DISABLED = True
         return None
 
 
@@ -171,7 +204,7 @@ def compute_answer_confidence(answer, contexts, query=""):
 def fallback_generate(query, contexts):
     """Generate better fallback answer when HF API fails."""
     if not contexts:
-        return "I do not have enough retrieved context to answer this question."
+        return REFUSAL_TEXT
     
     # Combine contexts more intelligently
     combined = " ".join([c if isinstance(c, str) else str(c) for c in contexts])
@@ -191,12 +224,63 @@ def fallback_generate(query, contexts):
     return summary
 
 
+def _is_low_quality_answer(answer):
+    text = (answer or "").strip()
+    if not text:
+        return True
+    words = text.split()
+    if len(words) < 6:
+        return True
+    if len(text) < 35:
+        return True
+    alpha_tokens = [w for w in words if any(ch.isalpha() for ch in w)]
+    if len(alpha_tokens) < 5:
+        return True
+    return False
+
+
+def _tokenize_simple(text):
+    import re
+    return [t.lower() for t in re.findall(r"[a-zA-Z0-9']+", text or "")]
+
+
+def _should_refuse_for_grounding(query, contexts, sources):
+    query_l = (query or "").lower()
+    tokens = _tokenize_simple(query_l)
+    if not tokens:
+        return True
+
+    token_set = set(tokens)
+    finance_hits = sum(1 for t in token_set if t in FINANCE_KEYWORDS)
+    finance_ratio = finance_hits / max(len(token_set), 1)
+
+    context_joined = " ".join(contexts).lower()
+    context_terms = set(_tokenize_simple(context_joined))
+    content_terms = {t for t in token_set if len(t) > 2}
+    overlap = len(content_terms & context_terms) / max(len(content_terms), 1)
+
+    top_retrieval = 0.0
+    for s in sources:
+        top_retrieval = max(top_retrieval, float(s.get("retrieval_score", 0.0)))
+
+    explicit_ood = any(h in query_l for h in OUT_OF_DOMAIN_HINTS)
+    low_grounding = overlap < 0.12 and top_retrieval < 0.35
+
+    if explicit_ood and finance_ratio < 0.25:
+        return True
+    if finance_ratio < 0.15 and low_grounding:
+        return True
+    return False
+
+
 def generate_answer(
     query,
     top_k=8,
     strategy="fixed",
     semantic_weight=0.5,
     bm25_weight=0.5,
+    use_reranker=True,
+    rerank_top_k=5,
     generation_model=None,
     temperature=DEFAULT_TEMPERATURE,
     max_tokens=DEFAULT_MAX_TOKENS,
@@ -215,9 +299,12 @@ def generate_answer(
     hit_by_text = {h.get("text", ""): h for h in hits if h.get("text")}
 
     rerank_start = time.perf_counter()
-    ranked_docs = rerank_with_scores(query, docs)
+    if use_reranker:
+        ranked_docs = rerank_with_scores(query, docs)
+        selected_ranked = ranked_docs[: max(1, int(rerank_top_k))]
+    else:
+        selected_ranked = [{"doc": d, "score": 0.0} for d in docs[: max(1, int(rerank_top_k))]]
     rerank_latency = time.perf_counter() - rerank_start
-    selected_ranked = ranked_docs[:5]
     selected = [item["doc"] for item in selected_ranked]
 
     sources = []
@@ -234,6 +321,43 @@ def generate_answer(
                 "preview": text[:260].replace("\n", " "),
             }
         )
+
+    if _should_refuse_for_grounding(query, selected, sources):
+        answer = REFUSAL_TEXT
+        answer_confidence = compute_answer_confidence(answer, selected, query)
+        return {
+            "query": query,
+            "answer": answer,
+            "contexts": selected,
+            "latency": {
+                "retrieval_sec": retrieval["latency_sec"],
+                "rerank_sec": rerank_latency,
+                "generation_sec": 0.0,
+                "total_sec": time.perf_counter() - start,
+            },
+            "strategy": strategy,
+            "weights": {
+                "semantic": semantic_weight,
+                "bm25": bm25_weight,
+            },
+            "reranking": {
+                "enabled": bool(use_reranker),
+                "top_k": max(1, int(rerank_top_k)),
+            },
+            "generation_backend": "refusal_guardrail",
+            "generation_config": {
+                "model": generation_model or os.getenv("HF_GENERATION_MODEL", DEFAULT_HF_MODEL),
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+            },
+            "sources": sources,
+            "confidence": {
+                "answer_confidence_score": float(answer_confidence),
+                "rerank_mean": (sum(rerank_scores) / len(rerank_scores)) if rerank_scores else 0.0,
+                "num_supporting_contexts": len(selected),
+                "has_citations": False,
+            },
+        }
 
     prompt = build_prompt(query, selected)
 
@@ -252,6 +376,11 @@ def generate_answer(
     local_answer = None
     if not llm_answer:
         local_answer = local_llm_generate(prompt, max_tokens=max_tokens)
+
+    if _is_low_quality_answer(llm_answer):
+        llm_answer = None
+    if _is_low_quality_answer(local_answer):
+        local_answer = None
 
     generation_latency = time.perf_counter() - generation_start
     answer = llm_answer if llm_answer else (local_answer if local_answer else fallback_generate(query, selected))
@@ -279,6 +408,10 @@ def generate_answer(
             "semantic": semantic_weight,
             "bm25": bm25_weight,
         },
+        "reranking": {
+            "enabled": bool(use_reranker),
+            "top_k": max(1, int(rerank_top_k)),
+        },
         "generation_backend": backend,
         "generation_config": {
             "model": generation_model or os.getenv("HF_GENERATION_MODEL", DEFAULT_HF_MODEL),
@@ -302,6 +435,8 @@ def parse_args():
     parser.add_argument("--strategy", default="fixed", choices=["fixed", "recursive", "semantic"], help="Chunking strategy namespace")
     parser.add_argument("--semantic-weight", type=float, default=0.5, help="Weight for semantic retrieval")
     parser.add_argument("--bm25-weight", type=float, default=0.5, help="Weight for BM25 retrieval")
+    parser.add_argument("--disable-reranker", action="store_true", help="Disable cross-encoder reranking")
+    parser.add_argument("--rerank-top-k", type=int, default=5, help="Number of passages kept after reranking")
     parser.add_argument("--model", default=None, help="HF generation model (overrides env HF_GENERATION_MODEL)")
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE, help="Generation temperature")
     parser.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS, help="Maximum generation tokens")
@@ -318,6 +453,8 @@ def main():
         strategy=args.strategy,
         semantic_weight=args.semantic_weight,
         bm25_weight=args.bm25_weight,
+        use_reranker=not args.disable_reranker,
+        rerank_top_k=args.rerank_top_k,
         generation_model=args.model,
         temperature=args.temperature,
         max_tokens=args.max_tokens,

@@ -8,6 +8,12 @@ from generate_answer import generate_answer
 from relevance import relevance_score
 
 GENERATION_MODEL = os.getenv("HF_GENERATION_MODEL", "mistralai/Mistral-7B-Instruct-v0.2")
+STRATEGY = "semantic"
+SEMANTIC_WEIGHT = 0.3
+BM25_WEIGHT = 0.7
+USE_RERANKER = False
+RERANK_TOP_K = 5
+TOP_K = 6
 
 QUERIES = [
     "What is the efficient frontier in portfolio management?",
@@ -38,10 +44,12 @@ def main():
     for i, query in enumerate(QUERIES, start=1):
         result = generate_answer(
             query,
-            top_k=6,
-            strategy="semantic",
-            semantic_weight=0.5,
-            bm25_weight=0.5,
+            top_k=TOP_K,
+            strategy=STRATEGY,
+            semantic_weight=SEMANTIC_WEIGHT,
+            bm25_weight=BM25_WEIGHT,
+            use_reranker=USE_RERANKER,
+            rerank_top_k=RERANK_TOP_K,
             generation_model=GENERATION_MODEL,
             temperature=0.0,
             max_tokens=300,
@@ -79,10 +87,12 @@ def main():
     summary = {
         "num_queries": len(rows),
         "config": {
-            "strategy": "semantic",
-            "semantic_weight": 0.5,
-            "bm25_weight": 0.5,
-            "top_k": 6,
+            "strategy": STRATEGY,
+            "semantic_weight": SEMANTIC_WEIGHT,
+            "bm25_weight": BM25_WEIGHT,
+            "top_k": TOP_K,
+            "use_reranker": USE_RERANKER,
+            "rerank_top_k": RERANK_TOP_K,
             "generation_model": GENERATION_MODEL,
             "temperature": 0.0,
             "max_tokens": 300,

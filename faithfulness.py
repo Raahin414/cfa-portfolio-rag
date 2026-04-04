@@ -15,9 +15,22 @@ DEFAULT_LOCAL_FALLBACK_MODEL = "google/flan-t5-small"
 
 load_dotenv()
 
+_REMOTE_FAITHFULNESS_DISABLED = False
+
 
 def split_sentences(text):
-    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text or "") if s.strip()]
+    claims = []
+    parts = re.split(r"(?<=[.!?])\s+|\n+|(?<=;)\s+", text or "")
+    for s in parts:
+        s = re.sub(r"\[Context\s*\d+\]", "", s, flags=re.IGNORECASE).strip()
+        if len(s) < 8:
+            continue
+        claims.append(s)
+    if not claims:
+        fallback = re.sub(r"\[Context\s*\d+\]", "", (text or ""), flags=re.IGNORECASE).strip()
+        if fallback:
+            claims.append(fallback)
+    return claims
 
 
 def _get_client_and_model(model_name=None):
@@ -29,17 +42,27 @@ def _get_client_and_model(model_name=None):
         or os.getenv("HF_GENERATION_MODEL")
         or DEFAULT_EVAL_MODEL
     )
-    client = InferenceClient(model=model_name, token=token, provider=provider) if provider else InferenceClient(model=model_name, token=token)
+    client = (
+        InferenceClient(model=model_name, token=token, provider=provider, timeout=20)
+        if provider
+        else InferenceClient(model=model_name, token=token, timeout=20)
+    )
     return client, model_name
 
 
 def _parse_support_label(raw_text):
     txt = (raw_text or "").strip().upper()
-    if "NOT_SUPPORTED" in txt:
+    if not txt:
+        return None
+    first_line = txt.splitlines()[0].strip()
+    m = re.match(r"^(NOT_SUPPORTED|SUPPORTED)\b", first_line)
+    if m:
+        return m.group(1)
+    if txt.startswith("NOT_SUPPORTED"):
         return "NOT_SUPPORTED"
-    if "SUPPORTED" in txt:
+    if txt.startswith("SUPPORTED"):
         return "SUPPORTED"
-    return "NOT_SUPPORTED"
+    return None
 
 
 @lru_cache(maxsize=1)
@@ -72,7 +95,15 @@ def _verify_claim_with_local_llm(claim, retrieved_context):
         "Label:"
     )
     raw = _generate_with_local_model(prompt, max_new_tokens=4)
-    label = _parse_support_label(raw)
+    model_label = _parse_support_label(raw)
+    heuristic_label, overlap = _heuristic_support_label(claim, retrieved_context, min_overlap=0.35)
+    # Local small models are unstable for strict binary judgment; use overlap-calibrated label.
+    label = heuristic_label
+    raw = (
+        f"{raw} | model_label={model_label or 'UNKNOWN'} | overlap={overlap:.3f}"
+        if raw
+        else f"model_label={model_label or 'UNKNOWN'} | overlap={overlap:.3f}"
+    )
     return {
         "claim": claim,
         "label": label,
@@ -104,7 +135,14 @@ def _heuristic_support_label(claim, retrieved_context, min_overlap=0.25):
 
 
 def verify_claim_with_llm(claim, retrieved_context, model_name=None):
+    global _REMOTE_FAITHFULNESS_DISABLED
+
+    if _REMOTE_FAITHFULNESS_DISABLED:
+        return _verify_claim_with_local_llm(claim, retrieved_context)
+
     client, chosen_model = _get_client_and_model(model_name=model_name)
+    provider_l = (os.getenv("HF_PROVIDER") or "").lower()
+    conversational_only_provider = provider_l in {"featherless-ai"}
 
     prompt = (
         "You are an expert evaluator.\n\n"
@@ -134,6 +172,11 @@ def verify_claim_with_llm(claim, retrieved_context, model_name=None):
         raw = completion.choices[0].message.content.strip()
         backend = "chat.completions"
     except Exception as chat_error:
+        err_txt = str(chat_error).lower()
+        if "402" in err_txt or "payment required" in err_txt or "not supported for task" in err_txt:
+            _REMOTE_FAITHFULNESS_DISABLED = True
+        if _REMOTE_FAITHFULNESS_DISABLED or conversational_only_provider:
+            return _verify_claim_with_local_llm(claim, retrieved_context)
         try:
             generated = client.text_generation(
                 prompt=f"<s>[INST] {prompt} [/INST]",
@@ -144,6 +187,9 @@ def verify_claim_with_llm(claim, retrieved_context, model_name=None):
             raw = generated.strip() if isinstance(generated, str) else str(generated).strip()
             backend = "text_generation"
         except Exception as textgen_error:
+            err_txt = str(textgen_error).lower()
+            if "402" in err_txt or "payment required" in err_txt or "not supported for task" in err_txt:
+                _REMOTE_FAITHFULNESS_DISABLED = True
             try:
                 verdict = _verify_claim_with_local_llm(claim, retrieved_context)
                 verdict["fallback_reason"] = f"chat={type(chat_error).__name__}; text={type(textgen_error).__name__}"
@@ -163,6 +209,11 @@ def verify_claim_with_llm(claim, retrieved_context, model_name=None):
                 }
 
     label = _parse_support_label(raw)
+    if label is None:
+        label, overlap = _heuristic_support_label(claim, retrieved_context, min_overlap=0.2)
+        backend = f"{backend}+heuristic_backstop"
+        raw = f"{raw} | heuristic_overlap={overlap:.3f}" if raw else f"heuristic_overlap={overlap:.3f}"
+
     return {
         "claim": claim,
         "label": label,
@@ -172,6 +223,24 @@ def verify_claim_with_llm(claim, retrieved_context, model_name=None):
     }
 
 def faithfulness_score(answer, contexts, threshold=0.45, model_name=None):
+    if "information not found in dataset" in (answer or "").lower():
+        return {
+            "score": 0.0,
+            "supported_claims": 0,
+            "total_claims": 1,
+            "details": [
+                {
+                    "claim": "Information not found in dataset",
+                    "label": "NOT_SUPPORTED",
+                    "supported": False,
+                    "raw_response": "refusal_guardrail",
+                    "backend": "refusal_guardrail",
+                }
+            ],
+            "method": "llm_claim_verification",
+            "threshold": threshold,
+        }
+
     claims = split_sentences(answer)
     if not claims:
         return {

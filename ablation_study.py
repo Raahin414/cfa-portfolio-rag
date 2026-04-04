@@ -28,7 +28,7 @@ DEFAULT_QUERIES = [
 STRATEGIES = ["fixed", "recursive", "semantic"]
 
 
-def evaluate_strategy(strategy, queries, semantic_weight=0.7, bm25_weight=0.3):
+def evaluate_strategy(strategy, queries, semantic_weight=0.7, bm25_weight=0.3, use_reranker=True):
     rows = []
     for q in queries:
         result = generate_answer(
@@ -37,6 +37,7 @@ def evaluate_strategy(strategy, queries, semantic_weight=0.7, bm25_weight=0.3):
             strategy=strategy,
             semantic_weight=semantic_weight,
             bm25_weight=bm25_weight,
+            use_reranker=use_reranker,
         )
         faith = faithfulness_score(result["answer"], result["contexts"])["score"]
         rel = relevance_score(q, result["answer"])
@@ -75,6 +76,7 @@ def parse_args():
     parser.add_argument("--output", default="ablation_results.json", help="Output JSON path")
     parser.add_argument("--semantic-weight", type=float, default=0.7, help="Semantic retrieval weight")
     parser.add_argument("--bm25-weight", type=float, default=0.3, help="BM25 retrieval weight")
+    parser.add_argument("--disable-reranker", action="store_true", help="Disable reranker during ablation")
     return parser.parse_args()
 
 
@@ -90,6 +92,7 @@ def main():
                 DEFAULT_QUERIES,
                 semantic_weight=args.semantic_weight,
                 bm25_weight=args.bm25_weight,
+                use_reranker=not args.disable_reranker,
             )
         )
 
@@ -99,6 +102,11 @@ def main():
 
     payload = {
         "queries": DEFAULT_QUERIES,
+        "config": {
+            "semantic_weight": args.semantic_weight,
+            "bm25_weight": args.bm25_weight,
+            "use_reranker": not args.disable_reranker,
+        },
         "results": all_results,
         "best_strategy": best["strategy"],
     }

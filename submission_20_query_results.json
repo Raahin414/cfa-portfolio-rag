@@ -1,0 +1,1374 @@
+{
+  "summary": {
+    "num_queries": 20,
+    "config": {
+      "strategy": "semantic",
+      "semantic_weight": 0.3,
+      "bm25_weight": 0.7,
+      "top_k": 6,
+      "use_reranker": false,
+      "rerank_top_k": 5,
+      "generation_model": "mistralai/Mistral-7B-Instruct-v0.2",
+      "temperature": 0.0,
+      "max_tokens": 300
+    },
+    "avg_faithfulness": 0.9904545454545455,
+    "avg_relevance": 0.6311721878880729,
+    "avg_retrieval_sec": 0.2880096750006487,
+    "avg_generation_sec": 1.6554300099975081,
+    "avg_latency_sec": 1.94392693000118,
+    "success_rate": 0.7
+  },
+  "rows": [
+    {
+      "id": 1,
+      "query": "What is the efficient frontier in portfolio management?",
+      "answer": "The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return [Context 1]. It is a curve in the space of assets, showing all the portfolios that cannot be bettered for the given level of risk or the given level of expected return [Context 2]. The efficient frontier is important because it shows the optimal balance between risk and return for a given investor [Context 3]. The efficient frontier is not a fixed concept, but rather a dynamic one that changes as new information becomes available [Context 4]. The efficient frontier is a powerful tool for investors, as it allows them to identify the optimal balance between risk and return for their given investment horizon and risk tolerance [Context 5].",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 5,
+        "total_claims": 5,
+        "details": [
+          {
+            "claim": "The efficient frontier is a set of optimal portfolios that offer the highest expected return for a defined level of risk, or the lowest risk for a given level of expected return .",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED. The claim that",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "It is a curve in the space of assets, showing all the portfolios that cannot be bettered for the given level of risk or the given level of expected return .",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED. The claim describes",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "The efficient frontier is important because it shows the optimal balance between risk and return for a given investor .",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED. The claim that",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "The efficient frontier is not a fixed concept, but rather a dynamic one that changes as new information becomes available .",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED. The claim that",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "The efficient frontier is a powerful tool for investors, as it allows them to identify the optimal balance between risk and return for their given investment horizon and risk tolerance .",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED. The claim and",
+            "backend": "chat.completions"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.8442707459131876,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the significance of the efficient frontier in investment planning?",
+          "How does the efficient frontier help investors to determine the optimal balance between risk and return?",
+          "In what ways does the efficient frontier change as new information becomes available, and how can investors use this information to update their investment strategies?"
+        ],
+        "similarity_scores": [
+          0.8772264122962952,
+          0.8421852588653564,
+          0.8134005665779114
+        ],
+        "average_score": 0.8442707459131876,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "chat.completions"
+      },
+      "retrieval_sec": 1.276562000013655,
+      "generation_sec": 7.537400000001071,
+      "latency_sec": 8.814382600001409,
+      "backend": "huggingface_inference_api"
+    },
+    {
+      "id": 2,
+      "query": "Explain the role of constraints in portfolio construction.",
+      "answer": "constructing a portfolio for the client that meets the objectives. The typical categories are liquidity requirements, time horizon, regulatory requirements, tax status, and unique needs. The constraints may be either internal (i.e., set by the client) or external (i.e., set by law or regulation), as we discuss in detail later.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 3,
+        "total_claims": 3,
+        "details": [
+          {
+            "claim": "constructing a portfolio for the client that meets the objectives.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED\n\nThe context",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "The typical categories are liquidity requirements, time horizon, regulatory requirements, tax status, and unique needs.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED\n\nThe context",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "The constraints may be either internal (i.e., set by the client) or external (i.e., set by law or regulation), as we discuss in detail later.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED\n\nThe context",
+            "backend": "chat.completions"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.7677723902018164,
+      "relevance_report": {
+        "generated_questions": [
+          "What are the primary investment categories for constructing a client's portfolio?",
+          "How do internal and external constraints impact the investment choices for a client's portfolio?",
+          "Considering the client's objectives, time horizon, and unique needs, which asset classes would you recommend for inclusion in their portfolio?"
+        ],
+        "similarity_scores": [
+          0.7384632981739475,
+          0.8524394885432571,
+          0.7124143838882446
+        ],
+        "average_score": 0.7677723902018164,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "chat.completions"
+      },
+      "retrieval_sec": 0.22549179999623448,
+      "generation_sec": 4.468384699997841,
+      "latency_sec": 4.694170500006294,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 3,
+      "query": "Define and explain diversification in portfolio context.",
+      "answer": "Diversification aims to minimize risk by allocating investments among various financial instruments, industries, and other categories.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "Diversification aims to minimize risk by allocating investments among various financial instruments, industries, and other categories.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED\n\nThe context",
+            "backend": "chat.completions"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.7965757938716512,
+      "relevance_report": {
+        "generated_questions": [
+          "Which investment strategy is used to allocate investments among various financial instruments, industries, and other categories to minimize risk?",
+          "What is the primary goal of diversification in an investment portfolio?",
+          "How does diversification help to reduce overall risk in an investment portfolio?"
+        ],
+        "similarity_scores": [
+          0.6794602465951308,
+          0.8521957397460999,
+          0.858071395273723
+        ],
+        "average_score": 0.7965757938716512,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "chat.completions"
+      },
+      "retrieval_sec": 0.22192910000740085,
+      "generation_sec": 0.7926790000055917,
+      "latency_sec": 1.014873499996611,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 4,
+      "query": "What is the relationship between risk and return?",
+      "answer": "2 Portfolio Risk and Return: Part II future return. The relationship between price and return can also be observed in the valuation expression shown in Section 2.1.2. Therefore, we will occasionally use price and return interchangeably when discussing the price of risk. Consider an asset with both systematic and nonsystematic risk. Assume that both kinds of risk are priced\u2014that is, you receive a return for both systematic risk and non- systematic risk. Risks taken must be carefully chosen, understood, and well-managed to have a chance at adding value through decisions. Risk and return are the interconnected forces of the financial universe. Many decision makers focus on return, which is not something that is easily controlled, as opposed to risk, or exposure to risk, which may actually be managed or controlled. Risk exposure is the extent to which the underlying environmental or market risks result in actual risk borne by a business or investor who has assets or liabilities that are sensitive to those risks. It is the state of being exposed or vulnerable to a risk. Risk-return tradeoff is a [from retrieved contexts]",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 11,
+        "total_claims": 11,
+        "details": [
+          {
+            "claim": "2 Portfolio Risk and Return: Part II future return.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED\n\nThe context",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "The relationship between price and return can also be observed in the valuation expression shown in Section 2.1.2.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED\n\nThe context",
+            "backend": "chat.completions"
+          },
+          {
+            "claim": "Therefore, we will occasionally use price and return interchangeably when discussing the price of risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Consider an asset with both systematic and nonsystematic risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "0 | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Assume that both kinds of risk are priced\u2014that is, you receive a return for both systematic risk and non- systematic risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Risks taken must be carefully chosen, understood, and well-managed to have a chance at adding value through decisions.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Risk and return are the interconnected forces of the financial universe.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Many decision makers focus on return, which is not something that is easily controlled, as opposed to risk, or exposure to risk, which may actually be managed or controlled.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Risk exposure is the extent to which the underlying environmental or market risks result in actual risk borne by a business or investor who has assets or liabilities that are sensitive to those risks.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPROVAL | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "It is the state of being exposed or vulnerable to a risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPROVAL | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Risk-return tradeoff is a [from retrieved contexts]",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=0.600",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5917727362621854,
+      "relevance_report": {
+        "generated_questions": [
+          "How many more risks are there than systematic risk?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.6180357109329528,
+          0.5695659605056742,
+          0.5877165373479291
+        ],
+        "average_score": 0.5917727362621854,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.22395749999850523,
+      "generation_sec": 0.30732690000149887,
+      "latency_sec": 0.5316970999992918,
+      "backend": "fallback_context_only"
+    },
+    {
+      "id": 5,
+      "query": "Describe the Modern Portfolio Theory.",
+      "answer": "The modern portfolio theory (MPT) is a mathematical investment strategy that\u2019s designed to balance the risk and return of assets in a portfolio based on the investor\u2019s risk tolerance.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "The modern portfolio theory (MPT) is a mathematical investment strategy that\u2019s designed to balance the risk and return of assets in a portfolio based on the investor\u2019s risk tolerance.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.7239906954886568,
+      "relevance_report": {
+        "generated_questions": [
+          "How many years did the modern portfolio theory take place?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.8630276240722924,
+          0.6656810244512054,
+          0.6432634379424725
+        ],
+        "average_score": 0.7239906954886568,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.22671600000467151,
+      "generation_sec": 1.21251559999655,
+      "latency_sec": 1.439521699998295,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 6,
+      "query": "How is the Sharpe ratio calculated and what does it measure?",
+      "answer": "A Sharpe ratio is helpful to determine whether the risk is worth the reward. It is used when comparing peers or ETFs that hold similar assets. The calculation for the Sharpe ratio is the adjusted return divided by the level of risk, or its standard deviation. According to Investopedia, \u201cThe Sharpe ratio \u2019s numerator is the difference over time between realized, or expected, returns and a benchmark such as the risk-free rate of return or the performance of a particular investment category.\u201d Generally, when comparing similar portfolios, the higher the Sharpe ratio, the better because it shows an attractive risk-adjusted return , meaning the return after taking into account the degree of risk that was taken to achieve it. All three calculation methodologies will give investors different information. Because investors are risk averse, they will require compensation for higher risk in the form of higher returns. A commonly used measure of performance is the Sharpe ratio, which is defined as the portfolio\u2019s risk premium divided by its risk. An appealing feature of the Sharpe ratio is that its use can [from retrieved contexts]",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 8,
+        "total_claims": 8,
+        "details": [
+          {
+            "claim": "A Sharpe ratio is helpful to determine whether the risk is worth the reward.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPROVAL | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "It is used when comparing peers or ETFs that hold similar assets.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPROVAL | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "The calculation for the Sharpe ratio is the adjusted return divided by the level of risk, or its standard deviation.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "According to Investopedia, \u201cThe Sharpe ratio \u2019s numerator is the difference over time between realized, or expected, returns and a benchmark such as the risk-free rate of return or the performance of a particular investment category.\u201d Generally, when comparing similar portfolios, the higher the Sharpe ratio, the better because it shows an attractive risk-adjusted return , meaning the return after taking into account the degree of risk that was taken to achieve it.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a Sharpe | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "All three calculation methodologies will give investors different information.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPROVAL | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Because investors are risk averse, they will require compensation for higher risk in the form of higher returns.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPROVAL | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "A commonly used measure of performance is the Sharpe ratio, which is defined as the portfolio\u2019s risk premium divided by its risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "An appealing feature of the Sharpe ratio is that its use can [from retrieved contexts]",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "model_label=UNKNOWN | overlap=0.750",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5671411085765905,
+      "relevance_report": {
+        "generated_questions": [
+          "How many different methods of calculation will give investors different information?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.5880450501388251,
+          0.5336624621756452,
+          0.5797158134153011
+        ],
+        "average_score": 0.5671411085765905,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.22902920001070015,
+      "generation_sec": 0.41031020000809804,
+      "latency_sec": 0.6398940000071889,
+      "backend": "fallback_context_only"
+    },
+    {
+      "id": 7,
+      "query": "Explain rebalancing and its importance in portfolio management.",
+      "answer": "Identify the best rebalancing strategies for your portfolio.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "Identify the best rebalancing strategies for your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Identify the best | model_label=UNKNOWN | overlap=0.667",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.6332233792804175,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the best strategy for your portfolio?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.7217841480035605,
+          0.5736166405171212,
+          0.6042693493205707
+        ],
+        "average_score": 0.6332233792804175,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.2541815000004135,
+      "generation_sec": 0.8711730999930296,
+      "latency_sec": 1.1259251000010408,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 8,
+      "query": "What is the significance of correlation in portfolio diversification?",
+      "answer": "24. A is correct. Higher correlations will produce less diversification benefits provid- ed that the other components of the portfolio standard deviation do not change (i.e., the weights and standard deviations of the individual assets). 25. C is correct. Low correlation reduces volatility . The assets rise and fall in price at different times, at different rates, and based on a variety of factors. A portfolio holding diversified assets helps to create more consistency and improve overall performance. Correlation measures how closely two investments move in relation to each other. It\u2019s expressed as a number between \u20131 and +1, indicating the strength and direction of their relationship. Understanding correlation helps investors combine assets that don\u2019t move together, which smooths returns and reduces portfolio volatility. When we talk about the importance of diversification in a stock portfolio, we\u2019re referring to an investor\u2019s attempt to reduce exposure to unsystematic risk (i.e., company-specific risk) by investing in various companies across different sectors, industries, or even countries. A diversified stock portfolio contains a broad variety of stocks , but it is still focused on [from retrieved contexts]",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 11,
+        "total_claims": 11,
+        "details": [
+          {
+            "claim": "A is correct.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Higher correlations will produce less diversification benefits provid- ed that the other components of the portfolio standard deviation do not change (i.e., the weights and standard deviations of the individual assets).",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "C is correct.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Low correlation reduces volatility .",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "The assets rise and fall in price at different times, at different rates, and based on a variety of factors.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "A portfolio holding diversified assets helps to create more consistency and improve overall performance.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Correlation measures how closely two investments move in relation to each other.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "It\u2019s expressed as a number between \u20131 and +1, indicating the strength and direction of their relationship.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "-1 | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Understanding correlation helps investors combine assets that don\u2019t move together, which smooths returns and reduces portfolio volatility.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "When we talk about the importance of diversification in a stock portfolio, we\u2019re referring to an investor\u2019s attempt to reduce exposure to unsystematic risk (i.e., company-specific risk) by investing in various companies across different sectors, industries, or even countries.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "A diversified stock portfolio contains a broad variety of stocks , but it is still focused on [from retrieved contexts]",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=0.833",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5887614280674734,
+      "relevance_report": {
+        "generated_questions": [
+          "How many more stocks are there in a portfolio?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.6718690400006536,
+          0.527167138198959,
+          0.5672481060028076
+        ],
+        "average_score": 0.5887614280674734,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.2294417999946745,
+      "generation_sec": 0.748764799995115,
+      "latency_sec": 0.9787568000028841,
+      "backend": "fallback_context_only"
+    },
+    {
+      "id": 9,
+      "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+      "answer": "The efficient frontier coincides with the top portion of the minimum variance frontier.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "The efficient frontier coincides with the top portion of the minimum variance frontier.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "X is on | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5986842540584227,
+      "relevance_report": {
+        "generated_questions": [
+          "How many questions are there about the shortest variance frontier?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.6663372119464164,
+          0.5327680946407158,
+          0.5969474555881359
+        ],
+        "average_score": 0.5986842540584227,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.2647461000015028,
+      "generation_sec": 0.8766551000007894,
+      "latency_sec": 1.1418109000078402,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 10,
+      "query": "What is beta and how is it used in portfolio management?",
+      "answer": "A beta of 1.0 indicates a stock has market risk identical to the broader S&P 500, while a beta greater than 1 means that the asset is more volatile than the market. Beta can be used to estimate the market risk of a portfolio by calculating the weighted average beta of its constituent assets. Market risk and specific risk make up the two major categories of investment risk. It cannot be eliminated through diversification, though it can be hedged in other ways and tends to influence the entire market at the same time.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 4,
+        "total_claims": 4,
+        "details": [
+          {
+            "claim": "A beta of 1.0 indicates a stock has market risk identical to the broader S&P 500, while a beta greater than 1 means that the asset is more volatile than the market.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Beta can be used to estimate the market risk of a portfolio by calculating the weighted average beta of its constituent assets.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a high beta | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Market risk and specific risk make up the two major categories of investment risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "It cannot be eliminated through diversification, though it can be hedged in other ways and tends to influence the entire market at the same time.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.6246363970501038,
+      "relevance_report": {
+        "generated_questions": [
+          "How many betas does a stock have?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.7697992599249769,
+          0.545988760115727,
+          0.5581211711096076
+        ],
+        "average_score": 0.6246363970501038,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.2488320999982534,
+      "generation_sec": 3.6316071999899577,
+      "latency_sec": 3.880747600007453,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 11,
+      "query": "What are the key components of an Investment Policy Statement?",
+      "answer": "4. The section of the investment policy statement (IPS) that provides information about how policy may be executed, including restrictions and exclusions, is best described as the: A. Investment Objectives. B. Investment Guidelines. 4 Basics of Portfolio Planning and Construction This reading is organized as follows: Section 2 discusses the investment policy statement, a written document that captures the client\u2019s investment objectives and the constraints. Section 3 discusses the portfolio construction process, including the first step of specifying a strategic asset allocation for the client. Section 4 concludes and summarizes the reading. THE INVESTMENT POLICY STATEMENT describe the reasons for a written investment policy statement (IPS) describe the major components of an IPS Portfolio planning can be defined as a program developed in advance of constructing a portfolio that is expected to define the client\u2019s investment objectives. The written document governing this process is the investment policy statement (IPS). C. end product of the portfolio management process. 2. The component of an investment policy statement that defines the investment objectives is most likely to include information about: A. the investor\u2019s [from retrieved contexts]",
+      "faithfulness": 0.9090909090909091,
+      "faithfulness_report": {
+        "score": 0.9090909090909091,
+        "supported_claims": 10,
+        "total_claims": 11,
+        "details": [
+          {
+            "claim": "The section of the investment policy statement (IPS) that provides information about how policy may be executed, including restrictions and exclusions, is best described as the: A.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Investment Objectives.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Investment Guidelines.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "4 Basics of Portfolio Planning and Construction This reading is organized as follows: Section 2 discusses the investment policy statement, a written document that captures the client\u2019s investment objectives and the constraints.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Section 3 discusses the portfolio construction process, including the first step of specifying a strategic asset allocation for the client.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Section 4 concludes and summarizes the reading.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "THE INVESTMENT POLICY STATEMENT describe the reasons for a written investment policy statement (IPS) describe the major components of an IPS Portfolio planning can be defined as a program developed in advance of constructing a portfolio that is expected to define the client\u2019s investment objectives.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "The written document governing this process is the investment policy statement (IPS).",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "end product of the portfolio management process.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "The component of an investment policy statement that defines the investment objectives is most likely to include information about: A.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "B. | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "the investor\u2019s [from retrieved contexts]",
+            "label": "NOT_SUPPORTED",
+            "supported": false,
+            "raw_response": "A. | model_label=UNKNOWN | overlap=0.333",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.6131554614818022,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the article about? 2. What is the article about? 3.",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.5484899282455444,
+          0.5717102203714626,
+          0.7192662358283997
+        ],
+        "average_score": 0.6131554614818022,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.23077460000058636,
+      "generation_sec": 0.4419437999895308,
+      "latency_sec": 0.6734913000109373,
+      "backend": "fallback_context_only"
+    },
+    {
+      "id": 12,
+      "query": "How do time horizons affect portfolio construction decisions?",
+      "answer": "The time horizon of the investor will affect the nature of investments used in the portfolio.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "The time horizon of the investor will affect the nature of investments used in the portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.6081444017749779,
+      "relevance_report": {
+        "generated_questions": [
+          "How many years did the investor have to wait for the investor to get his portfolio?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.7105740308761597,
+          0.5183456518238043,
+          0.5955135226249695
+        ],
+        "average_score": 0.6081444017749779,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.22817400000349153,
+      "generation_sec": 0.7825103999930434,
+      "latency_sec": 1.0109876999922562,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 13,
+      "query": "What role does liquidity play in portfolio constraints?",
+      "answer": "Then, as now, the important points to cover in an IPS were Risk, Return, Time horizon, Tax situation, Liquidity, Legal restrictions, and the Unique constraints of a specific investor. Investment constraints include the investor\u2019s liquidity needs, time horizon, tax considerations, legal and regulatory constraints, and unique needs and preferences. Liquidity: Liquidity refers to the ability to turn investment assets into spendable cash in a short period of time without having to make significant price concessions to do so. Investor needs for money to pay tuition, to pay for a parent\u2019s assisted living expenses, or to fund other possible spending needs may all require that some liquid assets be held. As we noted in an earlier reading discussing property and casualty insurance companies, claims arrive unpredictably to some extent and therefore their portfolios must hold a significant proportion of liquid (or maturing) securities in order to be prepared to honor these claims. This need for liquidity also forces P&C companies to accept investments with relatively low expected returns. Liquidity is of less con- cern to life insurance companies given the greater [from retrieved contexts]",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 7,
+        "total_claims": 7,
+        "details": [
+          {
+            "claim": "Then, as now, the important points to cover in an IPS were Risk, Return, Time horizon, Tax situation, Liquidity, Legal restrictions, and the Unique constraints of a specific investor.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Not_SUP | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Investment constraints include the investor\u2019s liquidity needs, time horizon, tax considerations, legal and regulatory constraints, and unique needs and preferences.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "SUPPORTED | model_label=SUPPORTED | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Liquidity: Liquidity refers to the ability to turn investment assets into spendable cash in a short period of time without having to make significant price concessions to do so.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "IPS | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Investor needs for money to pay tuition, to pay for a parent\u2019s assisted living expenses, or to fund other possible spending needs may all require that some liquid assets be held.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "IPS | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "As we noted in an earlier reading discussing property and casualty insurance companies, claims arrive unpredictably to some extent and therefore their portfolios must hold a significant proportion of liquid (or maturing) securities in order to be prepared to honor these claims.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "IPS | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "This need for liquidity also forces P&C companies to accept investments with relatively low expected returns.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "IPS should state | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Liquidity is of less con- cern to life insurance companies given the greater [from retrieved contexts]",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "IPS. | model_label=UNKNOWN | overlap=0.818",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5928813410546959,
+      "relevance_report": {
+        "generated_questions": [
+          "How many assets are in a liquid assets?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.6612774133682251,
+          0.5181335785229745,
+          0.5992330312728882
+        ],
+        "average_score": 0.5928813410546959,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.23142359999474138,
+      "generation_sec": 0.6156383999914397,
+      "latency_sec": 0.8477621999918483,
+      "backend": "fallback_context_only"
+    },
+    {
+      "id": 14,
+      "query": "Explain tax considerations in portfolio planning.",
+      "answer": "1. Identify the tax strategies that are necessary to maximize your portfolio. 2. Identify the tax strategies that are necessary to maximize your portfolio. 3. Identify the tax strategies that are necessary to maximize your portfolio. 4. Identify the tax strategies that are necessary to maximize your portfolio. 5. Identify the tax strategies that are necessary to maximize your portfolio. 6. Identify the tax strategies that are necessary to maximize your portfolio. 7. Identify the tax strategies that are necessary to maximize your portfolio. 8. Identify the tax strategies that are necessary to maximize your portfolio. 9. Identify the tax strategies that are necessary to maximize your portfolio. 10. Identify the tax strategies that are necessary to maximize your portfolio.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 10,
+        "total_claims": 10,
+        "details": [
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Identify the tax strategies that are necessary to maximize your portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1. | model_label=UNKNOWN | overlap=0.571",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5781564675976203,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the best title for the article? 2. What is the best title for the article? 3.",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.5176660881339988,
+          0.5886278993709242,
+          0.6281754152879377
+        ],
+        "average_score": 0.5781564675976203,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.23321570000553038,
+      "generation_sec": 4.47784479999973,
+      "latency_sec": 4.711443899999722,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 15,
+      "query": "How do regulatory requirements impact portfolio construction?",
+      "answer": "The ESG integration approach that is based on the ESG integration approach",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "The ESG integration approach that is based on the ESG integration approach",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "IPS | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5519164591697576,
+      "relevance_report": {
+        "generated_questions": [
+          "How many questions does the ESG integration approach have?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.5682152767053091,
+          0.49172309139692044,
+          0.5958110094070435
+        ],
+        "average_score": 0.5519164591697576,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.22973150000325404,
+      "generation_sec": 1.0568359999888344,
+      "latency_sec": 1.2869979000097374,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 16,
+      "query": "Discuss the relationship between systematic and unsystematic risk.",
+      "answer": "Systematic risk is the risk that is specific to a particular company or industry.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "Systematic risk is the risk that is specific to a particular company or industry.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "1). | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5382492692460257,
+      "relevance_report": {
+        "generated_questions": [
+          "How many questions does the narrator have?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.44511057600049625,
+          0.5531576377310542,
+          0.6164795940065265
+        ],
+        "average_score": 0.5382492692460257,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.2372614999912912,
+      "generation_sec": 0.9006549000041559,
+      "latency_sec": 1.1385991999995895,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 17,
+      "query": "How do you handle concentration limits in portfolio optimization?",
+      "answer": "Using an investment universe with associated market expectations",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "Using an investment universe with associated market expectations",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a negative impact | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.5775626099066773,
+      "relevance_report": {
+        "generated_questions": [
+          "How many years did the investment universe have a market expectations?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.6179283261299133,
+          0.5101079332699892,
+          0.6046515703201294
+        ],
+        "average_score": 0.5775626099066773,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.23473789999843575,
+      "generation_sec": 0.8350043999962509,
+      "latency_sec": 1.070544999995036,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 18,
+      "query": "Explain the difference between strategic and tactical asset allocation.",
+      "answer": "Tactical asset allocation is the process of taking an active stance on the strategic asset allocation itself and adjusting long-term target weights for a short period to capitalize on the market or economic opportunities.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "Tactical asset allocation is the process of taking an active stance on the strategic asset allocation itself and adjusting long-term target weights for a short period to capitalize on the market or economic opportunities.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "B | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.6926386590158142,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the term for the term tactical asset allocation?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.886955267968474,
+          0.5636149308911097,
+          0.6273457781878589
+        ],
+        "average_score": 0.6926386590158142,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.24787900000228547,
+      "generation_sec": 1.713051800004905,
+      "latency_sec": 1.9615665000019362,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 19,
+      "query": "What factors should be considered in evaluating portfolio performance?",
+      "answer": "1. Portfolios with higher risk and higher risk. 2.",
+      "faithfulness": 1.0,
+      "faithfulness_report": {
+        "score": 1.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "details": [
+          {
+            "claim": "Portfolios with higher risk and higher risk.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "APPRAISA | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.6467999874318566,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the best time to buy a portfolio?",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.7427288736539408,
+          0.5238699444648731,
+          0.673801144176756
+        ],
+        "average_score": 0.6467999874318566,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.255185399990296,
+      "generation_sec": 0.788503399991896,
+      "latency_sec": 1.0442808999941917,
+      "backend": "local_llm_fallback"
+    },
+    {
+      "id": 20,
+      "query": "How can investors achieve diversification across asset classes?",
+      "answer": "You'll generate returns or losses that blend the returns of the individual asset classes in the long term. This diversification helps smooth out volatility compared with investing in one asset class or another. You'll want to start with having an understanding of the different asset classes such as stocks, bonds, and real estate and then assessing your investment goals and risk tolerance. Aim for diversification by including a mix of these asset classes to mitigate risk and select specific investments within each category. Regularly review and rebalance your portfolio to maintain your desired asset allocation and consider seeking professional advice if needed to tailor your strategy to your finances, risk tolerance, and goals. As investors consider ways to diversify their holdings, there are dozens of strategies to implement. Many of the methods below can be combined to enhance the level of diversification within a single portfolio. Fund managers and investors often diversify their investments across asset classes and determine what percentages of the portfolio to allocate to each. Each asset class has a different, unique set of risks and opportunities. [from retrieved contexts]",
+      "faithfulness": 0.9,
+      "faithfulness_report": {
+        "score": 0.9,
+        "supported_claims": 9,
+        "total_claims": 10,
+        "details": [
+          {
+            "claim": "You'll generate returns or losses that blend the returns of the individual asset classes in the long term.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "aim for | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "This diversification helps smooth out volatility compared with investing in one asset class or another.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Identify the best | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "You'll want to start with having an understanding of the different asset classes such as stocks, bonds, and real estate and then assessing your investment goals and risk tolerance.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a lack of | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Aim for diversification by including a mix of these asset classes to mitigate risk and select specific investments within each category.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Identify the asset | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Regularly review and rebalance your portfolio to maintain your desired asset allocation and consider seeking professional advice if needed to tailor your strategy to your finances, risk tolerance, and goals.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Identify the different | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "As investors consider ways to diversify their holdings, there are dozens of strategies to implement.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Identify the strategies | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Many of the methods below can be combined to enhance the level of diversification within a single portfolio.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "aim for | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Fund managers and investors often diversify their investments across asset classes and determine what percentages of the portfolio to allocate to each.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "Identify the different | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "Each asset class has a different, unique set of risks and opportunities.",
+            "label": "SUPPORTED",
+            "supported": true,
+            "raw_response": "a single asset | model_label=UNKNOWN | overlap=1.000",
+            "backend": "local_llm_fallback"
+          },
+          {
+            "claim": "[from retrieved contexts]",
+            "label": "NOT_SUPPORTED",
+            "supported": false,
+            "raw_response": "a). | model_label=UNKNOWN | overlap=0.000",
+            "backend": "local_llm_fallback"
+          }
+        ],
+        "method": "llm_claim_verification",
+        "threshold": 0.45
+      },
+      "relevance": 0.4871101723117263,
+      "relevance_report": {
+        "generated_questions": [
+          "What is the best title for the article? 2. What is the best title for the article? 3.",
+          "What is the main concept explained in the answer?",
+          "Which key factors are described in the answer?"
+        ],
+        "similarity_scores": [
+          0.44692437192572293,
+          0.496724546346126,
+          0.5176815986633301
+        ],
+        "average_score": 0.4871101723117263,
+        "method": "alternate_query_generation",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "question_generation_backend": "local_llm_fallback"
+      },
+      "retrieval_sec": 0.2309231999970507,
+      "generation_sec": 0.6397957000008319,
+      "latency_sec": 0.8710842000000412,
+      "backend": "fallback_context_only"
+    }
+  ]
+}

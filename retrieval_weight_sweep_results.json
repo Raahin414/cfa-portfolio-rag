@@ -1,0 +1,1426 @@
+{
+  "best": {
+    "config": {
+      "strategy": "semantic",
+      "semantic_weight": 0.3,
+      "bm25_weight": 0.7,
+      "top_k": 6,
+      "use_reranker": false,
+      "rerank_top_k": 5
+    },
+    "metrics": {
+      "avg_faithfulness": 0.9904545454545455,
+      "avg_relevance": 0.6079234996958088,
+      "avg_latency_sec": 1.9239239749986154,
+      "objective": 1.5983780451503544
+    },
+    "rows": [
+      {
+        "query": "What is the efficient frontier in portfolio management?",
+        "faithfulness": 1.0,
+        "relevance": 0.8318091168356817,
+        "latency_sec": 10.205241000003298,
+        "backend": "huggingface_inference_api"
+      },
+      {
+        "query": "Explain the role of constraints in portfolio construction.",
+        "faithfulness": 1.0,
+        "relevance": 0.5637050726005379,
+        "latency_sec": 6.570804200004204,
+        "backend": "huggingface_inference_api"
+      },
+      {
+        "query": "Define and explain diversification in portfolio context.",
+        "faithfulness": 1.0,
+        "relevance": 0.5481309767051524,
+        "latency_sec": 3.0911818999884417,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "What is the relationship between risk and return?",
+        "faithfulness": 1.0,
+        "relevance": 0.5917727362621854,
+        "latency_sec": 0.5306784999993397,
+        "backend": "fallback_context_only"
+      },
+      {
+        "query": "Describe the Modern Portfolio Theory.",
+        "faithfulness": 1.0,
+        "relevance": 0.7239906954886568,
+        "latency_sec": 1.3228583999880357,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "How is the Sharpe ratio calculated and what does it measure?",
+        "faithfulness": 1.0,
+        "relevance": 0.5671411085765905,
+        "latency_sec": 0.6377273999969475,
+        "backend": "fallback_context_only"
+      },
+      {
+        "query": "Explain rebalancing and its importance in portfolio management.",
+        "faithfulness": 1.0,
+        "relevance": 0.6332233792804175,
+        "latency_sec": 0.779670799995074,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "What is the significance of correlation in portfolio diversification?",
+        "faithfulness": 1.0,
+        "relevance": 0.5887614280674734,
+        "latency_sec": 0.7880098000023281,
+        "backend": "fallback_context_only"
+      },
+      {
+        "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+        "faithfulness": 1.0,
+        "relevance": 0.5986842540584227,
+        "latency_sec": 0.8301225000031991,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "What is beta and how is it used in portfolio management?",
+        "faithfulness": 1.0,
+        "relevance": 0.6246363970501038,
+        "latency_sec": 2.8269387999898754,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "What are the key components of an Investment Policy Statement?",
+        "faithfulness": 0.9090909090909091,
+        "relevance": 0.6131554614818022,
+        "latency_sec": 0.5387356999999611,
+        "backend": "fallback_context_only"
+      },
+      {
+        "query": "How do time horizons affect portfolio construction decisions?",
+        "faithfulness": 1.0,
+        "relevance": 0.6081444017749779,
+        "latency_sec": 0.8910398000007262,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "What role does liquidity play in portfolio constraints?",
+        "faithfulness": 1.0,
+        "relevance": 0.5928813410546959,
+        "latency_sec": 0.6961153000011109,
+        "backend": "fallback_context_only"
+      },
+      {
+        "query": "Explain tax considerations in portfolio planning.",
+        "faithfulness": 1.0,
+        "relevance": 0.5781564675976203,
+        "latency_sec": 3.4652279000001727,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "How do regulatory requirements impact portfolio construction?",
+        "faithfulness": 1.0,
+        "relevance": 0.5519164591697576,
+        "latency_sec": 0.9248348999972222,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "Discuss the relationship between systematic and unsystematic risk.",
+        "faithfulness": 1.0,
+        "relevance": 0.5382492692460257,
+        "latency_sec": 0.8628298999974504,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "How do you handle concentration limits in portfolio optimization?",
+        "faithfulness": 1.0,
+        "relevance": 0.5775626099066773,
+        "latency_sec": 0.7045683000033023,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "Explain the difference between strategic and tactical asset allocation.",
+        "faithfulness": 1.0,
+        "relevance": 0.6926386590158142,
+        "latency_sec": 1.435728399999789,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "What factors should be considered in evaluating portfolio performance?",
+        "faithfulness": 1.0,
+        "relevance": 0.6467999874318566,
+        "latency_sec": 0.761986400000751,
+        "backend": "local_llm_fallback"
+      },
+      {
+        "query": "How can investors achieve diversification across asset classes?",
+        "faithfulness": 0.9,
+        "relevance": 0.4871101723117263,
+        "latency_sec": 0.61417960000108,
+        "backend": "fallback_context_only"
+      }
+    ]
+  },
+  "all_results": [
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.3,
+        "bm25_weight": 0.7,
+        "top_k": 6,
+        "use_reranker": false,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9904545454545455,
+        "avg_relevance": 0.6079234996958088,
+        "avg_latency_sec": 1.9239239749986154,
+        "objective": 1.5983780451503544
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.8318091168356817,
+          "latency_sec": 10.205241000003298,
+          "backend": "huggingface_inference_api"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.5637050726005379,
+          "latency_sec": 6.570804200004204,
+          "backend": "huggingface_inference_api"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5481309767051524,
+          "latency_sec": 3.0911818999884417,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 1.0,
+          "relevance": 0.5917727362621854,
+          "latency_sec": 0.5306784999993397,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7239906954886568,
+          "latency_sec": 1.3228583999880357,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5671411085765905,
+          "latency_sec": 0.6377273999969475,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.6332233792804175,
+          "latency_sec": 0.779670799995074,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.5887614280674734,
+          "latency_sec": 0.7880098000023281,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.8301225000031991,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.8269387999898754,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.6131554614818022,
+          "latency_sec": 0.5387356999999611,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.8910398000007262,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5928813410546959,
+          "latency_sec": 0.6961153000011109,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.5781564675976203,
+          "latency_sec": 3.4652279000001727,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5519164591697576,
+          "latency_sec": 0.9248348999972222,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.5382492692460257,
+          "latency_sec": 0.8628298999974504,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.5775626099066773,
+          "latency_sec": 0.7045683000033023,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6926386590158142,
+          "latency_sec": 1.435728399999789,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.6467999874318566,
+          "latency_sec": 0.761986400000751,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 0.9,
+          "relevance": 0.4871101723117263,
+          "latency_sec": 0.61417960000108,
+          "backend": "fallback_context_only"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "use_reranker": false,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9904545454545455,
+        "avg_relevance": 0.5968993066132403,
+        "avg_latency_sec": 1.1995135449978989,
+        "objective": 1.587353852067786
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 1.9651611000008415,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6665648982131097,
+          "latency_sec": 2.1784823999914806,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5481309767051524,
+          "latency_sec": 1.046202199999243,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 1.0,
+          "relevance": 0.5917727362621854,
+          "latency_sec": 0.5402324000024237,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7239906954886568,
+          "latency_sec": 1.3590772000025027,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5671411085765905,
+          "latency_sec": 0.6394396999967285,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.6332233792804175,
+          "latency_sec": 0.771768599995994,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.5887614280674734,
+          "latency_sec": 0.7979358000011416,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.8213014999928419,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.852440000002389,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.6131554614818022,
+          "latency_sec": 0.5371754999941913,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.9275398999889148,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5928813410546959,
+          "latency_sec": 0.7071112000121502,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.5781564675976203,
+          "latency_sec": 3.5343377999961376,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5519164591697576,
+          "latency_sec": 0.9070371999987401,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.5382492692460257,
+          "latency_sec": 0.8398618999926839,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.5775626099066773,
+          "latency_sec": 0.7020938000059687,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6926386590158142,
+          "latency_sec": 1.4599606999981916,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.6467999874318566,
+          "latency_sec": 0.7711741999955848,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 0.9,
+          "relevance": 0.4871101723117263,
+          "latency_sec": 0.6319377999898279,
+          "backend": "fallback_context_only"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.7,
+        "bm25_weight": 0.3,
+        "top_k": 6,
+        "use_reranker": false,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9904545454545455,
+        "avg_relevance": 0.5968993066132403,
+        "avg_latency_sec": 1.2582397199999833,
+        "objective": 1.587353852067786
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 1.9439094999979716,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6665648982131097,
+          "latency_sec": 2.171257699999842,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5481309767051524,
+          "latency_sec": 1.046552600004361,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 1.0,
+          "relevance": 0.5917727362621854,
+          "latency_sec": 1.751055600005202,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7239906954886568,
+          "latency_sec": 1.3752526999887777,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5671411085765905,
+          "latency_sec": 0.6456212000048254,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.6332233792804175,
+          "latency_sec": 0.7737034999881871,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.5887614280674734,
+          "latency_sec": 0.7979653000074904,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.8369504999864148,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.849027499993099,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.6131554614818022,
+          "latency_sec": 0.5428458999958821,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.9058074000058696,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5928813410546959,
+          "latency_sec": 0.6979562000051374,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.5781564675976203,
+          "latency_sec": 3.5241023000126006,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5519164591697576,
+          "latency_sec": 0.9115137000044342,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.5382492692460257,
+          "latency_sec": 0.8694531000073766,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.5775626099066773,
+          "latency_sec": 0.7018439000094077,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6926386590158142,
+          "latency_sec": 1.4603494999901159,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.6467999874318566,
+          "latency_sec": 0.743334099999629,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 0.9,
+          "relevance": 0.4871101723117263,
+          "latency_sec": 0.6162921999930404,
+          "backend": "fallback_context_only"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.8,
+        "bm25_weight": 0.2,
+        "top_k": 6,
+        "use_reranker": false,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9904545454545455,
+        "avg_relevance": 0.5968993066132403,
+        "avg_latency_sec": 1.1929103299989947,
+        "objective": 1.587353852067786
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 1.9868987999943784,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6665648982131097,
+          "latency_sec": 2.1059009000018705,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5481309767051524,
+          "latency_sec": 1.0503468999959296,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 1.0,
+          "relevance": 0.5917727362621854,
+          "latency_sec": 0.5327505000022938,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7239906954886568,
+          "latency_sec": 1.3441200999950524,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5671411085765905,
+          "latency_sec": 0.635751199995866,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.6332233792804175,
+          "latency_sec": 0.7781457999954,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.5887614280674734,
+          "latency_sec": 0.8041958000103477,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.8368116999918129,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.858334000004106,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.6131554614818022,
+          "latency_sec": 0.5414380999864079,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.8898226999881444,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5928813410546959,
+          "latency_sec": 0.7065047000069171,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.5781564675976203,
+          "latency_sec": 3.5158156999968924,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5519164591697576,
+          "latency_sec": 0.8957932000048459,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.5382492692460257,
+          "latency_sec": 0.8636179000022821,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.5775626099066773,
+          "latency_sec": 0.7101939999993192,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6926386590158142,
+          "latency_sec": 1.4259553000010783,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.6467999874318566,
+          "latency_sec": 0.7552428000053624,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 0.9,
+          "relevance": 0.4871101723117263,
+          "latency_sec": 0.620566500001587,
+          "backend": "fallback_context_only"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.3,
+        "bm25_weight": 0.7,
+        "top_k": 6,
+        "use_reranker": true,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9954545454545455,
+        "avg_relevance": 0.5890517765653327,
+        "avg_latency_sec": 1.0375968900028965,
+        "objective": 1.584506322019878
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 0.6700420000124723,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6405652130845798,
+          "latency_sec": 0.7245645000075456,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5571161840004699,
+          "latency_sec": 1.0177217000018572,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.5867986668605255,
+          "latency_sec": 0.6741375000128755,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7199884107532853,
+          "latency_sec": 1.3485050000017509,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5613073358685398,
+          "latency_sec": 0.8447282999986783,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.556465987034019,
+          "latency_sec": 0.8504562000016449,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.6240060914688466,
+          "latency_sec": 1.2511780000058934,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 1.0211373000056483,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.975341400000616,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 1.0,
+          "relevance": 0.6114675175464079,
+          "latency_sec": 1.673908600001596,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.9817067999974824,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5159635053715906,
+          "latency_sec": 1.1460174999956507,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.6423047391483739,
+          "latency_sec": 0.870683300003293,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5354867584602051,
+          "latency_sec": 0.7926957000017865,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.6125577585013214,
+          "latency_sec": 0.9729825000104029,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.6108820179635438,
+          "latency_sec": 0.9511705999902915,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6026914331064838,
+          "latency_sec": 0.6527242000011029,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.5912492327502865,
+          "latency_sec": 0.650723900005687,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 1.0,
+          "relevance": 0.4722541969329311,
+          "latency_sec": 0.6815128000016557,
+          "backend": "local_llm_fallback"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.5,
+        "bm25_weight": 0.5,
+        "top_k": 6,
+        "use_reranker": true,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9954545454545455,
+        "avg_relevance": 0.5890517765653327,
+        "avg_latency_sec": 1.0382000299992797,
+        "objective": 1.584506322019878
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 0.6577840999962064,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6405652130845798,
+          "latency_sec": 0.7259542999963742,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5571161840004699,
+          "latency_sec": 1.0057114999945043,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.5867986668605255,
+          "latency_sec": 0.684058399987407,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7199884107532853,
+          "latency_sec": 1.346689800004242,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5613073358685398,
+          "latency_sec": 0.8475980999937747,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.556465987034019,
+          "latency_sec": 0.8682448000035947,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.6240060914688466,
+          "latency_sec": 1.2407589000067674,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.9770466999907512,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.9842577000090387,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 1.0,
+          "relevance": 0.6114675175464079,
+          "latency_sec": 1.4432548000040697,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.9828441999998176,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5159635053715906,
+          "latency_sec": 1.1468663999985438,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.6423047391483739,
+          "latency_sec": 0.8995540999894729,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5354867584602051,
+          "latency_sec": 0.9843733000016073,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.6125577585013214,
+          "latency_sec": 1.0404738999932306,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.6108820179635438,
+          "latency_sec": 0.9385939000057988,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6026914331064838,
+          "latency_sec": 0.6543379999930039,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.5912492327502865,
+          "latency_sec": 0.6537822000100277,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 1.0,
+          "relevance": 0.4722541969329311,
+          "latency_sec": 0.6818155000073602,
+          "backend": "local_llm_fallback"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.7,
+        "bm25_weight": 0.3,
+        "top_k": 6,
+        "use_reranker": true,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9954545454545455,
+        "avg_relevance": 0.5890517765653327,
+        "avg_latency_sec": 1.021040549997997,
+        "objective": 1.584506322019878
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 0.6615674999920884,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6405652130845798,
+          "latency_sec": 0.7207214999943972,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5571161840004699,
+          "latency_sec": 1.013341500001843,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.5867986668605255,
+          "latency_sec": 0.6866502999910153,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7199884107532853,
+          "latency_sec": 1.349611099998583,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5613073358685398,
+          "latency_sec": 0.8326762000069721,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.556465987034019,
+          "latency_sec": 0.837733099993784,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.6240060914688466,
+          "latency_sec": 1.2462790999998106,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.9981452999927569,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.9675770999892848,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 1.0,
+          "relevance": 0.6114675175464079,
+          "latency_sec": 1.4312477000057697,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.9695081999961985,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5159635053715906,
+          "latency_sec": 1.1389824999932898,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.6423047391483739,
+          "latency_sec": 0.8825051000021631,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5354867584602051,
+          "latency_sec": 0.7758162999962224,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.6125577585013214,
+          "latency_sec": 0.9913846999988891,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.6108820179635438,
+          "latency_sec": 0.9382293999951798,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6026914331064838,
+          "latency_sec": 0.6474887000076706,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.5912492327502865,
+          "latency_sec": 0.6646031999989646,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 1.0,
+          "relevance": 0.4722541969329311,
+          "latency_sec": 0.6667425000050571,
+          "backend": "local_llm_fallback"
+        }
+      ]
+    },
+    {
+      "config": {
+        "strategy": "semantic",
+        "semantic_weight": 0.8,
+        "bm25_weight": 0.2,
+        "top_k": 6,
+        "use_reranker": true,
+        "rerank_top_k": 5
+      },
+      "metrics": {
+        "avg_faithfulness": 0.9954545454545455,
+        "avg_relevance": 0.5890517765653327,
+        "avg_latency_sec": 1.0599239749994012,
+        "objective": 1.584506322019878
+      },
+      "rows": [
+        {
+          "query": "What is the efficient frontier in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.50846542957174,
+          "latency_sec": 0.6521922999963863,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain the role of constraints in portfolio construction.",
+          "faithfulness": 1.0,
+          "relevance": 0.6405652130845798,
+          "latency_sec": 0.7227168999961577,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Define and explain diversification in portfolio context.",
+          "faithfulness": 1.0,
+          "relevance": 0.5571161840004699,
+          "latency_sec": 1.0336561000003712,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the relationship between risk and return?",
+          "faithfulness": 0.9090909090909091,
+          "relevance": 0.5867986668605255,
+          "latency_sec": 0.6779860999959055,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Describe the Modern Portfolio Theory.",
+          "faithfulness": 1.0,
+          "relevance": 0.7199884107532853,
+          "latency_sec": 1.357765399996424,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How is the Sharpe ratio calculated and what does it measure?",
+          "faithfulness": 1.0,
+          "relevance": 0.5613073358685398,
+          "latency_sec": 0.849534399996628,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Explain rebalancing and its importance in portfolio management.",
+          "faithfulness": 1.0,
+          "relevance": 0.556465987034019,
+          "latency_sec": 0.8630241999926511,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is the significance of correlation in portfolio diversification?",
+          "faithfulness": 1.0,
+          "relevance": 0.6240060914688466,
+          "latency_sec": 1.2487038999970537,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Describe the role of the efficient frontier in optimal portfolio selection.",
+          "faithfulness": 1.0,
+          "relevance": 0.5986842540584227,
+          "latency_sec": 0.9942142000072636,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What is beta and how is it used in portfolio management?",
+          "faithfulness": 1.0,
+          "relevance": 0.6246363970501038,
+          "latency_sec": 2.9899358000111533,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What are the key components of an Investment Policy Statement?",
+          "faithfulness": 1.0,
+          "relevance": 0.6114675175464079,
+          "latency_sec": 1.5046901000023354,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do time horizons affect portfolio construction decisions?",
+          "faithfulness": 1.0,
+          "relevance": 0.6081444017749779,
+          "latency_sec": 0.9728516000031959,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "What role does liquidity play in portfolio constraints?",
+          "faithfulness": 1.0,
+          "relevance": 0.5159635053715906,
+          "latency_sec": 1.149491999996826,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain tax considerations in portfolio planning.",
+          "faithfulness": 1.0,
+          "relevance": 0.6423047391483739,
+          "latency_sec": 0.8728035000094678,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do regulatory requirements impact portfolio construction?",
+          "faithfulness": 1.0,
+          "relevance": 0.5354867584602051,
+          "latency_sec": 0.7802660999877844,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "Discuss the relationship between systematic and unsystematic risk.",
+          "faithfulness": 1.0,
+          "relevance": 0.6125577585013214,
+          "latency_sec": 1.585238700004993,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "How do you handle concentration limits in portfolio optimization?",
+          "faithfulness": 1.0,
+          "relevance": 0.6108820179635438,
+          "latency_sec": 0.9617680999945151,
+          "backend": "local_llm_fallback"
+        },
+        {
+          "query": "Explain the difference between strategic and tactical asset allocation.",
+          "faithfulness": 1.0,
+          "relevance": 0.6026914331064838,
+          "latency_sec": 0.6466120999975828,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "What factors should be considered in evaluating portfolio performance?",
+          "faithfulness": 1.0,
+          "relevance": 0.5912492327502865,
+          "latency_sec": 0.6530229999916628,
+          "backend": "fallback_context_only"
+        },
+        {
+          "query": "How can investors achieve diversification across asset classes?",
+          "faithfulness": 1.0,
+          "relevance": 0.4722541969329311,
+          "latency_sec": 0.6820050000096671,
+          "backend": "local_llm_fallback"
+        }
+      ]
+    }
+  ]
+}
