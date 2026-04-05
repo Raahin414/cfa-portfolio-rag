@@ -15,7 +15,7 @@ load_dotenv()
 
 MODEL_NAME = os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
 DEFAULT_INDEX = os.getenv("PINECONE_INDEX", "portfolio-rag-384")
-DEFAULT_NAMESPACE = "recursive"
+DEFAULT_NAMESPACE = "fixed"
 CHUNK_FILE_MAP = {
     "fixed": "fixed_chunks.json",
     "recursive": "recursive_chunks.json",

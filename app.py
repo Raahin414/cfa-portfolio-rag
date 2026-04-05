@@ -11,7 +11,7 @@ st.caption("Grounded Q&A over CFA Kaplan portfolio materials")
 
 with st.sidebar:
     st.header("Retrieval Settings")
-    strategy = st.selectbox("Chunking Strategy", ["semantic", "fixed", "recursive"], index=0)
+    strategy = st.selectbox("Chunking Strategy", ["fixed", "recursive", "semantic"], index=0)
     semantic_weight = st.slider("Semantic Weight", min_value=0.0, max_value=1.0, value=0.5, step=0.1)
     bm25_weight = round(1.0 - semantic_weight, 1)
     st.write(f"BM25 Weight: {bm25_weight}")

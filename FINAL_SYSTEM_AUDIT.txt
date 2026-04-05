@@ -70,12 +70,12 @@ Semantic chunking method:
 - Sentences are grouped into fixed blocks of 5 sentences per chunk.
 
 Which chunking used in final system:
-- The current benchmark and Streamlit default use semantic chunking as the primary runtime strategy.
-- The ablation study shows fixed chunking has the highest faithfulness in the latest run, but the deployed/default path remains semantic in the code path used for the evaluated system.
+- Fixed chunking is now the default in the runtime entry points.
+- The final evaluation configuration uses strategy=fixed in submission_20_query_eval.py.
 
 Why chosen:
-- Semantic chunking is the coded default for the current benchmark and UI flow.
-- It provides coherent sentence-group chunks and works well with the hybrid retrieval setup.
+- Fixed chunking is selected for consistency because it delivers the highest faithfulness in the latest ablation outputs.
+- It is stable under the current hybrid retrieval and fallback generation behavior.
 
 
 Step 3 - Embedding Audit

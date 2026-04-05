@@ -8,7 +8,7 @@ from generate_answer import generate_answer
 from relevance import relevance_score
 
 GENERATION_MODEL = os.getenv("HF_GENERATION_MODEL", "mistralai/Mistral-7B-Instruct-v0.2")
-STRATEGY = "semantic"
+STRATEGY = "fixed"
 SEMANTIC_WEIGHT = 0.3
 BM25_WEIGHT = 0.7
 USE_RERANKER = False
