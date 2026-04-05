@@ -12,10 +12,12 @@ st.caption("Grounded Q&A over CFA Kaplan portfolio materials")
 with st.sidebar:
     st.header("Retrieval Settings")
     strategy = st.selectbox("Chunking Strategy", ["fixed", "recursive", "semantic"], index=0)
-    semantic_weight = st.slider("Semantic Weight", min_value=0.0, max_value=1.0, value=0.5, step=0.1)
+    semantic_weight = st.slider("Semantic Weight", min_value=0.0, max_value=1.0, value=0.3, step=0.1)
     bm25_weight = round(1.0 - semantic_weight, 1)
     st.write(f"BM25 Weight: {bm25_weight}")
-    top_k = st.slider("Top-K Retrieval", min_value=5, max_value=12, value=8, step=1)
+    top_k = st.slider("Top-K Retrieval", min_value=5, max_value=12, value=6, step=1)
+    use_reranker = st.checkbox("Use Reranker", value=False)
+    rerank_top_k = st.slider("Rerank Top-K", min_value=3, max_value=8, value=5, step=1, disabled=not use_reranker)
 
 query = st.text_input("Ask a portfolio management question", placeholder="What is the efficient frontier?")
 run_search = st.button("Search", type="primary")
@@ -29,6 +31,8 @@ if run_search and query.strip():
                 strategy=strategy,
                 semantic_weight=semantic_weight,
                 bm25_weight=bm25_weight,
+                use_reranker=use_reranker,
+                rerank_top_k=rerank_top_k,
             )
         except FileNotFoundError:
             st.error(
