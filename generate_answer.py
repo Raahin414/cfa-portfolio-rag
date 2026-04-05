@@ -19,7 +19,7 @@ _REMOTE_GENERATION_DISABLED = False
 DEFAULT_QUERY = "How to diversify a portfolio to reduce risk?"
 DEFAULT_HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
 DEFAULT_LOCAL_FALLBACK_MODEL = "google/flan-t5-small"
-DEFAULT_MAX_TOKENS = 260
+DEFAULT_MAX_TOKENS = 320
 DEFAULT_TEMPERATURE = 0.0
 REFUSAL_TEXT = "Information not found in dataset"
 
@@ -239,6 +239,32 @@ def _is_low_quality_answer(answer):
     return False
 
 
+def _normalize_answer_text(answer):
+    text = (answer or "").strip()
+    if not text or text == REFUSAL_TEXT:
+        return text
+
+    # Convert fragmented line-by-line output into readable paragraph form.
+    lines = [ln.strip() for ln in text.replace("\r\n", "\n").split("\n") if ln.strip()]
+    if not lines:
+        return REFUSAL_TEXT
+
+    merged = " ".join(lines)
+    merged = " ".join(merged.split())
+
+    # If generation ended mid-sentence, trim to the last complete sentence.
+    if merged and merged[-1] not in ".!?\"')]":
+        last_stop = max(merged.rfind("."), merged.rfind("!"), merged.rfind("?"))
+        if last_stop > 40:
+            merged = merged[: last_stop + 1].strip()
+
+    # Graceful fallback if punctuation is still missing.
+    if merged and merged[-1] not in ".!?\"')]":
+        merged = merged + "."
+
+    return merged
+
+
 def _tokenize_simple(text):
     import re
     return [t.lower() for t in re.findall(r"[a-zA-Z0-9']+", text or "")]
@@ -384,6 +410,7 @@ def generate_answer(
 
     generation_latency = time.perf_counter() - generation_start
     answer = llm_answer if llm_answer else (local_answer if local_answer else fallback_generate(query, selected))
+    answer = _normalize_answer_text(answer)
     backend = (
         "huggingface_inference_api"
         if llm_answer
